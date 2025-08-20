@@ -1,0 +1,333 @@
+// Базові стилі форм
+.form-group {
+  margin-bottom: $spacing-6;
+}
+
+.form-label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  margin-bottom: $spacing-2;
+  
+  &.required::after {
+    content: ' *';
+    color: $error-color;
+  }
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  border: 2px solid $gray-200;
+  border-radius: $border-radius-lg;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $text-primary;
+  background-color: $white;
+  transition: all $transition-duration-base $transition-timing;
+  
+  &::placeholder {
+    color: $text-muted;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+  
+  &:disabled {
+    background-color: $gray-100;
+    border-color: $gray-200;
+    color: $text-muted;
+    cursor: not-allowed;
+  }
+  
+  &.error {
+    border-color: $error-color;
+    
+    &:focus {
+      border-color: $error-color;
+      box-shadow: 0 0 0 3px rgba($error-color, 0.1);
+    }
+  }
+  
+  &.success {
+    border-color: $success-color;
+    
+    &:focus {
+      border-color: $success-color;
+      box-shadow: 0 0 0 3px rgba($success-color, 0.1);
+    }
+  }
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right $spacing-3 center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding-right: $spacing-10;
+  appearance: none;
+  cursor: pointer;
+}
+
+// Розміри інпутів
+.form-input-sm,
+.form-textarea-sm,
+.form-select-sm {
+  padding: $spacing-2 $spacing-3;
+  font-size: $font-size-sm;
+  border-radius: $border-radius-md;
+}
+
+.form-input-lg,
+.form-textarea-lg,
+.form-select-lg {
+  padding: $spacing-4 $spacing-6;
+  font-size: $font-size-lg;
+  border-radius: $border-radius-xl;
+}
+
+// Input group
+.input-group {
+  position: relative;
+  display: flex;
+  
+  .form-input {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-lg;
+      border-bottom-left-radius: $border-radius-lg;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+    }
+    
+    &:not(:last-child) {
+      border-right-width: 0;
+    }
+    
+    &:focus {
+      z-index: 1;
+    }
+  }
+  
+  .input-addon {
+    @include flex-center;
+    padding: $spacing-3 $spacing-4;
+    background-color: $gray-100;
+    border: 2px solid $gray-200;
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    white-space: nowrap;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-lg;
+      border-bottom-left-radius: $border-radius-lg;
+      border-right-width: 0;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+      border-left-width: 0;
+    }
+  }
+}
+
+// Floating label
+.form-floating {
+  position: relative;
+  
+  .form-input,
+  .form-textarea {
+    padding-top: $spacing-6;
+    padding-bottom: $spacing-2;
+    
+    &::placeholder {
+      color: transparent;
+    }
+    
+    &:focus ~ .form-label,
+    &:not(:placeholder-shown) ~ .form-label {
+      transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+      color: $primary-color;
+    }
+  }
+  
+  .form-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: $spacing-4;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: all $transition-duration-base $transition-timing;
+    margin-bottom: 0;
+    line-height: $line-height-normal;
+  }
+}
+
+// Checkbox і radio
+.form-check {
+  position: relative;
+  display: block;
+  padding-left: $spacing-6;
+  margin-bottom: $spacing-3;
+  
+  .form-check-input {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    cursor: pointer;
+    
+    &[type="checkbox"] {
+      border-radius: $border-radius-base;
+    }
+    
+    &[type="radio"] {
+      border-radius: 50%;
+    }
+    
+    &:checked {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+  
+  .form-check-label {
+    display: inline-block;
+    padding-left: $spacing-2;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+  }
+}
+
+// Switch
+.form-switch {
+  .form-check-input {
+    width: 2rem;
+    height: 1rem;
+    border-radius: 2rem;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all $transition-duration-base $transition-timing;
+    
+    &:checked {
+      background-position: right center;
+    }
+  }
+}
+
+// Помилки та повідомлення
+.form-text {
+  font-size: $font-size-sm;
+  color: $text-muted;
+  margin-top: $spacing-1;
+}
+
+.form-error {
+  font-size: $font-size-sm;
+  color: $error-color;
+  margin-top: $spacing-1;
+  
+  &::before {
+    content: '⚠ ';
+  }
+}
+
+.form-success {
+  font-size: $font-size-sm;
+  color: $success-color;
+  margin-top: $spacing-1;
+  
+  &::before {
+    content: '✓ ';
+  }
+}
+
+// File input
+.form-file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+  .form-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .form-file-label {
+    @include btn-secondary;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    margin: 0;
+    
+    &::before {
+      content: '📁';
+    }
+  }
+}
+
+// Search input
+.search-input {
+  position: relative;
+  
+  .form-input {
+    padding-left: $spacing-10;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: $spacing-3;
+    transform: translateY(-50%);
+    color: $text-muted;
+    pointer-events: none;
+  }
+  
+  .search-clear {
+    position: absolute;
+    top: 50%;
+    right: $spacing-3;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $text-muted;
+    cursor: pointer;
+    padding: $spacing-1;
+    border-radius: 50%;
+    
+    &:hover {
+      background-color: $gray-100;
+      color: $text-primary;
+    }
+  }
+}

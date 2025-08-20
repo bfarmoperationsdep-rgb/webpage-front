@@ -1,0 +1,30 @@
+.services-page {
+  padding: $spacing-20 0;
+  min-height: 70vh;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-16;
+    
+    h1 {
+      font-size: $font-size-4xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-4;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+    }
+  }
+  
+  &__content {
+    text-align: center;
+    
+    p {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+    }
+  }
+}

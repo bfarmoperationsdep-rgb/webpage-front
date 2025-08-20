@@ -1,0 +1,16 @@
+// Основні стилі
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './base/reset';
+@import './base/typography';
+@import './base/globals';
+
+// Компоненти
+@import './components/buttons';
+@import './components/cards';
+@import './components/forms';
+@import './components/animations';
+
+// Утиліти
+@import './utilities/spacing';
+@import './utilities/responsive';

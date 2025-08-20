@@ -1,0 +1,198 @@
+// Базові стилі кнопок
+.btn {
+  @include btn-base;
+}
+
+// Варіанти кнопок
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-secondary {
+  @include btn-secondary;
+}
+
+.btn-ghost {
+  @include btn-ghost;
+}
+
+.btn-success {
+  @include btn-base;
+  background-color: $success-color;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background-color: darken($success-color, 10%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn-warning {
+  @include btn-base;
+  background-color: $warning-color;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background-color: darken($warning-color, 10%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn-error {
+  @include btn-base;
+  background-color: $error-color;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background-color: darken($error-color, 10%);
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+// Розміри кнопок
+.btn-xs {
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-size-xs;
+  border-radius: $border-radius-base;
+}
+
+.btn-sm {
+  padding: $spacing-2 $spacing-4;
+  font-size: $font-size-sm;
+  border-radius: $border-radius-md;
+}
+
+.btn-base {
+  padding: $spacing-3 $spacing-6;
+  font-size: $font-size-base;
+  border-radius: $border-radius-lg;
+}
+
+.btn-lg {
+  padding: $spacing-4 $spacing-8;
+  font-size: $font-size-lg;
+  border-radius: $border-radius-xl;
+}
+
+.btn-xl {
+  padding: $spacing-5 $spacing-10;
+  font-size: $font-size-xl;
+  border-radius: $border-radius-xl;
+}
+
+// Ширина кнопок
+.btn-full {
+  width: 100%;
+}
+
+.btn-auto {
+  width: auto;
+}
+
+// Кнопки з іконками
+.btn-icon {
+  @include flex-center;
+  gap: $spacing-2;
+  
+  .icon {
+    font-size: 1.2em;
+  }
+  
+  &.btn-icon-only {
+    padding: $spacing-3;
+    aspect-ratio: 1;
+    
+    .icon {
+      margin: 0;
+    }
+  }
+}
+
+// Кнопка-лінк
+.btn-link {
+  @include btn-base;
+  background-color: transparent;
+  color: $primary-color;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  
+  &:hover:not(:disabled) {
+    color: $primary-dark;
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+// Кнопка завантаження
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin: -0.5rem 0 0 -0.5rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+// Група кнопок
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+  
+  .btn {
+    border-radius: 0;
+    border-right-width: 0;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-lg;
+      border-bottom-left-radius: $border-radius-lg;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+      border-right-width: 2px;
+    }
+    
+    &:hover {
+      z-index: 1;
+    }
+  }
+}
+
+// Floating Action Button
+.fab {
+  @include btn-primary;
+  position: fixed;
+  bottom: $spacing-6;
+  right: $spacing-6;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow: $shadow-lg;
+  z-index: $z-index-fixed;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: $shadow-xl;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+}
