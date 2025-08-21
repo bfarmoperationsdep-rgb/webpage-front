@@ -1,7 +1,7 @@
 {
-  "name": "modular-business-website",
+  "name": "bfarm-website",
   "version": "1.0.0",
-  "description": "Модульний фронтенд для великого бізнес-сайту",
+  "description": "BFarm: Built for Bold Brands - Amazon Growth Agency Website",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",

@@ -12,9 +12,9 @@ module.exports = {
     port: 3001,
     hot: true,
     historyApiFallback: true,
-    stats: {
-      warnings: false
-    },
+  },
+  stats: {
+    warnings: false,
   },
   module: {
     rules: [
