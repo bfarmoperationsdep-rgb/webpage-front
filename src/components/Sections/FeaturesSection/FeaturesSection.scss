@@ -38,13 +38,42 @@
     }
   }
   
-  &__description {
-    font-size: $font-size-lg;
-    line-height: $line-height-relaxed;
-    opacity: 0.9;
+  &__points {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
     
     @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__point {
+    text-align: center;
+    
+    @include respond-to(lg) {
+      text-align: left;
+    }
+    
+    h3 {
       font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $white;
+      margin-bottom: $spacing-3;
+      
+      @include respond-to(md) {
+        font-size: $font-size-2xl;
+      }
+    }
+    
+    p {
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+      opacity: 0.9;
+      
+      @include respond-to(md) {
+        font-size: $font-size-lg;
+      }
     }
   }
   

@@ -8,6 +8,42 @@
   &__header {
     text-align: center;
     margin-bottom: $spacing-16;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__teaser {
+    background: rgba($primary-color, 0.1);
+    padding: $spacing-6;
+    border-radius: $border-radius-xl;
+    margin: $spacing-8 0;
+    border-left: 4px solid $primary-color;
+    
+    p {
+      color: $text-primary;
+      font-weight: $font-weight-medium;
+      margin: 0;
+    }
+  }
+  
+  &__why-bfarm {
+    background: rgba($secondary-color, 0.1);
+    padding: $spacing-6;
+    border-radius: $border-radius-xl;
+    border-left: 4px solid $secondary-color;
+    
+    h3 {
+      color: $secondary-color;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-3;
+    }
+    
+    p {
+      color: $text-primary;
+      margin: 0;
+    }
   }
   
   &__title {
@@ -94,6 +130,28 @@
     margin-bottom: $spacing-6;
   }
   
+  &__item-features {
+    list-style: none;
+    padding: 0;
+    margin: $spacing-4 0 $spacing-6;
+    
+    li {
+      @include flex-center;
+      justify-content: flex-start;
+      gap: $spacing-2;
+      margin-bottom: $spacing-2;
+      color: $text-secondary;
+      font-size: $font-size-sm;
+      
+      &::before {
+        content: '✓';
+        color: $success-color;
+        font-weight: bold;
+        font-size: $font-size-base;
+      }
+    }
+  }
+
   &__item-link {
     color: $primary-color;
     text-decoration: none;

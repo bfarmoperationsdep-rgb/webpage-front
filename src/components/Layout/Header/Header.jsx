@@ -41,10 +41,10 @@ const Header = () => {
         <div className="header__content">
           {/* Logo */}
           <Link to="/" className="header__logo">
-            <div className="header__logo-icon">
-              <i className="fab fa-amazon"></i>
+            <div className="header__logo-brand">
+              <span className="header__logo-b">B</span>
+              <span className="header__logo-farm">Farm</span>
             </div>
-            <span className="header__logo-text">BFarm</span>
           </Link>
 
           {/* Desktop Navigation */}

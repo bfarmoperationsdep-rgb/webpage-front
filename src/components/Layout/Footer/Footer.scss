@@ -42,14 +42,25 @@
     margin-bottom: $spacing-6;
   }
   
-  &__logo-icon {
+  &__logo-brand {
     @include flex-center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: linear-gradient(135deg, $primary-color, $primary-light);
+    gap: 0;
+  }
+  
+  &__logo-b {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-extrabold;
     color: $white;
-    border-radius: $border-radius-lg;
-    font-size: 1.2rem;
+    background: $primary-color;
+    padding: 0.2em 0.4em;
+    border-radius: $border-radius-md;
+    margin-right: 0.1em;
+  }
+  
+  &__logo-farm {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $white;
   }
   
   &__description {

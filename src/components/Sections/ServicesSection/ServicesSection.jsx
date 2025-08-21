@@ -9,28 +9,28 @@ const ServicesSection = () => {
 
   const services = [
     {
+      icon: 'fas fa-user-cog',
+      title: t('services.items.fullAccount.title'),
+      description: t('services.items.fullAccount.description'),
+      features: t('services.items.fullAccount.features')
+    },
+    {
       icon: 'fas fa-chart-line',
-      title: 'Amazon PPC',
-      description: 'The key to driving traffic to your listings lies in Amazon PPC. Higher revenue, lower ACOS, and transparent ad management.',
-      color: '$primary-color'
+      title: t('services.items.advertising.title'),
+      description: t('services.items.advertising.description'),
+      features: t('services.items.advertising.features')
     },
     {
       icon: 'fas fa-search',
-      title: 'SEO Optimization',
-      description: 'Our 4-phase Amazon SEO plan is best-in-class and can show dramatic results in search rankings in 90 days.',
-      color: '$secondary-color'
+      title: t('services.items.optimization.title'),
+      description: t('services.items.optimization.description'),
+      features: t('services.items.optimization.features')
     },
     {
-      icon: 'fas fa-palette',
-      title: 'Creative Services',
-      description: 'All-Day VISUAL Display, Product Focus - comprehensive visual strategy for maximum impact.',
-      color: '$primary-light'
-    },
-    {
-      icon: 'fas fa-cogs',
-      title: 'Strategy & Execution',
-      description: 'Campaign Structure, Budgets, Media Mix - complete strategic approach to Amazon success.',
-      color: '$primary-dark'
+      icon: 'fas fa-rocket',
+      title: t('services.items.launching.title'),
+      description: t('services.items.launching.description'),
+      features: t('services.items.launching.features')
     }
   ];
 
@@ -46,6 +46,13 @@ const ServicesSection = () => {
         >
           <h2 className="services__title">{t('services.title')}</h2>
           <p className="services__description">{t('services.subtitle')}</p>
+          <div className="services__teaser">
+            <p>{t('services.teaser')}</p>
+          </div>
+          <div className="services__why-bfarm">
+            <h3>Why BFarm?</h3>
+            <p>{t('services.whyBfarm')}</p>
+          </div>
         </motion.div>
 
         <div className="services__grid">
@@ -64,6 +71,11 @@ const ServicesSection = () => {
               </div>
               <h3 className="services__item-title">{service.title}</h3>
               <p className="services__item-description">{service.description}</p>
+              <ul className="services__item-features">
+                {service.features && service.features.map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
+              </ul>
               <Link to="/services" className="services__item-link">
                 Learn More →
               </Link>

@@ -40,9 +40,20 @@ const FeaturesSection = () => {
               {t('features.title')}
             </motion.h2>
             
-            <motion.p className="features__description" variants={itemVariants}>
-              {t('features.description')}
-            </motion.p>
+            <motion.div className="features__points" variants={itemVariants}>
+              <div className="features__point">
+                <h3>Data</h3>
+                <p>{t('features.data')}</p>
+              </div>
+              <div className="features__point">
+                <h3>Creativity</h3>
+                <p>{t('features.creativity')}</p>
+              </div>
+              <div className="features__point">
+                <h3>Speed</h3>
+                <p>{t('features.speed')}</p>
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div 

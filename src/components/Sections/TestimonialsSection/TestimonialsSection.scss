@@ -3,112 +3,123 @@
 
 .testimonials {
   padding: $spacing-18 0;
-  background-color: $gray-50;
+  background-color: $white;
   
-  &__header {
+  &__content {
     text-align: center;
-    margin-bottom: $spacing-16;
   }
   
   &__title {
     font-size: $font-size-3xl;
     font-weight: $font-weight-bold;
     color: $text-primary;
-    margin-bottom: $spacing-6;
+    margin-bottom: $spacing-12;
     
     @include respond-to(md) {
       font-size: $font-size-4xl;
     }
   }
   
-  &__description {
-    font-size: $font-size-lg;
-    color: $text-secondary;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  &__grid {
+  &__main {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-8;
-    
-    @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    gap: $spacing-12;
     
     @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-16;
     }
   }
   
-  &__item {
+  // Customer Quote
+  &__quote {
     @include card;
     padding: $spacing-8;
-    transition: all $transition-duration-base $transition-timing;
-    
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-lg;
-    }
+    background: linear-gradient(135deg, rgba($primary-color, 0.05), rgba($secondary-color, 0.05));
+    border-left: 4px solid $primary-color;
+    text-align: left;
   }
   
-  &__quote {
+  &__quote-content {
+    position: relative;
+  }
+  
+  &__quote-mark {
+    font-size: 4rem;
+    color: $primary-color;
+    opacity: 0.3;
+    position: absolute;
+    top: -$spacing-4;
+    left: -$spacing-2;
+    line-height: 1;
+    font-family: serif;
+  }
+  
+  &__quote p {
     font-size: $font-size-lg;
-    color: $text-secondary;
+    color: $text-primary;
     line-height: $line-height-relaxed;
     margin-bottom: $spacing-6;
     font-style: italic;
     position: relative;
+    z-index: 2;
     
-    &::before {
-      content: '"';
-      font-size: $font-size-4xl;
-      color: $primary-color;
-      position: absolute;
-      top: -$spacing-2;
-      left: -$spacing-3;
-      line-height: 1;
+    @include respond-to(md) {
+      font-size: $font-size-xl;
     }
   }
   
   &__author {
-    @include flex-center;
-    gap: $spacing-4;
-    justify-content: flex-start;
-  }
-  
-  &__author-avatar {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: $gray-200;
-    overflow: hidden;
+    border-top: 1px solid $gray-200;
+    padding-top: $spacing-4;
   }
   
   &__author-info {
-    flex: 1;
+    h4 {
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      margin-bottom: $spacing-1;
+    }
   }
   
-  &__author-name {
-    font-weight: $font-weight-semibold;
-    color: $text-primary;
-    margin-bottom: $spacing-1;
+  // Founder Quote
+  &__founder {
+    @include card;
+    padding: $spacing-8;
+    background: linear-gradient(135deg, rgba($secondary-color, 0.05), rgba($primary-light, 0.05));
+    border-left: 4px solid $secondary-color;
+    text-align: left;
   }
   
-  &__author-role {
-    color: $text-muted;
-    font-size: $font-size-sm;
+  &__founder-quote {
+    p {
+      font-size: $font-size-lg;
+      color: $text-primary;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacing-6;
+      font-style: italic;
+      
+      @include respond-to(md) {
+        font-size: $font-size-xl;
+      }
+    }
   }
   
-  &__rating {
-    @include flex-center;
-    gap: $spacing-1;
-    margin-bottom: $spacing-4;
+  &__founder-info {
+    border-top: 1px solid $gray-200;
+    padding-top: $spacing-4;
     
-    .star {
-      color: $warning-color;
+    h4 {
+      font-weight: $font-weight-bold;
+      color: $secondary-color;
+      margin-bottom: $spacing-1;
+      font-size: $font-size-lg;
+    }
+    
+    span {
+      color: $text-secondary;
       font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
     }
   }
 }

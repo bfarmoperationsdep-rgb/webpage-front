@@ -30,14 +30,14 @@ const translations = {
     // Hero Section
     hero: {
       title: 'AMPLIFY YOUR AMAZON SALES',
-      subtitle: 'Full-Service Amazon Growth for Serious Brands',
-      description: 'We are a leading Amazon growth agency specializing in A-to-Z Amazon growth management for health and wellness brands up to $100k. Our done-for-you service helps you maximize, save costs, and expand marketplace.',
+      subtitle: 'BFarm: Built for Bold Brands',
+      description: 'Selling on Amazon felt like a jungle? We\'ve already cut the trail—from your first shipment all the way to seven‑figure revenue. Since 2015 we\'ve been turning ambitious Amazon‑marketplace brands into category leaders, powered by data, creativity and rock‑solid processes.',
       startProject: 'Start Your Project',
       watchWork: 'Watch Our Work',
       features: {
-        strategy: 'Strategic Approach',
-        creative: 'Creative Excellence', 
-        execution: 'Flawless Execution'
+        strategy: 'Data × Creativity',
+        creative: 'Rock-solid Processes', 
+        execution: 'Category Leaders'
       }
     },
     
@@ -87,32 +87,54 @@ const translations = {
     
     // Services Section
     services: {
-      title: 'Our Amazon Services',
-      subtitle: 'Complete Amazon management solutions',
+      title: 'Full‑spectrum services for Amazon brands',
+      subtitle: 'We handle everything—strategy, listings, ads and scaling beyond Amazon. Choose an all‑inclusive package or refuel exactly where your business needs it.',
+      teaser: 'We\'re a one‑stop shop: strategy, creative, advertising, consulting and flawless account management—all under one roof. Pick the service you need and go break some records.',
+      whyBfarm: 'Choose BFarm and you\'re not hiring a vendor—you\'re gaining co‑founders of your growth. 98% of clients stay with us longer than 18 months because we speak the language of profit and open dashboards, not pretty promises.',
       items: {
-        ppc: {
-          title: 'Amazon PPC',
-          description: 'The key to driving traffic to your listings lies in Amazon PPC. Higher revenue, lower ACOS, and transparent ad management.'
+        fullAccount: {
+          title: 'Full Account Management',
+          description: '360° care: purchasing & FBA logistics, KPI‑driven stock management, Seller Central / Brand Registry admin.',
+          features: ['Automated SOPs → zero errors and full transparency in Slack + Looker Studio', 'Average client net‑profit uplift after 6 months: +42%']
         },
-        seo: {
-          title: 'SEO Optimization',
-          description: 'Our 4-phase Amazon SEO plan is best-in-class and can show dramatic results in search rankings in 90 days.'
+        advertising: {
+          title: 'Amazon Advertising Management',
+          description: 'All formats covered: Sponsored Products, Brands, Display, DSP.',
+          features: ['In‑house bid‑management scripts cut CPC by up to –25% without losing traffic', 'DSP retargeting wins back up to 14% of "lost" visitors']
         },
-        creative: {
-          title: 'Creative Services',
-          description: 'All-Day VISUAL Display, Product Focus'
+        optimization: {
+          title: 'Product Page Optimization',
+          description: 'Data‑Driven SEO: Brand Analytics + Helium 10 → 100/100 relevance.',
+          features: ['Copy that sells: Hook—Problem—Solution—Proof formula', 'Open A/B panel shows you which tweaks deliver +15‑30% CVR']
         },
-        strategy: {
-          title: 'Strategy & Execution',
-          description: 'Campaign Structure, Budgets, Media Mix'
+        launching: {
+          title: 'Launching on Amazon',
+          description: 'Niche analysis & white‑space strategy → we dodge the "red ocean."',
+          features: ['Step‑by‑step 0‑90 day plan: from listings to first review', 'Amazon\'s Choice guaranteed or the service fee is refunded']
         }
       }
     },
     
     // Features Section
     features: {
-      title: "What's the formula for creating consistent, profitable growth for your brand?",
-      description: "It's finding the proper mix of Demand Generation and Demand Capture activities, crafting the right creatives for every step of the shopping journey and establishing clear creative directions."
+      title: 'Data × Creativity × Speed = The BFarm Way',
+      data: 'Data — decisions based solely on Market Intelligence, not intuition.',
+      creativity: 'Creativity — make the brand stand out in an ocean of copy‑paste products.',
+      speed: 'Speed — KPI dashboards refresh every 24 h → instant reaction.'
+    },
+    
+    // Testimonials
+    testimonials: {
+      title: 'What Our Clients Say',
+      quote: '"In nine months BFarm took our cosmetics brand from zero to $400K/month and dropped TACoS to 9%. Finally found partners who speak in numbers, not poetry."',
+      author: 'Anna R., Co‑Founder, Beauty Lab'
+    },
+    
+    // Founder Quote
+    founder: {
+      quote: '"I once realized: Amazon rewards those who play by its rules—then add their own creativity. That\'s exactly how BFarm helps brands worldwide: we mixed the platform\'s cold data with human creativity and got an explosive growth cocktail. Join us and see how 1 + 1 can equal 11."',
+      name: 'MAKSYM LAZUTO',
+      title: 'Founder & CEO'
     },
     
     // Language Switcher
@@ -142,14 +164,14 @@ const translations = {
     // Hero Section
     hero: {
       title: 'ЗБІЛЬШУЙТЕ ПРОДАЖІ НА AMAZON',
-      subtitle: 'Повний сервіс Amazon для серйозних брендів',
-      description: 'Ми - провідне Amazon-агентство, що спеціалізується на A-to-Z управлінні зростанням Amazon для брендів здоров\'я та велнесу до $100k. Наш готовий сервіс допомагає максимізувати, заощаджувати витрати та розширювати ринок.',
+      subtitle: 'BFarm: Створені для сміливих брендів',
+      description: 'Продажі на Amazon здавались джунглями? Ми вже прорубали стежку—від вашої першої відправки до семизначного доходу. З 2015 року ми перетворюємо амбітні Amazon бренди на лідерів категорій, використовуючи дані, креативність та надійні процеси.',
       startProject: 'Почати проект',
       watchWork: 'Подивитись роботи',
       features: {
-        strategy: 'Стратегічний підхід',
-        creative: 'Творча досконалість',
-        execution: 'Бездоганне виконання'
+        strategy: 'Дані × Креативність',
+        creative: 'Надійні процеси',
+        execution: 'Лідери категорій'
       }
     },
     
@@ -161,32 +183,54 @@ const translations = {
     
     // Services Section
     services: {
-      title: 'Наші Amazon послуги',
-      subtitle: 'Комплексні рішення для управління Amazon',
+      title: 'Повний спектр послуг для Amazon брендів',
+      subtitle: 'Ми обробляємо все—стратегія, лістинги, реклама та масштабування поза Amazon. Оберіть комплексний пакет або підзарядіть саме те, що потрібно вашому бізнесу.',
+      teaser: 'Ми універсальний магазин: стратегія, креатив, реклама, консалтинг та бездоганне управління аккаунтом—все під одним дахом. Оберіть потрібну послугу та підіть бити рекорди.',
+      whyBfarm: 'Обираючи BFarm, ви не наймаєте підрядника—ви отримуєте співзасновників вашого зростання. 98% клієнтів залишаються з нами понад 18 місяців, бо ми говоримо мовою прибутку та відкритих дашбордів, а не красивих обіцянок.',
       items: {
-        ppc: {
-          title: 'Amazon PPC',
-          description: 'Ключ до залучення трафіку на ваші лістинги лежить у Amazon PPC. Вищий дохід, нижчий ACOS та прозоре управління рекламою.'
+        fullAccount: {
+          title: 'Повне управління аккаунтом',
+          description: '360° турбота: закупівлі та FBA логістика, управління запасами на основі KPI, адміністрування Seller Central / Brand Registry.',
+          features: ['Автоматизовані SOP → нуль помилок та повна прозорість у Slack + Looker Studio', 'Середнє підвищення чистого прибутку клієнта через 6 місяців: +42%']
         },
-        seo: {
-          title: 'SEO Оптимізація',
-          description: 'Наш 4-фазний план Amazon SEO є найкращим у класі та може показати драматичні результати в рейтингу пошуку за 90 днів.'
+        advertising: {
+          title: 'Управління Amazon рекламою',
+          description: 'Всі формати покриті: Sponsored Products, Brands, Display, DSP.',
+          features: ['Власні скрипти управління ставками знижують CPC до –25% без втрати трафіку', 'DSP ретаргетинг повертає до 14% "втрачених" відвідувачів']
         },
-        creative: {
-          title: 'Креативні послуги',
-          description: 'Цілодобовий ВІЗУАЛЬНИЙ дисплей, фокус на продукті'
+        optimization: {
+          title: 'Оптимізація сторінки продукту',
+          description: 'SEO на основі даних: Brand Analytics + Helium 10 → 100/100 релевантність.',
+          features: ['Копірайт що продає: Хук—Проблема—Рішення—Доказ формула', 'Відкрита A/B панель показує які зміни дають +15‑30% CVR']
         },
-        strategy: {
-          title: 'Стратегія та виконання',
-          description: 'Структура кампанії, бюджети, медіа-мікс'
+        launching: {
+          title: 'Запуск на Amazon',
+          description: 'Аналіз ніші та стратегія білих плям → ми уникаємо "червоного океану."',
+          features: ['Покроковий план 0‑90 днів: від лістингів до першого відгуку', 'Amazon\'s Choice гарантовано або вартість послуги повертається']
         }
       }
     },
     
     // Features Section
     features: {
-      title: 'Яка формула для створення послідовного, прибуткового зростання вашого бренду?',
-      description: 'Це знаходження правильного поєднання діяльності з генерації попиту та захоплення попиту, створення правильних креативів для кожного кроку покупки та встановлення чітких креативних напрямків.'
+      title: 'Дані × Креативність × Швидкість = Шлях BFarm',
+      data: 'Дані — рішення базуються виключно на ринковій аналітиці, а не на інтуїції.',
+      creativity: 'Креативність — виділити бренд в океані копіпаст продуктів.',
+      speed: 'Швидкість — KPI дашборди оновлюються кожні 24 години → миттєва реакція.'
+    },
+    
+    // Testimonials
+    testimonials: {
+      title: 'Що кажуть наші клієнти',
+      quote: '"За дев\'ять місяців BFarm підняв наш косметичний бренд з нуля до $400K/місяць і знизив TACoS до 9%. Нарешті знайшли партнерів, які говорять цифрами, а не поезією."',
+      author: 'Анна Р., Співзасновник, Beauty Lab'
+    },
+    
+    // Founder Quote
+    founder: {
+      quote: '"Я колись зрозумів: Amazon винагороджує тих, хто грає за його правилами—а потім додає власну креативність. Саме так BFarm допомагає брендам по всьому світу: ми змішали холодні дані платформи з людською креативністю і отримали вибуховий коктейль зростання. Приєднуйтесь і подивіться, як 1 + 1 може дорівнювати 11."',
+      name: 'МАКСИМ ЛАЗУТО',
+      title: 'Засновник і CEO'
     },
     
     // Language Switcher

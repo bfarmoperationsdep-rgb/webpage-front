@@ -46,29 +46,29 @@ const Footer = () => {
             {/* Company Info */}
             <div className="footer__section footer__section--main">
               <Link to="/" className="footer__logo">
-                <div className="footer__logo-icon">
-                  <i className="fas fa-rocket"></i>
+                <div className="footer__logo-brand">
+                  <span className="footer__logo-b">B</span>
+                  <span className="footer__logo-farm">Farm</span>
                 </div>
-                <span className="footer__logo-text">ModularBiz</span>
               </Link>
               
               <p className="footer__description">
-                Ми створюємо інноваційні цифрові рішення, які допомагають бізнесу 
-                рости та процвітати в сучасному світі технологій.
+                BFarm is a Ukrainian company and we're proud of our roots. We help Amazon brands 
+                scale from startup to category leaders through data-driven strategies.
               </p>
               
               <div className="footer__contact">
                 <div className="footer__contact-item">
                   <i className="fas fa-envelope"></i>
-                  <a href="mailto:info@modularbiz.ua">info@modularbiz.ua</a>
-                </div>
-                <div className="footer__contact-item">
-                  <i className="fas fa-phone"></i>
-                  <a href="tel:+380123456789">+38 (012) 345-67-89</a>
+                  <a href="mailto:hello@bfarm.com">hello@bfarm.com</a>
                 </div>
                 <div className="footer__contact-item">
                   <i className="fas fa-map-marker-alt"></i>
-                  <span>м. Київ, вул. Інноваційна, 123</span>
+                  <span>Kyiv, Warsaw, Miami</span>
+                </div>
+                <div className="footer__contact-item">
+                  <i className="fas fa-heart"></i>
+                  <span>We Stand with Ukraine 🇺🇦</span>
                 </div>
               </div>
               
@@ -165,7 +165,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer__bottom-content">
             <p className="footer__copyright">
-              © {currentYear} ModularBiz. Всі права захищені.
+              © {currentYear} BFarm. Built for Bold Brands.
             </p>
             <div className="footer__legal">
               <Link to="/privacy" className="footer__legal-link">
