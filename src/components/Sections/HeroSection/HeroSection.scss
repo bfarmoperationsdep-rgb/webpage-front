@@ -27,7 +27,7 @@
   &__shape {
     position: absolute;
     border-radius: 50%;
-  background: linear-gradient(135deg, $secondary-color, $secondary-light);
+    background: linear-gradient(135deg, $secondary-color, $secondary-light);
     
     &--1 {
       width: 200px;
@@ -173,151 +173,247 @@
     z-index: 2;
   }
   
-  // Phone mockup
-  &__phone {
-    position: relative;
-    z-index: 3;
-  }
-  
-  &__phone-frame {
-    width: 300px;
-    height: 600px;
-    background: linear-gradient(145deg, #2D2D2D, #1A1A1A);
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    position: relative;
+  // Dashboard design (instead of phone)
+  &__dashboard {
+    background: rgba($white, 0.98);
+    border-radius: $border-radius-2xl;
+    padding: $spacing-8;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba($white, 0.3);
+    min-width: 350px;
+    max-width: 450px;
+    width: 100%;
+    color: $text-primary;
     
-    &::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: #444;
-      border-radius: 2px;
+    @include respond-to(md) {
+      padding: $spacing-10;
+      min-width: 400px;
+      max-width: 500px;
     }
   }
   
-  &__phone-screen {
-    width: 100%;
-    height: 100%;
-    background: $white;
-    border-radius: 20px;
-    overflow: hidden;
+  &__dashboard-header {
+    @include flex-between;
+    margin-bottom: $spacing-6;
+    padding-bottom: $spacing-4;
+    border-bottom: 1px solid $gray-200;
+  }
+  
+  &__dashboard-title {
+    @include flex-center;
+    gap: $spacing-2;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    
+    i {
+      color: $primary-color;
+    }
+  }
+  
+  &__dashboard-status {
+    @include flex-center;
+    gap: $spacing-2;
+    color: $success-color;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    
+    &--active {
+      background: $success-color;
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  &__metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-6;
+    margin-bottom: $spacing-8;
+  }
+  
+  &__metric {
+    text-align: center;
     position: relative;
   }
   
-  &__phone-content {
-    padding: $spacing-4;
-    height: 100%;
+  &__metric-value {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-extrabold;
+    color: $primary-color;
+    margin-bottom: $spacing-1;
+    
+    @include respond-to(md) {
+      font-size: $font-size-4xl;
+    }
   }
   
-  &__app-bar {
-    background: $white;
-    padding: $spacing-3;
+  &__metric-label {
+    font-size: $font-size-sm;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  &__metric-trend {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $success-color;
+    font-size: $font-size-lg;
+  }
+  
+  &__chart {
+    margin-bottom: $spacing-8;
+  }
+  
+  &__chart-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $text-secondary;
+    margin-bottom: $spacing-4;
+    text-align: center;
+  }
+  
+  &__chart-bars {
+    @include flex-center;
+    align-items: flex-end;
+    gap: $spacing-1;
+    height: 120px;
+    background: $gray-50;
     border-radius: $border-radius-lg;
-    box-shadow: $shadow-md;
+    padding: $spacing-4;
+  }
+  
+  &__chart-bar {
+    flex: 1;
+    background: linear-gradient(to top, $primary-color, $secondary-color);
+    border-radius: $border-radius-sm $border-radius-sm 0 0;
+    min-height: 20%;
+    animation: barGrow 1.5s ease-out;
+  }
+  
+  &__platforms {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-3;
   }
   
-  &__app-item {
+  &__platform {
     @include flex-center;
-    flex-direction: column;
-    gap: $spacing-1;
-    padding: $spacing-2;
-    border-radius: $border-radius-md;
+    gap: $spacing-2;
+    padding: $spacing-3;
     background: $gray-50;
-    font-size: $font-size-xs;
-    color: $text-primary;
-    font-weight: $font-weight-medium;
+    border-radius: $border-radius-lg;
+    transition: all $transition-duration-base $transition-timing;
+    
+    &:hover {
+      background: $gray-100;
+      transform: scale(1.02);
+    }
     
     i {
       font-size: $font-size-lg;
+      
+      &.fa-google {
+        color: #4285F4;
+      }
+      
+      &.fa-amazon {
+        color: #FF9900;
+      }
+      
+      &.fa-youtube {
+        color: #FF0000;
+      }
     }
-  }
-  
-  // Floating elements
-  &__floating-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    overflow: hidden;
     
-    @include respond-to(lg) {
-      width: 110%;
-      left: -5%;
+    span {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: $text-primary;
+      
+      &.klaviyo-logo {
+        color: #F06292;
+        font-weight: $font-weight-bold;
+        font-style: italic;
+      }
     }
   }
   
-  &__element {
+  // Floating Cards (redesigned)
+  &__floating-cards {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    pointer-events: none;
+  }
+  
+  &__card {
     position: absolute;
     background: rgba($white, 0.95);
-    border-radius: $border-radius-xl;
-    padding: $spacing-4;
-    box-shadow: $shadow-lg;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba($white, 0.2);
-    min-width: 160px;
-    max-width: 180px;
-    z-index: 1;
-    
-    @include respond-to(lg) {
-      padding: $spacing-6;
-      min-width: 200px;
-      max-width: 220px;
-    }
+    border-radius: $border-radius-xl;
+    padding: $spacing-6;
+    box-shadow: $shadow-2xl;
+    border: 1px solid rgba($white, 0.3);
+    min-width: 200px;
+    max-width: 240px;
     
     &--strategy {
-      top: 5%;
-      right: 5%;
-      background: linear-gradient(135deg, rgba($primary-light, 0.1), rgba($primary-color, 0.1));
+      top: 10%;
+      right: -5%;
       animation: float 6s ease-in-out infinite;
       
       @include respond-to(lg) {
-        top: 10%;
-        right: -10%;
+        right: -15%;
       }
     }
     
     &--creative {
-      top: 50%;
-      left: 5%;
-      background: linear-gradient(135deg, rgba($secondary-light, 0.1), rgba($secondary-color, 0.1));
+      bottom: 50%;
+      left: -5%;
       animation: float 8s ease-in-out infinite reverse;
       
       @include respond-to(lg) {
-        top: 45%;
         left: -15%;
       }
     }
     
     &--execution {
-      bottom: 10%;
+      bottom: 5%;
       right: 10%;
-      background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($primary-dark, 0.1));
       animation: float 10s ease-in-out infinite;
       
       @include respond-to(lg) {
-        bottom: 15%;
-        right: -5%;
+        right: 5%;
       }
     }
   }
   
-  &__element-icon {
-    font-size: $font-size-3xl;
-    margin-bottom: $spacing-3;
+  &__card-icon {
+    @include flex-center;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $white;
+    border-radius: 50%;
+    margin-bottom: $spacing-4;
+    font-size: $font-size-lg;
+    box-shadow: $shadow-md;
   }
   
-  &__element-content {
+  &__card-content {
+    text-align: center;
+    
     h4 {
       font-size: $font-size-sm;
       font-weight: $font-weight-bold;
@@ -372,10 +468,22 @@
 // Animations
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-20px);
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+@keyframes barGrow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: var(--height, 50%);
   }
 }
 
@@ -391,5 +499,16 @@
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
   }
 }

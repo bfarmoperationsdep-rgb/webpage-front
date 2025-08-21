@@ -96,56 +96,115 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div className="hero__visual" variants={itemVariants}>
-            <div className="hero__phone">
-              <div className="hero__phone-frame">
-                <div className="hero__phone-screen">
-                  <div className="hero__phone-content">
-                    <div className="hero__app-bar">
-                      <div className="hero__app-item">
-                        <i className="fab fa-google" style={{color: '#4285F4'}}></i>
-                        <span>Google</span>
-                      </div>
-                      <div className="hero__app-item">
-                        <i className="fab fa-amazon" style={{color: '#FF9900'}}></i>
-                        <span>Amazon ads</span>
-                      </div>
-                      <div className="hero__app-item">
-                        <span style={{color: '#F06292'}}>klaviyo</span>
-                      </div>
-                      <div className="hero__app-item">
-                        <i className="fab fa-youtube" style={{color: '#FF0000'}}></i>
-                        <span>YouTube</span>
-                      </div>
+            <div className="hero__dashboard">
+              <div className="hero__dashboard-header">
+                <div className="hero__dashboard-title">
+                  <i className="fas fa-chart-line"></i>
+                  Amazon Growth Dashboard
+                </div>
+                <div className="hero__dashboard-status">
+                  <span className="status-dot status-dot--active"></span>
+                  Live
+                </div>
+              </div>
+              
+              <div className="hero__dashboard-content">
+                <div className="hero__metrics-grid">
+                  <div className="hero__metric">
+                    <div className="hero__metric-value">+187%</div>
+                    <div className="hero__metric-label">Growth</div>
+                    <div className="hero__metric-trend">
+                      <i className="fas fa-arrow-up"></i>
                     </div>
+                  </div>
+                  
+                  <div className="hero__metric">
+                    <div className="hero__metric-value">1.375M</div>
+                    <div className="hero__metric-label">Revenue</div>
+                    <div className="hero__metric-trend">
+                      <i className="fas fa-arrow-up"></i>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="hero__chart">
+                  <div className="hero__chart-title">Monthly Performance</div>
+                  <div className="hero__chart-bars">
+                    <div className="hero__chart-bar" style={{height: '30%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '45%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '65%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '80%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '90%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '100%'}}></div>
+                    <div className="hero__chart-bar" style={{height: '85%'}}></div>
+                  </div>
+                </div>
+                
+                <div className="hero__platforms">
+                  <div className="hero__platform">
+                    <i className="fab fa-google"></i>
+                    <span>Google</span>
+                  </div>
+                  <div className="hero__platform">
+                    <i className="fab fa-amazon"></i>
+                    <span>Amazon ads</span>
+                  </div>
+                  <div className="hero__platform">
+                    <span className="klaviyo-logo">klaviyo</span>
+                  </div>
+                  <div className="hero__platform">
+                    <i className="fab fa-youtube"></i>
+                    <span>YouTube</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="hero__floating-elements">
-              <div className="hero__element hero__element--strategy">
-                <div className="hero__element-icon">📊</div>
-                <div className="hero__element-content">
+            <div className="hero__floating-cards">
+              <motion.div 
+                className="hero__card hero__card--strategy"
+                initial={{ opacity: 0, scale: 0.8, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <div className="hero__card-icon">
+                  <i className="fas fa-chart-line"></i>
+                </div>
+                <div className="hero__card-content">
                   <h4>STRATEGY</h4>
                   <p>Demand Gen &<br/>Demand Capture</p>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="hero__element hero__element--creative">
-                <div className="hero__element-icon">💡</div>
-                <div className="hero__element-content">
+              <motion.div 
+                className="hero__card hero__card--creative"
+                initial={{ opacity: 0, scale: 0.8, x: -50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <div className="hero__card-icon">
+                  <i className="fas fa-palette"></i>
+                </div>
+                <div className="hero__card-content">
                   <h4>CREATIVE</h4>
                   <p>All-Day VISUAL<br/>Display, Product Focus</p>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="hero__element hero__element--execution">
-                <div className="hero__element-icon">⚡</div>
-                <div className="hero__element-content">
+              <motion.div 
+                className="hero__card hero__card--execution"
+                initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <div className="hero__card-icon">
+                  <i className="fas fa-cogs"></i>
+                </div>
+                <div className="hero__card-content">
                   <h4>EXECUTION</h4>
                   <p>Campaign Structure<br/>Budgets, Media Mix</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>

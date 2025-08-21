@@ -27,7 +27,19 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader', 
+          'css-loader', 
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                quietDeps: true,
+                silenceDeprecations: ['legacy-js-api', 'import']
+              }
+            }
+          }
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,

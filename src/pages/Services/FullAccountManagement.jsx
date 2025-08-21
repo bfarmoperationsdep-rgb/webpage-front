@@ -17,7 +17,7 @@ const FullAccountManagement = () => {
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            ← Back to Services
+            {t('common.backToServices')}
           </Link>
           <h1 className="service-page__title">Full Account Management</h1>
           <p className="service-page__subtitle">
@@ -81,10 +81,10 @@ const FullAccountManagement = () => {
           </div>
 
           <div className="service-page__cta">
-            <h3>Ready to Scale Your Amazon Business?</h3>
-            <p>Let's discuss how our full account management can transform your results.</p>
+            <h3>{t('common.readyToScale')}</h3>
+            <p>{t('common.letsDiscuss')}</p>
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Get Started Today
+              {t('common.getStarted')}
             </Link>
           </div>
         </motion.div>

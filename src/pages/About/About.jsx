@@ -15,9 +15,9 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="about__title">About BFarm</h1>
+          <h1 className="about__title">{t('about.title')}</h1>
           <p className="about__description">
-            We are a leading Amazon growth agency specializing in comprehensive Amazon management for health and wellness brands.
+            {t('about.description')}
           </p>
         </motion.div>
 
@@ -28,22 +28,19 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2>Our Mission</h2>
+            <h2>{t('about.mission')}</h2>
             <p>
-              BFarm is dedicated to helping brands amplify their Amazon sales through strategic, data-driven approaches. 
-              We specialize in full-service Amazon growth management, helping businesses navigate the complex Amazon ecosystem.
+              {t('about.missionText')}
             </p>
             
-            <h2>Our Approach</h2>
+            <h2>{t('about.approach')}</h2>
             <p>
-              We focus on finding the proper mix of Demand Generation and Demand Capture activities, crafting the right 
-              creatives for every step of the shopping journey, and establishing clear creative directions that drive results.
+              {t('about.approachText')}
             </p>
             
-            <h2>Why Choose BFarm?</h2>
+            <h2>{t('about.whyChoose')}</h2>
             <p>
-              With years of experience in Amazon management, we understand what it takes to succeed on the platform. 
-              Our team combines strategic thinking with creative execution to deliver measurable results for our clients.
+              {t('about.whyChooseText')}
             </p>
           </motion.div>
 
@@ -56,15 +53,15 @@ const About = () => {
             <div className="about__stats">
               <div className="about__stat">
                 <h3>500+</h3>
-                <p>Successful Brands</p>
+                <p>{t('about.stats.brands')}</p>
               </div>
               <div className="about__stat">
                 <h3>$50M+</h3>
-                <p>Revenue Generated</p>
+                <p>{t('about.stats.revenue')}</p>
               </div>
               <div className="about__stat">
                 <h3>98%</h3>
-                <p>Client Satisfaction</p>
+                <p>{t('about.stats.satisfaction')}</p>
               </div>
             </div>
           </motion.div>

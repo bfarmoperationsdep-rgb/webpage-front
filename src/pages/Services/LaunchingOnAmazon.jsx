@@ -17,7 +17,7 @@ const LaunchingOnAmazon = () => {
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            ← Back to Services
+            {t('common.backToServices')}
           </Link>
           <h1 className="service-page__title">Launching on Amazon</h1>
           <p className="service-page__subtitle">

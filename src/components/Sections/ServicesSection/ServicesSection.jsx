@@ -81,7 +81,7 @@ const ServicesSection = () => {
                 ))}
               </ul>
               <Link to={service.link} className="services__item-link">
-                Learn More →
+                {t('common.learnMore')} →
               </Link>
             </motion.div>
           ))}

@@ -43,39 +43,18 @@ const translations = {
     
     // About Section
     about: {
-      title: 'Full Account Management',
-      description: 'More text here',
-      amazonPPC: {
-        title: 'Amazon Advertising/Management',
-        description: 'More text here'
-      },
-      productOptimization: {
-        title: 'Product/Page Optimization',
-        description: 'More text here'
-      },
-      launching: {
-        title: 'Launching/on Amazon',
-        description: 'More text here'
-      },
-      designSuite: {
-        title: 'DESIGN/Suite',
-        description: 'More text here'
-      },
-      consulting: {
-        title: 'Consulting',
-        description: 'More text here'
-      },
-      cataloging: {
-        title: 'Cataloging',
-        description: 'More text here'
-      },
-      training: {
-        title: 'Training',
-        description: 'More text here'
-      },
-      scaling: {
-        title: 'Scaling/Off Amazon (inactive)',
-        description: 'text not needed now.'
+      title: 'About BFarm',
+      description: 'We are a leading Amazon growth agency specializing in comprehensive Amazon management for health and wellness brands.',
+      mission: 'Our Mission',
+      missionText: 'BFarm is dedicated to helping brands amplify their Amazon sales through strategic, data-driven approaches. We specialize in full-service Amazon growth management, helping businesses navigate the complex Amazon ecosystem.',
+      approach: 'Our Approach',
+      approachText: 'We focus on finding the proper mix of Demand Generation and Demand Capture activities, crafting the right creatives for every step of the shopping journey, and establishing clear creative directions that drive results.',
+      whyChoose: 'Why Choose BFarm?',
+      whyChooseText: 'With years of experience in Amazon management, we understand what it takes to succeed on the platform. Our team combines strategic thinking with creative execution to deliver measurable results for our clients.',
+      stats: {
+        brands: 'Successful Brands',
+        revenue: 'Revenue Generated', 
+        satisfaction: 'Client Satisfaction'
       }
     },
     
@@ -137,6 +116,16 @@ const translations = {
       title: 'Founder & CEO'
     },
     
+    // Common Elements
+    common: {
+      learnMore: 'Learn More',
+      backToServices: '← Back to Services',
+      getStarted: 'Get Started Today',
+      readyToScale: 'Ready to Scale Your Amazon Business?',
+      letsDiscuss: 'Let\'s discuss how our full account management can transform your results.',
+      contact: 'Contact Us'
+    },
+    
     // Language Switcher
     language: {
       switch: 'Switch Language',
@@ -179,6 +168,23 @@ const translations = {
     clients: {
       title: 'З КИМ МИ ПРАЦЮЄМО',
       subtitle: 'Нам довіряють провідні бренди та Amazon FBA продавці'
+    },
+    
+    // About Section
+    about: {
+      title: 'Про BFarm',
+      description: 'Ми провідне Amazon-агентство, що спеціалізується на комплексному управлінні Amazon для брендів здоров\'я та велнесу.',
+      mission: 'Наша місія',
+      missionText: 'BFarm присвячена допомозі брендам у збільшенні продажів Amazon через стратегічні, керовані даними підходи. Ми спеціалізуємося на повному управлінні зростанням Amazon, допомагаючи бізнесам орієнтуватися в складній екосистемі Amazon.',
+      approach: 'Наш підхід',
+      approachText: 'Ми зосереджуємося на знаходженні правильного поєднання діяльності з генерації попиту та захоплення попиту, створенні правильних креативів для кожного кроку покупки та встановленні чітких креативних напрямків, які приносять результати.',
+      whyChoose: 'Чому обрати BFarm?',
+      whyChooseText: 'З роками досвіду в управлінні Amazon, ми розуміємо, що потрібно для успіху на платформі. Наша команда поєднує стратегічне мислення з креативним виконанням для досягнення вимірюваних результатів для наших клієнтів.',
+      stats: {
+        brands: 'Успішних брендів',
+        revenue: 'Доходу згенеровано',
+        satisfaction: 'Задоволеність клієнтів'
+      }
     },
     
     // Services Section
@@ -231,6 +237,16 @@ const translations = {
       quote: '"Я колись зрозумів: Amazon винагороджує тих, хто грає за його правилами—а потім додає власну креативність. Саме так BFarm допомагає брендам по всьому світу: ми змішали холодні дані платформи з людською креативністю і отримали вибуховий коктейль зростання. Приєднуйтесь і подивіться, як 1 + 1 може дорівнювати 11."',
       name: 'МАКСИМ ЛАЗУТО',
       title: 'Засновник і CEO'
+    },
+    
+    // Common Elements
+    common: {
+      learnMore: 'Дізнатися більше',
+      backToServices: '← Назад до послуг',
+      getStarted: 'Почати зараз',
+      readyToScale: 'Готові масштабувати ваш Amazon бізнес?',
+      letsDiscuss: 'Давайте обговоримо як наше повне управління аккаунтом може трансформувати ваші результати.',
+      contact: 'Зв\'язатися'
     },
     
     // Language Switcher
