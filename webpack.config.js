@@ -9,9 +9,12 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    port: 3000,
+    port: 3001,
     hot: true,
     historyApiFallback: true,
+    stats: {
+      warnings: false
+    },
   },
   module: {
     rules: [
@@ -35,8 +38,9 @@ module.exports = {
             options: {
               sassOptions: {
                 quietDeps: true,
-                silenceDeprecations: ['legacy-js-api', 'import']
-              }
+                verbose: false
+              },
+              warnRuleAsWarning: false
             }
           }
         ],
