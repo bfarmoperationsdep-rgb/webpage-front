@@ -1,19 +1,36 @@
+@use 'sass:color';
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
 .features {
-  padding: $spacing-20 0;
-  background-color: $white;
+  padding: $spacing-18 0;
+  background: linear-gradient(135deg, $primary-light 0%, $secondary-color 100%);
+  color: $white;
   
-  &__header {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-16;
+    align-items: center;
+    
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-20;
+    }
+  }
+  
+  &__text {
     text-align: center;
-    margin-bottom: $spacing-16;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    
+    @include respond-to(lg) {
+      text-align: left;
+    }
   }
   
   &__title {
     font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-tight;
     margin-bottom: $spacing-6;
     
     @include respond-to(md) {
@@ -23,110 +40,176 @@
   
   &__description {
     font-size: $font-size-lg;
-    color: $text-secondary;
     line-height: $line-height-relaxed;
-  }
-  
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-8;
+    opacity: 0.9;
     
     @include respond-to(md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+      font-size: $font-size-xl;
     }
   }
   
-  &__item {
-    @include card;
-    padding: $spacing-8;
-    text-align: center;
-    border-top: 4px solid transparent;
-    transition: all $transition-duration-base $transition-timing;
-    
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: $shadow-xl;
-    }
-    
-    &--primary {
-      border-top-color: $primary-color;
-      
-      .features__icon {
-        background: linear-gradient(135deg, $primary-color, $primary-light);
-      }
-    }
-    
-    &--secondary {
-      border-top-color: $secondary-color;
-      
-      .features__icon {
-        background: linear-gradient(135deg, $secondary-color, $secondary-light);
-      }
-    }
-    
-    &--success {
-      border-top-color: $success-color;
-      
-      .features__icon {
-        background: linear-gradient(135deg, $success-color, lighten($success-color, 10%));
-      }
-    }
-    
-    &--info {
-      border-top-color: $info-color;
-      
-      .features__icon {
-        background: linear-gradient(135deg, $info-color, lighten($info-color, 10%));
-      }
-    }
-    
-    &--warning {
-      border-top-color: $warning-color;
-      
-      .features__icon {
-        background: linear-gradient(135deg, $warning-color, lighten($warning-color, 10%));
-      }
-    }
-  }
-  
-  &__icon {
+  &__visual {
+    position: relative;
     @include flex-center;
+    flex-direction: column;
+    gap: $spacing-6;
+  }
+  
+  // Strategy Card
+  &__strategy-card {
+    background: rgba($white, 0.95);
+    border-radius: $border-radius-2xl;
+    padding: $spacing-6;
+    color: $text-primary;
+    box-shadow: $shadow-xl;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  &__strategy-header {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-3;
+    margin-bottom: $spacing-4;
+    
+    h3 {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      letter-spacing: 0.1em;
+    }
+  }
+  
+  &__strategy-icon {
+    font-size: $font-size-3xl;
+    background: linear-gradient(135deg, $primary-color, $primary-light);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    margin: 0 auto $spacing-6;
+    @include flex-center;
     color: $white;
-    font-size: $font-size-xl;
+  }
+  
+  &__strategy-content {
     position: relative;
     
-    &::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border-radius: 50%;
-      background: inherit;
-      opacity: 0.2;
-      animation: pulse 2s infinite;
+    p {
+      color: $text-secondary;
+      line-height: $line-height-snug;
+      margin-bottom: $spacing-4;
     }
   }
   
-  &__item-title {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-semibold;
-    color: $text-primary;
-    margin-bottom: $spacing-4;
+  &__plus {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
-  &__item-description {
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
+  // Creative Card
+  &__creative-card {
+    background: rgba($white, 0.95);
+    border-radius: $border-radius-2xl;
+    padding: $spacing-6;
+    color: $text-primary;
+    box-shadow: $shadow-xl;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  &__creative-header {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-3;
+    margin-bottom: $spacing-4;
+    
+    h3 {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $secondary-color;
+      letter-spacing: 0.1em;
+    }
+  }
+  
+  &__creative-icon {
+    font-size: $font-size-3xl;
+    background: linear-gradient(135deg, $secondary-color, $secondary-light);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    @include flex-center;
+    color: $white;
+  }
+  
+  &__creative-content {
+    position: relative;
+    
+    p {
+      color: $text-secondary;
+      line-height: $line-height-snug;
+      margin-bottom: $spacing-4;
+    }
+  }
+  
+  &__multiply {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $secondary-color;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  // Execution Card
+  &__execution-card {
+    background: rgba($white, 0.95);
+    border-radius: $border-radius-2xl;
+    padding: $spacing-6;
+    color: $text-primary;
+    box-shadow: $shadow-xl;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  &__execution-header {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-3;
+    margin-bottom: $spacing-4;
+    
+    h3 {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $primary-dark;
+      letter-spacing: 0.1em;
+    }
+  }
+  
+  &__execution-icon {
+    font-size: $font-size-3xl;
+    background: linear-gradient(135deg, $primary-dark, $primary-color);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    @include flex-center;
+    color: $white;
+  }
+  
+  &__execution-content {
+    p {
+      color: $text-secondary;
+      line-height: $line-height-snug;
+    }
   }
 }

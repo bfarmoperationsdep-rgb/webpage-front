@@ -1,78 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../context/LanguageContext';
 import './ServicesSection.scss';
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
-      icon: 'fas fa-code',
-      title: 'Веб-розробка',
-      description: 'Створюємо сучасні веб-сайти та веб-додатки з використанням найновіших технологій.',
-      features: ['React/Vue.js', 'Node.js/PHP', 'База даних', 'API інтеграція'],
-      price: 'від 15,000 грн',
-      popular: false
-    },
-    {
-      icon: 'fas fa-mobile-alt',
-      title: 'Мобільні додатки',
-      description: 'Розробляємо нативні та крос-платформні мобільні додатки для iOS та Android.',
-      features: ['React Native', 'Flutter', 'iOS/Android', 'Push-уведомлення'],
-      price: 'від 25,000 грн',
-      popular: true
-    },
-    {
-      icon: 'fas fa-shopping-cart',
-      title: 'E-commerce',
-      description: 'Створюємо потужні інтернет-магазини з повним функціоналом для онлайн-торгівлі.',
-      features: ['Каталог товарів', 'Оплата/Доставка', 'Адмін-панель', 'Аналітика'],
-      price: 'від 30,000 грн',
-      popular: false
-    },
-    {
       icon: 'fas fa-chart-line',
-      title: 'Цифровий маркетинг',
-      description: 'Комплексне просування вашого бізнесу в цифровому просторі.',
-      features: ['SEO оптимізація', 'Контекстна реклама', 'SMM', 'Email маркетинг'],
-      price: 'від 8,000 грн/міс',
-      popular: false
+      title: 'Amazon PPC',
+      description: 'The key to driving traffic to your listings lies in Amazon PPC. Higher revenue, lower ACOS, and transparent ad management.',
+      color: '$primary-color'
     },
     {
-      icon: 'fas fa-cloud',
-      title: 'Хмарні рішення',
-      description: 'Переносимо ваш бізнес у хмару для підвищення ефективності та масштабованості.',
-      features: ['AWS/Azure', 'DevOps', 'Автоматизація', 'Моніторинг'],
-      price: 'від 20,000 грн',
-      popular: false
+      icon: 'fas fa-search',
+      title: 'SEO Optimization',
+      description: 'Our 4-phase Amazon SEO plan is best-in-class and can show dramatic results in search rankings in 90 days.',
+      color: '$secondary-color'
     },
     {
-      icon: 'fas fa-headset',
-      title: 'Технічна підтримка',
-      description: 'Забезпечуємо безперебійну роботу ваших IT-систем та швидке вирішення проблем.',
-      features: ['24/7 моніторинг', 'Оновлення', 'Резервування', 'Консультації'],
-      price: 'від 5,000 грн/міс',
-      popular: false
+      icon: 'fas fa-palette',
+      title: 'Creative Services',
+      description: 'All-Day VISUAL Display, Product Focus - comprehensive visual strategy for maximum impact.',
+      color: '$primary-light'
+    },
+    {
+      icon: 'fas fa-cogs',
+      title: 'Strategy & Execution',
+      description: 'Campaign Structure, Budgets, Media Mix - complete strategic approach to Amazon success.',
+      color: '$primary-dark'
     }
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  };
 
   return (
     <section className="services">
@@ -84,84 +44,32 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="services__title">
-            Наші послуги
-          </h2>
-          <p className="services__description">
-            Ми надаємо повний спектр IT-послуг для розвитку вашого бізнесу. 
-            Від ідеї до реалізації - ми з вами на кожному кроці.
-          </p>
+          <h2 className="services__title">{t('services.title')}</h2>
+          <p className="services__description">{t('services.subtitle')}</p>
         </motion.div>
 
-        <motion.div 
-          className="services__grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="services__grid">
           {services.map((service, index) => (
             <motion.div
-              key={index}
-              className={`services__card ${service.popular ? 'services__card--popular' : ''}`}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
+              key={service.title}
+              className={`services__item services__item--${index + 1}`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
             >
-              {service.popular && (
-                <div className="services__badge">
-                  <i className="fas fa-star"></i>
-                  Популярно
-                </div>
-              )}
-              
-              <div className="services__card-header">
-                <div className="services__icon">
-                  <i className={service.icon}></i>
-                </div>
-                <h3 className="services__card-title">{service.title}</h3>
-                <p className="services__card-description">{service.description}</p>
+              <div className="services__item-icon">
+                <i className={service.icon}></i>
               </div>
-
-              <div className="services__card-body">
-                <ul className="services__features">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="services__feature">
-                      <i className="fas fa-check"></i>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="services__card-footer">
-                <div className="services__price">{service.price}</div>
-                <Link to="/contact" className="btn btn-primary btn-full">
-                  Замовити послугу
-                </Link>
-              </div>
+              <h3 className="services__item-title">{service.title}</h3>
+              <p className="services__item-description">{service.description}</p>
+              <Link to="/services" className="services__item-link">
+                Learn More →
+              </Link>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div 
-          className="services__cta"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="services__cta-title">
-            Не знайшли потрібну послугу?
-          </h3>
-          <p className="services__cta-description">
-            Зв'яжіться з нами, і ми обговоримо індивідуальне рішення для вашого бізнесу
-          </p>
-          <Link to="/contact" className="btn btn-secondary btn-lg">
-            <i className="fas fa-comments"></i>
-            Безкоштовна консультація
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

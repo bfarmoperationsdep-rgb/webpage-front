@@ -1,10 +1,10 @@
-// Кольори
-$primary-color: #2563eb;
-$primary-dark: #1d4ed8;
-$primary-light: #3b82f6;
-$secondary-color: #f59e0b;
-$secondary-dark: #d97706;
-$secondary-light: #fbbf24;
+// Кольори (BFarm зелена схема)
+$primary-color: #2E7D47;
+$primary-dark: #1F5F33;
+$primary-light: #42A065;
+$secondary-color: #5CB85C;
+$secondary-dark: #449D44;
+$secondary-light: #71C671;
 
 $success-color: #10b981;
 $warning-color: #f59e0b;
@@ -79,6 +79,14 @@ $spacing-40: 10rem;    // 160px
 $spacing-48: 12rem;    // 192px
 $spacing-56: 14rem;    // 224px
 $spacing-64: 16rem;    // 256px
+$spacing-80: 20rem;    // 320px
+$spacing-96: 24rem;    // 384px
+
+// Додаткові spacing змінні для гармонійного дизайну
+$spacing-14: 3.5rem;   // 56px
+$spacing-18: 4.5rem;   // 72px
+$spacing-28: 7rem;     // 112px
+$spacing-36: 9rem;     // 144px
 
 // Радіуси
 $border-radius-none: 0;

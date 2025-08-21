@@ -1,30 +1,62 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
 .blog-page {
-  padding: $spacing-20 0;
-  min-height: 70vh;
+  padding: $spacing-18 0;
   
   &__header {
     text-align: center;
     margin-bottom: $spacing-16;
-    
-    h1 {
-      font-size: $font-size-4xl;
-      font-weight: $font-weight-bold;
-      color: $text-primary;
-      margin-bottom: $spacing-4;
-    }
-    
-    p {
-      font-size: $font-size-lg;
-      color: $text-secondary;
-    }
+  }
+  
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-6;
+  }
+  
+  &__description {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   &__content {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
     
-    p {
-      font-size: $font-size-lg;
-      color: $text-secondary;
+    @include respond-to(lg) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  &__main {
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-8;
+      
+      @include respond-to(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  
+  &__sidebar {
+    .widget {
+      @include card;
+      padding: $spacing-6;
+      margin-bottom: $spacing-6;
+      
+      &__title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $text-primary;
+        margin-bottom: $spacing-4;
+      }
     }
   }
 }

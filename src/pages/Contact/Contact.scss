@@ -1,30 +1,106 @@
-.contact-page {
-  padding: $spacing-20 0;
-  min-height: 70vh;
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.contact {
+  padding: $spacing-18 0;
   
   &__header {
     text-align: center;
     margin-bottom: $spacing-16;
-    
-    h1 {
-      font-size: $font-size-4xl;
-      font-weight: $font-weight-bold;
-      color: $text-primary;
-      margin-bottom: $spacing-4;
-    }
-    
-    p {
-      font-size: $font-size-lg;
-      color: $text-secondary;
-    }
+  }
+  
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-6;
+  }
+  
+  &__description {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   &__content {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-12;
     
-    p {
-      font-size: $font-size-lg;
-      color: $text-secondary;
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  &__form {
+    @include card;
+    padding: $spacing-8;
+    
+    .form-group {
+      margin-bottom: $spacing-6;
+      
+      label {
+        display: block;
+        font-weight: $font-weight-medium;
+        color: $text-primary;
+        margin-bottom: $spacing-2;
+      }
+      
+      input,
+      textarea {
+        width: 100%;
+        padding: $spacing-3;
+        border: 1px solid $gray-300;
+        border-radius: $border-radius-md;
+        font-family: inherit;
+        transition: border-color $transition-duration-base $transition-timing;
+        
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+      
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+  }
+  
+  &__info {
+    .contact-item {
+      @include flex-center;
+      justify-content: flex-start;
+      gap: $spacing-4;
+      padding: $spacing-6;
+      background-color: $gray-50;
+      border-radius: $border-radius-lg;
+      margin-bottom: $spacing-4;
+      
+      .icon {
+        @include flex-center;
+        width: 3rem;
+        height: 3rem;
+        background-color: $primary-color;
+        color: $white;
+        border-radius: 50%;
+        font-size: $font-size-lg;
+      }
+      
+      .content {
+        h3 {
+          font-size: $font-size-lg;
+          font-weight: $font-weight-semibold;
+          color: $text-primary;
+          margin-bottom: $spacing-1;
+        }
+        
+        p {
+          color: $text-secondary;
+        }
+      }
     }
   }
 }

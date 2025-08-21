@@ -1,13 +1,12 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
 .footer {
   background-color: $gray-900;
-  color: $gray-300;
+  color: rgba($white, 0.8);
   
   &__main {
-    padding: $spacing-16 0 $spacing-12;
-    
-    @include respond-to(lg) {
-      padding: $spacing-20 0 $spacing-16;
-    }
+    padding: $spacing-16 0 $spacing-8;
   }
   
   &__content {
@@ -15,33 +14,19 @@
     grid-template-columns: 1fr;
     gap: $spacing-8;
     
-    @include respond-to(sm) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-10;
-    }
-    
     @include respond-to(md) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     
     @include respond-to(lg) {
-      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-      gap: $spacing-12;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     }
   }
   
   &__section {
     &--main {
-      @include respond-to(sm) {
-        grid-column: span 2;
-      }
-      
-      @include respond-to(md) {
-        grid-column: span 3;
-      }
-      
       @include respond-to(lg) {
-        grid-column: span 1;
+        grid-column: span 2;
       }
     }
   }
@@ -54,13 +39,7 @@
     color: $white;
     font-weight: $font-weight-bold;
     font-size: $font-size-xl;
-    margin-bottom: $spacing-4;
-    transition: all $transition-duration-base $transition-timing;
-    
-    &:hover {
-      color: $primary-light;
-      transform: scale(1.05);
-    }
+    margin-bottom: $spacing-6;
   }
   
   &__logo-icon {
@@ -73,15 +52,11 @@
     font-size: 1.2rem;
   }
   
-  &__logo-text {
-    font-weight: $font-weight-bold;
-  }
-  
   &__description {
-    font-size: $font-size-base;
+    color: rgba($white, 0.7);
     line-height: $line-height-relaxed;
-    color: $gray-400;
     margin-bottom: $spacing-6;
+    max-width: 400px;
   }
   
   &__contact {
@@ -93,41 +68,35 @@
     justify-content: flex-start;
     gap: $spacing-3;
     margin-bottom: $spacing-3;
-    font-size: $font-size-sm;
-    color: $gray-400;
     
     i {
-      width: 1rem;
       color: $primary-color;
+      width: 1.2rem;
     }
     
     a {
-      color: inherit;
+      color: rgba($white, 0.8);
       text-decoration: none;
       transition: color $transition-duration-base $transition-timing;
       
       &:hover {
-        color: $primary-light;
+        color: $primary-color;
       }
-    }
-    
-    &:last-child {
-      margin-bottom: 0;
     }
   }
   
   &__social {
     @include flex-center;
     justify-content: flex-start;
-    gap: $spacing-4;
+    gap: $spacing-3;
   }
   
   &__social-link {
     @include flex-center;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: $gray-800;
-    color: $gray-400;
+    background-color: rgba($white, 0.1);
+    color: rgba($white, 0.7);
     border-radius: 50%;
     text-decoration: none;
     transition: all $transition-duration-base $transition-timing;
@@ -140,87 +109,83 @@
   }
   
   &__title {
+    color: $white;
     font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
-    color: $white;
-    margin-bottom: $spacing-4;
-    
-    @include respond-to(lg) {
-      margin-bottom: $spacing-6;
-    }
+    margin-bottom: $spacing-6;
   }
   
   &__links {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  &__link {
-    display: block;
-    padding: $spacing-2 0;
-    color: $gray-400;
-    text-decoration: none;
-    font-size: $font-size-sm;
-    transition: all $transition-duration-base $transition-timing;
     
-    &:hover {
-      color: $primary-light;
-      padding-left: $spacing-2;
+    li {
+      margin-bottom: $spacing-3;
     }
   }
   
-  &__newsletter-text {
-    font-size: $font-size-sm;
-    color: $gray-400;
-    line-height: $line-height-relaxed;
-    margin-bottom: $spacing-4;
+  &__link {
+    color: rgba($white, 0.7);
+    text-decoration: none;
+    transition: color $transition-duration-base $transition-timing;
+    
+    &:hover {
+      color: $primary-color;
+    }
   }
   
   &__newsletter {
+    margin-top: $spacing-4;
+  }
+  
+  &__newsletter-text {
+    color: rgba($white, 0.7);
     margin-bottom: $spacing-4;
+    font-size: $font-size-sm;
   }
   
   &__newsletter-input {
-    position: relative;
-    display: flex;
+    @include flex-center;
+    gap: $spacing-2;
     margin-bottom: $spacing-3;
     
     .form-input {
       flex: 1;
-      background-color: $gray-800;
-      border-color: $gray-700;
+      padding: $spacing-3;
+      border: 1px solid rgba($white, 0.2);
+      background-color: rgba($white, 0.1);
       color: $white;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: $border-radius-md;
       
       &::placeholder {
-        color: $gray-500;
+        color: rgba($white, 0.5);
       }
       
       &:focus {
+        outline: none;
         border-color: $primary-color;
-        background-color: $gray-800;
       }
     }
     
     .btn {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      padding: $spacing-3 $spacing-4;
+      padding: $spacing-3;
     }
   }
   
   &__newsletter-consent {
+    @include flex-center;
+    justify-content: flex-start;
+    gap: $spacing-2;
     font-size: $font-size-xs;
-    color: $gray-500;
+    color: rgba($white, 0.6);
     
     .form-check-input {
-      margin-right: $spacing-2;
+      margin: 0;
     }
     
     a {
-      color: $primary-light;
+      color: $primary-color;
       text-decoration: none;
       
       &:hover {
@@ -229,10 +194,8 @@
     }
   }
   
-  // Bottom section
   &__bottom {
-    background-color: $gray-800;
-    border-top: 1px solid $gray-700;
+    border-top: 1px solid rgba($white, 0.1);
     padding: $spacing-6 0;
   }
   
@@ -243,14 +206,12 @@
     
     @include respond-to(md) {
       flex-direction: row;
-      gap: 0;
     }
   }
   
   &__copyright {
+    color: rgba($white, 0.6);
     font-size: $font-size-sm;
-    color: $gray-500;
-    margin: 0;
   }
   
   &__legal {
@@ -260,13 +221,13 @@
   }
   
   &__legal-link {
-    font-size: $font-size-sm;
-    color: $gray-500;
+    color: rgba($white, 0.6);
     text-decoration: none;
+    font-size: $font-size-sm;
     transition: color $transition-duration-base $transition-timing;
     
     &:hover {
-      color: $primary-light;
+      color: $primary-color;
     }
   }
 }

@@ -1,108 +1,90 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../context/LanguageContext';
 import './FeaturesSection.scss';
 
 const FeaturesSection = () => {
-  const features = [
-    {
-      icon: 'fas fa-rocket',
-      title: 'Швидка розробка',
-      description: 'Використовуємо сучасні технології та методології для швидкого створення якісних рішень.',
-      color: 'primary'
-    },
-    {
-      icon: 'fas fa-mobile-alt',
-      title: 'Адаптивний дизайн',
-      description: 'Всі наші рішення ідеально працюють на будь-яких пристроях - від смартфонів до десктопів.',
-      color: 'secondary'
-    },
-    {
-      icon: 'fas fa-shield-alt',
-      title: 'Безпека даних',
-      description: 'Гарантуємо максимальний рівень захисту ваших даних та інформації клієнтів.',
-      color: 'success'
-    },
-    {
-      icon: 'fas fa-chart-line',
-      title: 'Аналітика та звіти',
-      description: 'Надаємо детальну аналітику та звіти для відстеження ефективності вашого бізнесу.',
-      color: 'info'
-    },
-    {
-      icon: 'fas fa-cogs',
-      title: 'Легке масштабування',
-      description: 'Наші рішення легко масштабуються разом із зростанням вашого бізнесу.',
-      color: 'warning'
-    },
-    {
-      icon: 'fas fa-headset',
-      title: '24/7 Підтримка',
-      description: 'Надаємо цілодобову технічну підтримку та допомогу нашим клієнтам.',
-      color: 'primary'
-    }
-  ];
+  const { t } = useLanguage();
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      x: 0,
+      transition: { duration: 0.6 },
     },
   };
 
   return (
     <section className="features">
       <div className="container">
-        <motion.div 
-          className="features__header"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="features__title">
-            Чому обирають нас
-          </h2>
-          <p className="features__description">
-            Ми поєднуємо інноваційні технології з глибоким розумінням потреб бізнесу, 
-            щоб створювати рішення, які дійсно працюють.
-          </p>
-        </motion.div>
+        <div className="features__content">
+          <motion.div 
+            className="features__text"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 className="features__title" variants={itemVariants}>
+              {t('features.title')}
+            </motion.h2>
+            
+            <motion.p className="features__description" variants={itemVariants}>
+              {t('features.description')}
+            </motion.p>
+          </motion.div>
 
-        <motion.div 
-          className="features__grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className={`features__item features__item--${feature.color}`}
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="features__icon">
-                <i className={feature.icon}></i>
+          <motion.div 
+            className="features__visual"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="features__strategy-card">
+              <div className="features__strategy-header">
+                <div className="features__strategy-icon">📝</div>
+                <h3>STRATEGY</h3>
               </div>
-              <h3 className="features__item-title">{feature.title}</h3>
-              <p className="features__item-description">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+              <div className="features__strategy-content">
+                <p>Demand Gen &<br/>Demand Capture</p>
+                <div className="features__plus">+</div>
+              </div>
+            </div>
+            
+            <div className="features__creative-card">
+              <div className="features__creative-header">
+                <div className="features__creative-icon">💡</div>
+                <h3>CREATIVE</h3>
+              </div>
+              <div className="features__creative-content">
+                <p>All-Day VISUAL<br/>Display, Product Focus</p>
+                <div className="features__multiply">×</div>
+              </div>
+            </div>
+            
+            <div className="features__execution-card">
+              <div className="features__execution-header">
+                <div className="features__execution-icon">⚡</div>
+                <h3>EXECUTION</h3>
+              </div>
+              <div className="features__execution-content">
+                <p>Campaign Structure<br/>Budgets, Media Mix</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

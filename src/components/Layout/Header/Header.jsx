@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../../../context/LanguageContext';
 import './Header.scss';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, switchLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +23,12 @@ const Header = () => {
   }, [location]);
 
   const navigation = [
-    { name: 'Головна', href: '/' },
-    { name: 'Послуги', href: '/services' },
-    { name: 'Про нас', href: '/about' },
-    { name: 'Портфоліо', href: '/portfolio' },
-    { name: 'Блог', href: '/blog' },
-    { name: 'Контакти', href: '/contact' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.services'), href: '/services' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.portfolio'), href: '/portfolio' },
+    { name: t('nav.blog'), href: '/blog' },
+    { name: t('nav.contact'), href: '/contact' },
   ];
 
   const toggleMobileMenu = () => {
@@ -40,9 +42,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="header__logo">
             <div className="header__logo-icon">
-              <i className="fas fa-rocket"></i>
+              <i className="fab fa-amazon"></i>
             </div>
-            <span className="header__logo-text">ModularBiz</span>
+            <span className="header__logo-text">BFarm</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,10 +65,22 @@ const Header = () => {
             </ul>
           </nav>
 
+          {/* Language Switcher */}
+          <div className="header__language hidden-mobile">
+            <button
+              onClick={() => switchLanguage(language === 'en' ? 'uk' : 'en')}
+              className="header__language-btn"
+              title={t('language.switch')}
+            >
+              <i className="fas fa-globe"></i>
+              <span>{language === 'en' ? 'EN' : 'УК'}</span>
+            </button>
+          </div>
+
           {/* CTA Button */}
           <div className="header__actions hidden-mobile">
             <Link to="/contact" className="btn btn-primary">
-              Безкоштовна консультація
+              {t('cta.consultation')}
             </Link>
           </div>
 
@@ -101,9 +115,20 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+            
+            <div className="header__mobile-language">
+              <button
+                onClick={() => switchLanguage(language === 'en' ? 'uk' : 'en')}
+                className="header__language-btn"
+              >
+                <i className="fas fa-globe"></i>
+                <span>{language === 'en' ? 'English' : 'Українська'}</span>
+              </button>
+            </div>
+            
             <div className="header__mobile-actions">
               <Link to="/contact" className="btn btn-primary btn-full">
-                Безкоштовна консультація
+                {t('cta.consultation')}
               </Link>
             </div>
           </nav>

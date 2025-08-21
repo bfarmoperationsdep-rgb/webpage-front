@@ -1,13 +1,13 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
 .services {
-  padding: $spacing-20 0;
-  background: linear-gradient(135deg, $gray-50 0%, $white 100%);
+  padding: $spacing-18 0;
+  background-color: $gray-50;
   
   &__header {
     text-align: center;
     margin-bottom: $spacing-16;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   &__title {
@@ -24,14 +24,14 @@
   &__description {
     font-size: $font-size-lg;
     color: $text-secondary;
-    line-height: $line-height-relaxed;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-8;
-    margin-bottom: $spacing-16;
     
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
@@ -42,158 +42,65 @@
     }
   }
   
-  &__card {
+  &__item {
     @include card;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
+    padding: $spacing-8;
+    text-align: center;
     transition: all $transition-duration-base $transition-timing;
     
     &:hover {
-      transform: translateY(-8px);
-      box-shadow: $shadow-2xl;
-    }
-    
-    &--popular {
-      border: 2px solid $primary-color;
-      
-      .services__card-header {
-        background: linear-gradient(135deg, $primary-color, $primary-light);
-        color: $white;
-      }
-      
-      .services__icon {
-        background-color: rgba($white, 0.2);
-        color: $white;
-      }
-      
-      .services__card-title,
-      .services__card-description {
-        color: $white;
-      }
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
     }
   }
   
-  &__badge {
-    position: absolute;
-    top: $spacing-4;
-    right: $spacing-4;
-    background: linear-gradient(135deg, $warning-color, $secondary-color);
-    color: $white;
-    padding: $spacing-1 $spacing-3;
-    border-radius: $border-radius-full;
-    font-size: $font-size-xs;
-    font-weight: $font-weight-medium;
-    z-index: 1;
-    
-    i {
-      margin-right: $spacing-1;
-    }
-  }
-  
-  &__card-header {
-    padding: $spacing-8;
-    text-align: center;
-    background-color: $white;
-    transition: all $transition-duration-base $transition-timing;
-  }
-  
-  &__icon {
+  &__item-icon {
     @include flex-center;
     width: 4rem;
     height: 4rem;
-    border-radius: 50%;
-    background-color: $primary-color;
+    background: linear-gradient(135deg, $primary-color, $primary-light);
     color: $white;
+    border-radius: 50%;
+    margin: 0 auto $spacing-6;
     font-size: $font-size-xl;
-    margin: 0 auto $spacing-4;
-    transition: all $transition-duration-base $transition-timing;
   }
   
-  &__card-title {
+  &__item--1 &__item-icon {
+    background: linear-gradient(135deg, $primary-color, $primary-light);
+  }
+  
+  &__item--2 &__item-icon {
+    background: linear-gradient(135deg, $secondary-color, $secondary-light);
+  }
+  
+  &__item--3 &__item-icon {
+    background: linear-gradient(135deg, $primary-light, $secondary-color);
+  }
+  
+  &__item--4 &__item-icon {
+    background: linear-gradient(135deg, $primary-dark, $primary-color);
+  }
+  
+  &__item-title {
     font-size: $font-size-xl;
     font-weight: $font-weight-semibold;
     color: $text-primary;
-    margin-bottom: $spacing-3;
-    transition: color $transition-duration-base $transition-timing;
-  }
-  
-  &__card-description {
-    font-size: $font-size-sm;
-    color: $text-secondary;
-    line-height: $line-height-relaxed;
-    transition: color $transition-duration-base $transition-timing;
-  }
-  
-  &__card-body {
-    padding: $spacing-6 $spacing-8;
-    background-color: $white;
-  }
-  
-  &__features {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  &__feature {
-    @include flex-center;
-    justify-content: flex-start;
-    gap: $spacing-3;
-    padding: $spacing-2 0;
-    font-size: $font-size-sm;
-    color: $text-secondary;
-    border-bottom: 1px solid $gray-100;
-    
-    &:last-child {
-      border-bottom: none;
-    }
-    
-    i {
-      color: $success-color;
-      font-size: $font-size-xs;
-    }
-  }
-  
-  &__card-footer {
-    padding: $spacing-6 $spacing-8;
-    background-color: $gray-50;
-    border-top: 1px solid $gray-100;
-  }
-  
-  &__price {
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-bold;
-    color: $primary-color;
-    text-align: center;
     margin-bottom: $spacing-4;
   }
   
-  &__cta {
-    text-align: center;
-    padding: $spacing-12;
-    background: linear-gradient(135deg, $primary-color, $primary-dark);
-    border-radius: $border-radius-2xl;
-    color: $white;
-  }
-  
-  &__cta-title {
-    font-size: $font-size-2xl;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-4;
-    
-    @include respond-to(md) {
-      font-size: $font-size-3xl;
-    }
-  }
-  
-  &__cta-description {
-    font-size: $font-size-lg;
-    color: rgba($white, 0.9);
+  &__item-description {
+    color: $text-secondary;
     line-height: $line-height-relaxed;
     margin-bottom: $spacing-6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  }
+  
+  &__item-link {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

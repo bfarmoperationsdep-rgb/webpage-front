@@ -1,17 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../context/LanguageContext';
 import './ClientsSection.scss';
 
 const ClientsSection = () => {
+  const { t } = useLanguage();
+  
   const clients = [
-    { name: 'Microsoft', logo: '🏢' },
-    { name: 'Google', logo: '🔍' },
-    { name: 'Apple', logo: '🍎' },
-    { name: 'Amazon', logo: '📦' },
-    { name: 'Tesla', logo: '⚡' },
-    { name: 'Meta', logo: '👥' },
-    { name: 'Netflix', logo: '🎬' },
-    { name: 'Spotify', logo: '🎵' },
+    { name: 'GROOVE LIFE', logo: '🔗' },
+    { name: 'MONIN', logo: '🥤' },
+    { name: 'NATIVE', logo: '🧴' },
+    { name: 'SMARTY PANTS', logo: '💊' },
+    { name: 'BOOM!', logo: '💥' },
+    { name: 'crumbl', logo: '🍪' },
+    { name: 'FIXD', logo: '🔧' },
+    { name: 'RAINDROP', logo: '💧' },
+    { name: 'Buffy', logo: '🛏️' },
+    { name: 'TRUVANI', logo: '🌱' },
+    { name: 'organifi', logo: '🌿' },
+    { name: 'NAVAGE', logo: '💨' }
   ];
 
   return (
@@ -25,8 +32,12 @@ const ClientsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="clients__title">
-            Нам довіряють провідні компанії
+            {t('clients.title')}
           </h2>
+          
+          <p className="clients__subtitle">
+            {t('clients.subtitle')}
+          </p>
           
           <div className="clients__grid">
             {clients.map((client, index) => (

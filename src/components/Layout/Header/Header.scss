@@ -1,3 +1,6 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
 .header {
   position: fixed;
   top: 0;
@@ -116,6 +119,34 @@
     }
   }
   
+  &__language {
+    @include flex-center;
+    margin-right: $spacing-4;
+  }
+  
+  &__language-btn {
+    @include flex-center;
+    gap: $spacing-2;
+    background: none;
+    border: 1px solid $gray-300;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $border-radius-md;
+    color: $text-primary;
+    cursor: pointer;
+    transition: all $transition-duration-base $transition-timing;
+    font-size: $font-size-sm;
+    
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
+    }
+    
+    i {
+      font-size: 1em;
+    }
+  }
+
   &__actions {
     @include flex-center;
     gap: $spacing-4;
@@ -234,6 +265,22 @@
     }
   }
   
+  &__mobile-language {
+    border-top: 1px solid $gray-100;
+    padding-top: $spacing-4;
+    margin-bottom: $spacing-4;
+    
+    .header__language-btn {
+      width: 100%;
+      justify-content: center;
+      padding: $spacing-3;
+      
+      span {
+        font-size: $font-size-base;
+      }
+    }
+  }
+
   &__mobile-actions {
     border-top: 1px solid $gray-100;
     padding-top: $spacing-6;

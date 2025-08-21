@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Базові стилі кнопок
 .btn {
   @include btn-base;
@@ -22,7 +24,7 @@
   color: $white;
   
   &:hover:not(:disabled) {
-    background-color: darken($success-color, 10%);
+    background-color: color.adjust($success-color, $lightness: -10%);
     transform: translateY(-1px);
     box-shadow: $shadow-md;
   }
@@ -34,7 +36,7 @@
   color: $white;
   
   &:hover:not(:disabled) {
-    background-color: darken($warning-color, 10%);
+    background-color: color.adjust($warning-color, $lightness: -10%);
     transform: translateY(-1px);
     box-shadow: $shadow-md;
   }
@@ -46,7 +48,7 @@
   color: $white;
   
   &:hover:not(:disabled) {
-    background-color: darken($error-color, 10%);
+    background-color: color.adjust($error-color, $lightness: -10%);
     transform: translateY(-1px);
     box-shadow: $shadow-md;
   }

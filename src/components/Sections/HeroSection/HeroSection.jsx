@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../context/LanguageContext';
 import './HeroSection.scss';
 
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
-  const words = ['інноваційні', 'сучасні', 'ефективні', 'професійні'];
+  const { t } = useLanguage();
+  
+  const words = ['innovative', 'effective', 'profitable', 'data-driven'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,99 +57,93 @@ const HeroSection = () => {
         >
           <motion.div className="hero__text" variants={itemVariants}>
             <h1 className="hero__title">
-              Створюємо{' '}
-              <span className="hero__title-highlight">
-                {words[currentWord]}
-              </span>
-              <br />
-              цифрові рішення для вашого бізнесу
+              {t('hero.title')}
             </h1>
             
+            <h2 className="hero__subtitle">
+              {t('hero.subtitle')}
+            </h2>
+            
             <p className="hero__description">
-              Ми спеціалізуємося на розробці веб-сайтів, мобільних додатків та 
-              комплексних IT-рішень, які допомагають бізнесу рости та розвиватися 
-              в цифровому світі.
+              {t('hero.description')}
             </p>
 
             <div className="hero__actions">
               <Link to="/contact" className="btn btn-primary btn-lg">
                 <i className="fas fa-rocket"></i>
-                Почати проект
+                {t('hero.startProject')}
               </Link>
               <Link to="/portfolio" className="btn btn-secondary btn-lg">
                 <i className="fas fa-play-circle"></i>
-                Наші роботи
+                {t('hero.watchWork')}
               </Link>
             </div>
 
             <div className="hero__features">
               <div className="hero__feature">
-                <i className="fas fa-clock"></i>
-                <span>Швидка розробка</span>
+                <i className="fas fa-chart-line"></i>
+                <span>{t('hero.features.strategy')}</span>
               </div>
               <div className="hero__feature">
-                <i className="fas fa-shield-alt"></i>
-                <span>Гарантія якості</span>
+                <i className="fas fa-palette"></i>
+                <span>{t('hero.features.creative')}</span>
               </div>
               <div className="hero__feature">
-                <i className="fas fa-headset"></i>
-                <span>24/7 підтримка</span>
+                <i className="fas fa-cogs"></i>
+                <span>{t('hero.features.execution')}</span>
               </div>
             </div>
           </motion.div>
 
           <motion.div className="hero__visual" variants={itemVariants}>
-            <div className="hero__image">
-              <div className="hero__floating-cards">
-                <div className="hero__card hero__card--1">
-                  <i className="fas fa-code"></i>
-                  <span>Веб-розробка</span>
+            <div className="hero__phone">
+              <div className="hero__phone-frame">
+                <div className="hero__phone-screen">
+                  <div className="hero__phone-content">
+                    <div className="hero__app-bar">
+                      <div className="hero__app-item">
+                        <i className="fab fa-google" style={{color: '#4285F4'}}></i>
+                        <span>Google</span>
+                      </div>
+                      <div className="hero__app-item">
+                        <i className="fab fa-amazon" style={{color: '#FF9900'}}></i>
+                        <span>Amazon ads</span>
+                      </div>
+                      <div className="hero__app-item">
+                        <span style={{color: '#F06292'}}>klaviyo</span>
+                      </div>
+                      <div className="hero__app-item">
+                        <i className="fab fa-youtube" style={{color: '#FF0000'}}></i>
+                        <span>YouTube</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="hero__card hero__card--2">
-                  <i className="fas fa-mobile-alt"></i>
-                  <span>Мобільні додатки</span>
-                </div>
-                <div className="hero__card hero__card--3">
-                  <i className="fas fa-chart-line"></i>
-                  <span>Аналітика</span>
-                </div>
-                <div className="hero__card hero__card--4">
-                  <i className="fas fa-shopping-cart"></i>
-                  <span>E-commerce</span>
+              </div>
+            </div>
+            
+            <div className="hero__floating-elements">
+              <div className="hero__element hero__element--strategy">
+                <div className="hero__element-icon">📊</div>
+                <div className="hero__element-content">
+                  <h4>STRATEGY</h4>
+                  <p>Demand Gen &<br/>Demand Capture</p>
                 </div>
               </div>
               
-              <div className="hero__dashboard">
-                <div className="hero__dashboard-header">
-                  <div className="hero__dashboard-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <div className="hero__dashboard-title">Analytics Dashboard</div>
+              <div className="hero__element hero__element--creative">
+                <div className="hero__element-icon">💡</div>
+                <div className="hero__element-content">
+                  <h4>CREATIVE</h4>
+                  <p>All-Day VISUAL<br/>Display, Product Focus</p>
                 </div>
-                <div className="hero__dashboard-content">
-                  <div className="hero__stats">
-                    <div className="hero__stat">
-                      <div className="hero__stat-value">324%</div>
-                      <div className="hero__stat-label">Зростання</div>
-                    </div>
-                    <div className="hero__stat">
-                      <div className="hero__stat-value">1.2M</div>
-                      <div className="hero__stat-label">Користувачі</div>
-                    </div>
-                  </div>
-                  <div className="hero__chart">
-                    <div className="hero__chart-bars">
-                      <div className="hero__chart-bar" style={{height: '20%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '45%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '30%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '60%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '80%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '65%'}}></div>
-                      <div className="hero__chart-bar" style={{height: '90%'}}></div>
-                    </div>
-                  </div>
+              </div>
+              
+              <div className="hero__element hero__element--execution">
+                <div className="hero__element-icon">⚡</div>
+                <div className="hero__element-content">
+                  <h4>EXECUTION</h4>
+                  <p>Campaign Structure<br/>Budgets, Media Mix</p>
                 </div>
               </div>
             </div>

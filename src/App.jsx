@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Layout/Header/Header';
 import Footer from './components/Layout/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -12,22 +13,24 @@ import './styles/main.scss';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 
