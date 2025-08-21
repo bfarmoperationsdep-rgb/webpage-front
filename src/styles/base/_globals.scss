@@ -7,6 +7,18 @@
 
 .main-content {
   flex: 1;
+  margin-top: 0; // Remove header offset since it's handled by body padding
+}
+
+// Секції з правильними відступами
+section {
+  position: relative;
+  z-index: 1;
+  margin-bottom: $spacing-4;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Контейнер

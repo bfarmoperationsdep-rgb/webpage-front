@@ -68,13 +68,16 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-8;
+    margin-top: $spacing-12;
     
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-10;
     }
     
     @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-12;
     }
   }
   
@@ -83,10 +86,15 @@
     padding: $spacing-8;
     text-align: center;
     transition: all $transition-duration-base $transition-timing;
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-lg;
+      transform: translateY(-8px);
+      box-shadow: $shadow-xl;
     }
   }
   
@@ -134,31 +142,46 @@
     list-style: none;
     padding: 0;
     margin: $spacing-4 0 $spacing-6;
+    flex-grow: 1;
     
     li {
       @include flex-center;
       justify-content: flex-start;
+      align-items: flex-start;
       gap: $spacing-2;
-      margin-bottom: $spacing-2;
+      margin-bottom: $spacing-3;
       color: $text-secondary;
       font-size: $font-size-sm;
+      line-height: $line-height-relaxed;
       
       &::before {
         content: '✓';
         color: $success-color;
         font-weight: bold;
         font-size: $font-size-base;
+        flex-shrink: 0;
+        margin-top: 0.1em;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
 
   &__item-link {
-    color: $primary-color;
+    @include btn-base;
+    background-color: $primary-color;
+    color: $white;
     text-decoration: none;
-    font-weight: $font-weight-medium;
+    margin-top: auto;
+    align-self: stretch;
     
     &:hover {
-      text-decoration: underline;
+      background-color: $primary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+      text-decoration: none;
     }
   }
 }

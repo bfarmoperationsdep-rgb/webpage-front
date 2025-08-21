@@ -1,0 +1,406 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.service-page {
+  padding: $spacing-18 0;
+  min-height: 100vh;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-16;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-8;
+    transition: all $transition-duration-base $transition-timing;
+    
+    &:hover {
+      color: $primary-dark;
+      transform: translateX(-4px);
+    }
+  }
+  
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-6;
+    
+    @include respond-to(md) {
+      font-size: $font-size-5xl;
+    }
+  }
+  
+  &__subtitle {
+    font-size: $font-size-xl;
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  &__content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  &__description {
+    margin-bottom: $spacing-12;
+    
+    h2 {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-6;
+      text-align: center;
+    }
+    
+    > p {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+      line-height: $line-height-relaxed;
+      text-align: center;
+      margin-bottom: $spacing-8;
+    }
+  }
+  
+  &__features {
+    background: rgba($primary-color, 0.05);
+    padding: $spacing-8;
+    border-radius: $border-radius-xl;
+    margin-bottom: $spacing-8;
+    border-left: 4px solid $primary-color;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $primary-color;
+      margin-bottom: $spacing-4;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        @include flex-center;
+        justify-content: flex-start;
+        gap: $spacing-3;
+        margin-bottom: $spacing-3;
+        color: $text-primary;
+        
+        &::before {
+          content: '✓';
+          color: $success-color;
+          font-weight: bold;
+          font-size: $font-size-lg;
+          flex-shrink: 0;
+        }
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  &__stats {
+    margin-bottom: $spacing-8;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-6;
+      text-align: center;
+    }
+  }
+  
+  .stats-table {
+    background: $white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    
+    .stats-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: $spacing-4;
+      padding: $spacing-4;
+      align-items: center;
+      
+      &.stats-header {
+        background: $primary-color;
+        color: $white;
+        font-weight: $font-weight-bold;
+      }
+      
+      &:not(.stats-header) {
+        border-bottom: 1px solid $gray-200;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      
+      .positive {
+        color: $success-color;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  
+  &__case-study {
+    background: rgba($secondary-color, 0.05);
+    padding: $spacing-8;
+    border-radius: $border-radius-xl;
+    margin-bottom: $spacing-8;
+    border-left: 4px solid $secondary-color;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $secondary-color;
+      margin-bottom: $spacing-4;
+    }
+    
+    .case-study-card {
+      background: $white;
+      padding: $spacing-6;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-sm;
+      
+      h4 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $text-primary;
+        margin-bottom: $spacing-4;
+      }
+    }
+    
+    .case-metrics {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-4;
+      
+      @include respond-to(md) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .metric {
+      text-align: center;
+      
+      .label {
+        display: block;
+        font-size: $font-size-sm;
+        color: $text-muted;
+        margin-bottom: $spacing-1;
+      }
+      
+      .value {
+        display: block;
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $primary-color;
+        margin-bottom: $spacing-1;
+      }
+      
+      .timeframe {
+        display: block;
+        font-size: $font-size-xs;
+        color: $text-secondary;
+      }
+    }
+  }
+  
+  &__launch-steps {
+    margin-bottom: $spacing-8;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-6;
+      text-align: center;
+    }
+  }
+  
+  .launch-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    
+    @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .launch-step {
+    @include card;
+    padding: $spacing-6;
+    text-align: center;
+    
+    .step-icon {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-4;
+    }
+    
+    .step-content {
+      h4 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $text-primary;
+        margin-bottom: $spacing-3;
+      }
+      
+      p {
+        color: $text-secondary;
+        line-height: $line-height-relaxed;
+      }
+    }
+  }
+  
+  &__process {
+    margin-bottom: $spacing-8;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-6;
+      text-align: center;
+    }
+  }
+  
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .step {
+    @include card;
+    padding: $spacing-6;
+    text-align: center;
+    transition: all $transition-duration-base $transition-timing;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+    }
+    
+    .step-number {
+      @include flex-center;
+      width: 3rem;
+      height: 3rem;
+      background: linear-gradient(135deg, $primary-color, $primary-light);
+      color: $white;
+      border-radius: 50%;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 auto $spacing-4;
+    }
+    
+    h4 {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $text-primary;
+      margin-bottom: $spacing-3;
+    }
+    
+    p {
+      color: $text-secondary;
+      line-height: $line-height-relaxed;
+    }
+  }
+  
+  &__results {
+    background: rgba($success-color, 0.05);
+    padding: $spacing-8;
+    border-radius: $border-radius-xl;
+    margin-bottom: $spacing-8;
+    border-left: 4px solid $success-color;
+    
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $success-color;
+      margin-bottom: $spacing-6;
+      text-align: center;
+    }
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-4;
+    
+    @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .result-item {
+    @include card;
+    padding: $spacing-4;
+    text-align: center;
+    background: $white;
+    
+    h4 {
+      font-size: $font-size-sm;
+      color: $text-muted;
+      margin-bottom: $spacing-2;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    span {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $success-color;
+    }
+  }
+  
+  &__cta {
+    @include card;
+    padding: $spacing-10;
+    text-align: center;
+    background: linear-gradient(135deg, rgba($primary-color, 0.05), rgba($secondary-color, 0.05));
+    border: 2px solid rgba($primary-color, 0.1);
+    
+    h3 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-4;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      color: $text-secondary;
+      margin-bottom: $spacing-8;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

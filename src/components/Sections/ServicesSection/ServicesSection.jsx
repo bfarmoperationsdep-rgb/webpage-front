@@ -12,25 +12,29 @@ const ServicesSection = () => {
       icon: 'fas fa-user-cog',
       title: t('services.items.fullAccount.title'),
       description: t('services.items.fullAccount.description'),
-      features: t('services.items.fullAccount.features')
+      features: t('services.items.fullAccount.features'),
+      link: '/services/full-account-management'
     },
     {
       icon: 'fas fa-chart-line',
       title: t('services.items.advertising.title'),
       description: t('services.items.advertising.description'),
-      features: t('services.items.advertising.features')
+      features: t('services.items.advertising.features'),
+      link: '/services/amazon-advertising'
     },
     {
       icon: 'fas fa-search',
       title: t('services.items.optimization.title'),
       description: t('services.items.optimization.description'),
-      features: t('services.items.optimization.features')
+      features: t('services.items.optimization.features'),
+      link: '/services/product-optimization'
     },
     {
       icon: 'fas fa-rocket',
       title: t('services.items.launching.title'),
       description: t('services.items.launching.description'),
-      features: t('services.items.launching.features')
+      features: t('services.items.launching.features'),
+      link: '/services/launching-on-amazon'
     }
   ];
 
@@ -76,7 +80,7 @@ const ServicesSection = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <Link to="/services" className="services__item-link">
+              <Link to={service.link} className="services__item-link">
                 Learn More →
               </Link>
             </motion.div>

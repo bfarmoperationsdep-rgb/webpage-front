@@ -60,11 +60,14 @@
     gap: $spacing-12;
     align-items: center;
     width: 100%;
-    padding: $spacing-24 0;
+    padding: $spacing-16 0 $spacing-24;
+    position: relative;
+    z-index: 2;
     
     @include respond-to(lg) {
       grid-template-columns: 1fr 1fr;
-      gap: $spacing-16;
+      gap: $spacing-20;
+      padding: $spacing-20 0 $spacing-32;
     }
   }
   
@@ -241,41 +244,71 @@
   // Floating elements
   &__floating-elements {
     position: absolute;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    
+    @include respond-to(lg) {
+      width: 110%;
+      left: -5%;
+    }
   }
   
   &__element {
     position: absolute;
     background: rgba($white, 0.95);
     border-radius: $border-radius-xl;
-    padding: $spacing-6;
+    padding: $spacing-4;
     box-shadow: $shadow-lg;
     backdrop-filter: blur(10px);
     border: 1px solid rgba($white, 0.2);
-    min-width: 200px;
+    min-width: 160px;
+    max-width: 180px;
+    z-index: 1;
+    
+    @include respond-to(lg) {
+      padding: $spacing-6;
+      min-width: 200px;
+      max-width: 220px;
+    }
     
     &--strategy {
-      top: 10%;
-      right: -20%;
-      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+      top: 5%;
+      right: 5%;
+      background: linear-gradient(135deg, rgba($primary-light, 0.1), rgba($primary-color, 0.1));
       animation: float 6s ease-in-out infinite;
+      
+      @include respond-to(lg) {
+        top: 10%;
+        right: -10%;
+      }
     }
     
     &--creative {
-      top: 45%;
-      left: -25%;
-      background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+      top: 50%;
+      left: 5%;
+      background: linear-gradient(135deg, rgba($secondary-light, 0.1), rgba($secondary-color, 0.1));
       animation: float 8s ease-in-out infinite reverse;
+      
+      @include respond-to(lg) {
+        top: 45%;
+        left: -15%;
+      }
     }
     
     &--execution {
-      bottom: 15%;
-      right: -15%;
-      background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+      bottom: 10%;
+      right: 10%;
+      background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($primary-dark, 0.1));
       animation: float 10s ease-in-out infinite;
+      
+      @include respond-to(lg) {
+        bottom: 15%;
+        right: -5%;
+      }
     }
   }
   

@@ -9,6 +9,10 @@ import About from './pages/About/About';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Blog from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
+import FullAccountManagement from './pages/Services/FullAccountManagement';
+import AmazonAdvertising from './pages/Services/AmazonAdvertising';
+import ProductOptimization from './pages/Services/ProductOptimization';
+import LaunchingOnAmazon from './pages/Services/LaunchingOnAmazon';
 import './styles/main.scss';
 
 function App() {
@@ -21,6 +25,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/full-account-management" element={<FullAccountManagement />} />
+              <Route path="/services/amazon-advertising" element={<AmazonAdvertising />} />
+              <Route path="/services/product-optimization" element={<ProductOptimization />} />
+              <Route path="/services/launching-on-amazon" element={<LaunchingOnAmazon />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />
