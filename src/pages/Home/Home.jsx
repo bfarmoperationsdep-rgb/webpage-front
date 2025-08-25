@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../../components/Sections/HeroSection/HeroSection';
-import FeaturesSection from '../../components/Sections/FeaturesSection/FeaturesSection';
+import ToolsSection from '../../components/Sections/ToolsSection/ToolsSection';
+import WhyBFarmSection from '../../components/Sections/WhyBFarmSection/WhyBFarmSection';
 import ServicesSection from '../../components/Sections/ServicesSection/ServicesSection';
 import StatsSection from '../../components/Sections/StatsSection/StatsSection';
 import TestimonialsSection from '../../components/Sections/TestimonialsSection/TestimonialsSection';
@@ -8,15 +9,14 @@ import PortfolioSection from '../../components/Sections/PortfolioSection/Portfol
 import TeamSection from '../../components/Sections/TeamSection/TeamSection';
 import BlogSection from '../../components/Sections/BlogSection/BlogSection';
 import CTASection from '../../components/Sections/CTASection/CTASection';
-import ClientsSection from '../../components/Sections/ClientsSection/ClientsSection';
 import './Home.scss';
 
 const Home = () => {
   return (
     <div className="home">
       <HeroSection />
-      <ClientsSection />
-      <FeaturesSection />
+      <ToolsSection />
+      <WhyBFarmSection />
       <ServicesSection />
       <StatsSection />
       <PortfolioSection />
