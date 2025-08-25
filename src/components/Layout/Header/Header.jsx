@@ -39,10 +39,12 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="container">
         <div className="header__content">
-          {/* Logo */}
-          <Link to="/" className="header__logo">
-            <div className="header__logo-brand">
+          {/* Enhanced Logo */}
+          <Link to="/" className="header__logo hover-lift">
+            <div className="header__logo-icon">
               <span className="header__logo-b">B</span>
+            </div>
+            <div className="header__logo-brand">
               <span className="header__logo-farm">Farm</span>
             </div>
           </Link>

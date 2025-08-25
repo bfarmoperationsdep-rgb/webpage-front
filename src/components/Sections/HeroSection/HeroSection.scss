@@ -17,6 +17,18 @@
     bottom: 0;
     opacity: 0.1;
   }
+
+  &__animated-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-45deg, $primary-color, $secondary-color, $secondary-light, $primary-color);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    opacity: 0.15;
+  }
   
   &__shapes {
     position: absolute;
@@ -94,6 +106,15 @@
     
     @include respond-to(lg) {
       font-size: $font-size-6xl;
+    }
+
+    &-gradient {
+      background: linear-gradient(135deg, $secondary-light 0%, $secondary-color 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: gradientText 3s ease-in-out infinite alternate;
     }
   }
   
@@ -510,5 +531,57 @@
   50% {
     opacity: 0.7;
     transform: scale(1.1);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+// Hover effects for buttons
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-arrow {
+    margin-left: $spacing-2;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+}
+
+// General hover lift effect
+.hover-lift {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   }
 }

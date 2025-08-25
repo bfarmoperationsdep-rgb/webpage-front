@@ -1,3 +1,6 @@
+// Імпорт Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 // Глобальні стилі
 .app {
   min-height: 100vh;
@@ -45,7 +48,7 @@ section {
 
 // Responsive utilities
 .hidden-mobile {
-  @media (max-width: $breakpoint-md - 1px) {
+  @media (max-width: #{$breakpoint-md - 1px}) {
     display: none !important;
   }
 }
@@ -63,7 +66,7 @@ section {
 }
 
 .visible-desktop-only {
-  @media (max-width: $breakpoint-md - 1px) {
+  @media (max-width: #{$breakpoint-md - 1px}) {
     display: none !important;
   }
 }
@@ -172,5 +175,67 @@ section {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+// Сучасні ефекти з Figma проекту
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, $bfarm-green, $bfarm-light-green, $bfarm-accent-green, $bfarm-green);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba($bfarm-green, 0.2);
+  }
+}
+
+// Автоматичний marquee ефект для логотипів
+.marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// Плавний fade-in для секцій
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

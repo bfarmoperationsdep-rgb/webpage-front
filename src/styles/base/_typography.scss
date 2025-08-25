@@ -1,8 +1,11 @@
-// Заголовки
+// Заголовки з сучасними шрифтами
 h1, .h1 {
+  font-family: $font-heading;
   font-size: $font-size-5xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
+  letter-spacing: -0.02em;
+  color: $text-primary;
   
   @include respond-to(md) {
     font-size: $font-size-6xl;
@@ -14,9 +17,12 @@ h1, .h1 {
 }
 
 h2, .h2 {
+  font-family: $font-heading;
   font-size: $font-size-3xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
+  letter-spacing: -0.01em;
+  color: $text-primary;
   
   @include respond-to(md) {
     font-size: $font-size-4xl;
@@ -28,9 +34,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
+  font-family: $font-heading;
   font-size: $font-size-2xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-snug;
+  color: $text-primary;
   
   @include respond-to(md) {
     font-size: $font-size-3xl;
@@ -38,9 +46,11 @@ h3, .h3 {
 }
 
 h4, .h4 {
+  font-family: $font-heading;
   font-size: $font-size-xl;
   font-weight: $font-weight-semibold;
   line-height: $line-height-snug;
+  color: $text-primary;
   
   @include respond-to(md) {
     font-size: $font-size-2xl;
@@ -151,3 +161,42 @@ small, .small {
 .leading-normal { line-height: $line-height-normal; }
 .leading-relaxed { line-height: $line-height-relaxed; }
 .leading-loose { line-height: $line-height-loose; }
+
+// Градієнтні тексти
+.text-gradient {
+  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-light-green 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+.text-gradient-animated {
+  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-light-green 50%, $bfarm-accent-green 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientText 3s ease-in-out infinite alternate;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+// Сучасні заголовки з градієнтами
+.heading-gradient {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, $text-primary 0%, $bfarm-green 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

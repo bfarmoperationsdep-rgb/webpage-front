@@ -28,7 +28,7 @@
   
   &__logo {
     @include flex-center;
-    gap: $spacing-3;
+    gap: $spacing-2;
     text-decoration: none;
     color: $text-primary;
     font-weight: $font-weight-bold;
@@ -36,38 +36,60 @@
     transition: all $transition-duration-base $transition-timing;
     
     &:hover {
-      color: $primary-color;
-      transform: scale(1.05);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &__logo-icon {
+    @include flex-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    transition: all $transition-duration-base $transition-timing;
+    
+    .header__logo:hover & {
+      transform: rotate(5deg) scale(1.1);
+      box-shadow: 0 6px 20px rgba($primary-color, 0.4);
+    }
+    
+    @include respond-to(lg) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  
+  &__logo-b {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-extrabold;
+    color: $white;
+    line-height: 1;
+    
+    @include respond-to(lg) {
+      font-size: $font-size-2xl;
     }
   }
   
   &__logo-brand {
-    @include flex-center;
+    @include flex-column;
+    align-items: flex-start;
     gap: 0;
   }
   
-  &__logo-b {
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-extrabold;
-    color: $primary-color;
-    background: $primary-color;
-    color: $white;
-    padding: 0.2em 0.4em;
-    border-radius: $border-radius-md;
-    margin-right: 0.1em;
-    
-    @include respond-to(lg) {
-      font-size: $font-size-4xl;
-    }
-  }
-  
   &__logo-farm {
-    font-size: $font-size-3xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
-    color: $primary-color;
+    color: $text-primary;
+    line-height: 1;
+    transition: color $transition-duration-base $transition-timing;
+    
+    .header__logo:hover & {
+      color: $primary-color;
+    }
     
     @include respond-to(lg) {
-      font-size: $font-size-4xl;
+      font-size: $font-size-3xl;
     }
   }
   

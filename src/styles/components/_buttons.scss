@@ -1,21 +1,86 @@
 @use 'sass:color';
 
-// Базові стилі кнопок
+// Базові стилі кнопок з сучасним дизайном
 .btn {
   @include btn-base;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
-// Варіанти кнопок
+// Варіанти кнопок з градієнтами
 .btn-primary {
-  @include btn-primary;
+  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-light-green 100%);
+  color: $white;
+  border: none;
+  box-shadow: 0 4px 15px rgba($bfarm-green, 0.3);
+  
+  &:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba($bfarm-green, 0.4);
+    transform: translateY(-3px);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
 }
 
 .btn-secondary {
-  @include btn-secondary;
+  background: $white;
+  color: $bfarm-green;
+  border: 2px solid $bfarm-green;
+  
+  &:hover:not(:disabled) {
+    background: $bfarm-green;
+    color: $white;
+    border-color: $bfarm-green;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $bfarm-green;
+  border: 1px solid rgba($bfarm-green, 0.3);
+  
+  &:hover:not(:disabled) {
+    background: rgba($bfarm-green, 0.1);
+    border-color: $bfarm-green;
+    color: $bfarm-green;
+  }
 }
 
 .btn-ghost {
-  @include btn-ghost;
+  background: transparent;
+  color: $text-primary;
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background: rgba($bfarm-green, 0.1);
+    color: $bfarm-green;
+  }
 }
 
 .btn-success {
@@ -177,24 +242,69 @@
   }
 }
 
-// Floating Action Button
+// Floating Action Button з сучасним дизайном
 .fab {
-  @include btn-primary;
   position: fixed;
   bottom: $spacing-6;
   right: $spacing-6;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  box-shadow: $shadow-lg;
+  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-light-green 100%);
+  color: $white;
+  border: none;
+  box-shadow: 0 8px 32px rgba($bfarm-green, 0.3);
   z-index: $z-index-fixed;
+  @include flex-center;
+  transition: all 0.3s ease;
   
   &:hover {
-    transform: scale(1.1);
-    box-shadow: $shadow-xl;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 12px 40px rgba($bfarm-green, 0.4);
+  }
+  
+  &:active {
+    transform: scale(1.05);
   }
   
   .icon {
     font-size: 1.5rem;
+  }
+}
+
+// Додаткові сучасні стилі
+.btn-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.btn-gradient-animated {
+  background: linear-gradient(-45deg, $bfarm-green, $bfarm-light-green, $bfarm-accent-green, $bfarm-green);
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+  color: $white;
+  border: none;
+  
+  &:hover:not(:disabled) {
+    animation-duration: 1.5s;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

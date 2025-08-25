@@ -40,11 +40,46 @@ const HeroSection = () => {
 
   return (
     <section className="hero">
+      {/* Enhanced Animated Background */}
       <div className="hero__background">
+        <div className="hero__animated-gradient"></div>
         <div className="hero__shapes">
-          <div className="hero__shape hero__shape--1"></div>
-          <div className="hero__shape hero__shape--2"></div>
-          <div className="hero__shape hero__shape--3"></div>
+          <motion.div 
+            className="hero__shape hero__shape--1"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          ></motion.div>
+          <motion.div 
+            className="hero__shape hero__shape--2"
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          ></motion.div>
+          <motion.div 
+            className="hero__shape hero__shape--3"
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          ></motion.div>
         </div>
       </div>
 
@@ -56,30 +91,51 @@ const HeroSection = () => {
           animate="visible"
         >
           <motion.div className="hero__text" variants={itemVariants}>
-            <h1 className="hero__title">
+            <motion.h1 
+              className="hero__title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               {t('hero.title')}
-            </h1>
+              <br />
+              <span className="hero__title-gradient">
+                {t('hero.titleHighlight')}
+              </span>
+            </motion.h1>
             
-            <h2 className="hero__subtitle">
-              {t('hero.subtitle')}
-            </h2>
-            
-            <p className="hero__description">
+            <motion.p 
+              className="hero__description"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               {t('hero.description')}
-            </p>
+            </motion.p>
 
-            <div className="hero__actions">
-              <Link to="/contact" className="btn btn-primary btn-lg">
+            <motion.div 
+              className="hero__actions"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
                 <i className="fas fa-rocket"></i>
                 {t('hero.startProject')}
+                <i className="fas fa-arrow-right btn-arrow"></i>
               </Link>
-              <Link to="/portfolio" className="btn btn-secondary btn-lg">
+              <Link to="/portfolio" className="btn btn-secondary btn-lg hover-lift">
                 <i className="fas fa-play-circle"></i>
                 {t('hero.watchWork')}
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="hero__features">
+            <motion.div 
+              className="hero__features"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
               <div className="hero__feature">
                 <i className="fas fa-chart-line"></i>
                 <span>{t('hero.features.strategy')}</span>
@@ -92,7 +148,7 @@ const HeroSection = () => {
                 <i className="fas fa-cogs"></i>
                 <span>{t('hero.features.execution')}</span>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div className="hero__visual" variants={itemVariants}>
@@ -210,12 +266,17 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      <div className="hero__scroll-indicator">
+      {/* Enhanced Scroll indicator */}
+      <motion.div 
+        className="hero__scroll-indicator"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
         <div className="hero__scroll-mouse">
           <div className="hero__scroll-wheel"></div>
         </div>
-        <span>Scroll</span>
-      </div>
+        <span>{t('hero.scroll')}</span>
+      </motion.div>
     </section>
   );
 };
