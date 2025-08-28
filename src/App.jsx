@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Layout/Header/Header';
 import Footer from './components/Layout/Footer/Footer';
@@ -15,10 +15,23 @@ import ProductOptimization from './pages/Services/ProductOptimization';
 import LaunchingOnAmazon from './pages/Services/LaunchingOnAmazon';
 import './styles/main.scss';
 
+// Компонент для автоматичного скролу вгору при зміні роуту
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Скрол вгору при зміні сторінки
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="app">
           <Header />
           <main className="main-content">

@@ -53,7 +53,7 @@ const translations = {
           google: 'Google',
           amazon: 'Amazon ads',
           klaviyo: 'klaviyo',
-          youtube: 'YouTube'
+          telegram: 'Telegram'
         }
       },
       floatingCards: {
@@ -379,7 +379,7 @@ const translations = {
           google: 'Google',
           amazon: 'Amazon реклама',
           klaviyo: 'klaviyo',
-          youtube: 'YouTube'
+          telegram: 'Telegram'
         }
       },
       floatingCards: {

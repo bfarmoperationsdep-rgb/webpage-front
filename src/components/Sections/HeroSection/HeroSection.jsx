@@ -209,8 +209,8 @@ const HeroSection = () => {
                     <span className="klaviyo-logo">{t('hero.dashboard.platforms.klaviyo')}</span>
                   </div>
                   <div className="hero__platform">
-                    <i className="fab fa-youtube"></i>
-                    <span>{t('hero.dashboard.platforms.youtube')}</span>
+                    <i className="fab fa-telegram"></i>
+                    <span>{t('hero.dashboard.platforms.telegram')}</span>
                   </div>
                 </div>
               </div>
