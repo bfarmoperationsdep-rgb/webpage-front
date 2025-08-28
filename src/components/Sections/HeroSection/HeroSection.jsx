@@ -206,9 +206,6 @@ const HeroSection = () => {
                     <span>{t('hero.dashboard.platforms.amazon')}</span>
                   </div>
                   <div className="hero__platform">
-                    <span className="klaviyo-logo">{t('hero.dashboard.platforms.klaviyo')}</span>
-                  </div>
-                  <div className="hero__platform">
                     <i className="fab fa-telegram"></i>
                     <span>{t('hero.dashboard.platforms.telegram')}</span>
                   </div>
@@ -265,6 +262,11 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* FAB кнопка Telegram без фону як просив користувач */}
+      <button className="fab" aria-label="Telegram">
+        <i className="fab fa-telegram"></i>
+      </button>
 
       {/* Enhanced Scroll indicator */}
       <motion.div 

@@ -52,7 +52,6 @@ const translations = {
         platforms: {
           google: 'Google',
           amazon: 'Amazon ads',
-          klaviyo: 'klaviyo',
           telegram: 'Telegram'
         }
       },

@@ -242,7 +242,7 @@
   }
 }
 
-// Floating Action Button з сучасним дизайном
+// Floating Action Button без фону (як просив користувач)
 .fab {
   position: fixed;
   bottom: $spacing-6;
@@ -250,10 +250,10 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-light-green 100%);
-  color: $white;
+  background: transparent;
+  color: $bfarm-green;
   border: none;
-  box-shadow: 0 8px 32px rgba($bfarm-green, 0.3);
+  box-shadow: none;
   z-index: $z-index-fixed;
   @include flex-center;
   transition: all 0.3s ease;
