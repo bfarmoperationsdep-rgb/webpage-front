@@ -245,26 +245,37 @@
   &__dashboard {
     background: rgba($white, 0.98);
     border-radius: $border-radius-xl;
-    padding: $spacing-4;
+    padding: $spacing-3;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
     border: 1px solid rgba($white, 0.3);
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     margin: 0 auto;
     color: $text-primary;
     
+    // Мобільні покращення
+    @media (max-width: 359px) {
+      padding: $spacing-2;
+      max-width: 260px;
+    }
+    
     @include respond-to(sm) {
+      padding: $spacing-4;
+      max-width: 320px;
+    }
+    
+    @include respond-to(md) {
       padding: $spacing-6;
       max-width: 380px;
     }
     
-    @include respond-to(md) {
+    @include respond-to(lg) {
       padding: $spacing-8;
       max-width: 420px;
     }
     
-    @include respond-to(lg) {
+    @include respond-to(xl) {
       padding: $spacing-10;
       max-width: 500px;
     }

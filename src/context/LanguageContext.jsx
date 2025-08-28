@@ -40,6 +40,35 @@ const translations = {
         strategy: 'Data × Creativity',
         creative: 'Rock-solid Processes', 
         execution: 'Category Leaders'
+      },
+      dashboard: {
+        title: 'Amazon Growth Dashboard',
+        status: 'Live',
+        chartTitle: 'Monthly Performance',
+        metrics: {
+          growth: 'Growth',
+          revenue: 'Revenue'
+        },
+        platforms: {
+          google: 'Google',
+          amazon: 'Amazon ads',
+          klaviyo: 'klaviyo',
+          youtube: 'YouTube'
+        }
+      },
+      floatingCards: {
+        strategy: {
+          title: 'STRATEGY',
+          description: 'Demand Gen &<br/>Demand Capture'
+        },
+        creative: {
+          title: 'CREATIVE',
+          description: 'All-Day VISUAL<br/>Display, Product Focus'
+        },
+        execution: {
+          title: 'EXECUTION',
+          description: 'Campaign Structure<br/>Budgets, Media Mix'
+        }
       }
     },
     
@@ -133,6 +162,178 @@ const translations = {
       switch: 'Switch Language',
       en: 'English',
       uk: 'Українська'
+    },
+
+    // Services Page
+    servicesPage: {
+      title: 'Our Amazon Services',
+      description: 'Complete Amazon management solutions to grow your business',
+      services: {
+        fullAccount: {
+          title: 'Full Account Management',
+          description: 'Complete end-to-end Amazon account management with dedicated account managers.',
+          features: ['Account Setup', 'Daily Monitoring', '24/7 Support', 'Performance Reports']
+        },
+        advertising: {
+          title: 'Amazon Advertising/Management',
+          description: 'Professional Amazon PPC management to maximize your advertising ROI.',
+          features: ['PPC Campaign Setup', 'Keyword Research', 'Bid Management', 'Performance Optimization']
+        },
+        optimization: {
+          title: 'Product/Page Optimization',
+          description: 'Optimize your product listings for maximum visibility and conversions.',
+          features: ['Listing Optimization', 'A+ Content', 'SEO Enhancement', 'Conversion Rate Optimization']
+        },
+        launching: {
+          title: 'Launching/on Amazon',
+          description: 'Strategic product launch services to ensure successful market entry.',
+          features: ['Launch Strategy', 'Market Research', 'Competitor Analysis', 'Pre-launch Preparation']
+        },
+        design: {
+          title: 'DESIGN Suite',
+          description: 'Complete design services for your Amazon presence.',
+          features: ['Product Photography', 'A+ Content Design', 'Storefront Design', 'Brand Assets']
+        },
+        consulting: {
+          title: 'Consulting',
+          description: 'Expert Amazon consulting to guide your business strategy.',
+          features: ['Strategic Planning', 'Market Analysis', 'Growth Strategies', 'Expert Guidance']
+        },
+        cataloging: {
+          title: 'Cataloging',
+          description: 'Professional product cataloging and inventory management.',
+          features: ['Product Catalog Setup', 'Inventory Management', 'SKU Organization', 'Data Management']
+        },
+        training: {
+          title: 'Training',
+          description: 'Comprehensive training programs for your team.',
+          features: ['Amazon Best Practices', 'Team Training', 'Skill Development', 'Ongoing Education']
+        }
+      }
+    },
+
+    // Service Pages Details
+    servicePages: {
+      fullAccount: {
+        title: 'Full Account Management',
+        subtitle: 'We remove the grunt work, giving you back time for R&D and brand building.',
+        heading: '360° Amazon Care',
+        description: '360° care: purchasing & FBA logistics, KPI‑driven stock management, Seller Central / Brand Registry admin.',
+        featuresTitle: 'What\'s Included:',
+        features: [
+          'Automated SOPs → zero errors and full transparency in Slack + Looker Studio',
+          'Average client net‑profit uplift after 6 months: +42%',
+          'Daily account monitoring and optimization',
+          'Inventory management and forecasting',
+          'Performance reporting and analytics'
+        ],
+        trackRecordTitle: 'Our Track Record',
+        statsHeaders: ['KPI', 'Before BFarm', 'After 6 mo.', 'Δ'],
+        stats: [
+          ['Revenue', '$120K/mo', '$170K/mo', '+42%'],
+          ['Sessions', '58K', '78K', '+34%'],
+          ['Avg. CPC', '$1.18', '$0.94', '–20%']
+        ]
+      },
+      advertising: {
+        title: 'Amazon Advertising Management',
+        subtitle: 'We don\'t "run ads"—we hunt profit. We blend rule‑based bid‑management with an ML conversion‑forecast model.',
+        heading: 'Advanced PPC Management',
+        description: 'All formats covered: Sponsored Products, Brands, Display, DSP.',
+        approachTitle: 'Our Approach:',
+        features: [
+          'In‑house bid‑management scripts cut CPC by up to –25% without losing traffic',
+          'DSP retargeting wins back up to 14% of "lost" visitors',
+          'ML-powered conversion forecasting',
+          'Rule-based bid optimization',
+          'Multi-format campaign management'
+        ],
+        caseStudyTitle: 'Case Study',
+        caseStudyBrand: 'Pet Supplements Brand',
+        roasLabel: 'ROAS Improvement',
+        roasValue: '2.8 → 5.1',
+        roasTime: 'in 3 months',
+        tacosLabel: 'TACoS Reduction', 
+        tacosValue: '18% → 11%',
+        tacosTime: 'sustained',
+        ctaTitle: 'Ready to Optimize Your Amazon Ads?',
+        ctaText: 'Let\'s turn your advertising spend into profitable growth.',
+        ctaButton: 'Start Optimizing'
+      },
+      optimization: {
+        title: 'Product Page Optimization',
+        subtitle: 'Data‑Driven SEO: Brand Analytics + Helium 10 → 100/100 relevance.',
+        heading: 'Optimization That Converts',
+        description: 'Copy that sells: Hook—Problem—Solution—Proof formula.',
+        processTitle: 'Our Process:',
+        features: [
+          'Copy that sells: Hook—Problem—Solution—Proof formula',
+          'Open A/B panel shows you which tweaks deliver +15‑30% CVR',
+          'Keyword research and optimization',
+          'Image and video optimization',
+          'A+ Content creation',
+          'Competitor analysis'
+        ],
+        optimizationTitle: 'Optimization Process',
+        steps: [
+          {
+            title: 'Audit & Analysis',
+            description: 'Complete listing audit with competitor analysis'
+          },
+          {
+            title: 'Keyword Research',
+            description: 'Data-driven keyword strategy using Brand Analytics'
+          },
+          {
+            title: 'Content Optimization',
+            description: 'Hook—Problem—Solution—Proof copywriting'
+          },
+          {
+            title: 'A/B Testing',
+            description: 'Continuous testing for +15‑30% CVR improvement'
+          }
+        ],
+        ctaTitle: 'Ready to Optimize Your Listings?',
+        ctaText: 'Let\'s maximize your conversion rates and visibility.',
+        ctaButton: 'Optimize Now'
+      },
+      launching: {
+        title: 'Launching on Amazon',
+        subtitle: '"Launch & Lead" package: Niche analysis & white‑space strategy → we dodge the "red ocean."',
+        heading: 'Strategic Product Launch',
+        packageTitle: '"Launch & Lead" Package:',
+        steps: [
+          {
+            title: 'Positioning & Price-Point Selection',
+            description: 'Strategic market positioning for maximum impact'
+          },
+          {
+            title: 'Creation of Killer Listing, EBC and Video',
+            description: 'Complete content creation optimized for conversions'
+          },
+          {
+            title: 'Kick-off Ads (SP + SB + SD) + "White-hat" Review Plan',
+            description: 'Multi-format advertising launch with review strategy'
+          }
+        ],
+        featuresTitle: 'What You Get:',
+        features: [
+          'Step‑by‑step 0‑90 day plan: from listings to first review',
+          'Amazon\'s Choice guaranteed or the service fee is refunded',
+          'Niche analysis and competition research',
+          'White-space opportunity identification',
+          'Complete launch strategy and execution'
+        ],
+        resultsTitle: 'Average Results',
+        results: [
+          { label: 'Break-even', value: 'Day 38' },
+          { label: 'Revenue', value: '$100K in first 90 days' },
+          { label: 'Success Rate', value: 'Amazon\'s Choice guarantee' }
+        ],
+        ctaTitle: 'Ready to Launch Successfully?',
+        ctaText: 'Let\'s create a winning launch strategy for your product.',
+        ctaButton: 'Plan My Launch'
+      }
     }
   },
   
@@ -165,6 +366,35 @@ const translations = {
         strategy: 'Дані × Креативність',
         creative: 'Надійні процеси',
         execution: 'Лідери категорій'
+      },
+      dashboard: {
+        title: 'Панель зростання Amazon',
+        status: 'Онлайн',
+        chartTitle: 'Місячна продуктивність',
+        metrics: {
+          growth: 'Зростання',
+          revenue: 'Доходи'
+        },
+        platforms: {
+          google: 'Google',
+          amazon: 'Amazon реклама',
+          klaviyo: 'klaviyo',
+          youtube: 'YouTube'
+        }
+      },
+      floatingCards: {
+        strategy: {
+          title: 'СТРАТЕГІЯ',
+          description: 'Генерація попиту і<br/>захоплення попиту'
+        },
+        creative: {
+          title: 'КРЕАТИВ',
+          description: 'Цілодобовий ВІЗУАЛ<br/>Display, фокус на продукт'
+        },
+        execution: {
+          title: 'ВИКОНАННЯ',
+          description: 'Структура кампаній<br/>Бюджети, медіа мікс'
+        }
       }
     },
     
@@ -258,6 +488,178 @@ const translations = {
       switch: 'Змінити мову',
       en: 'English',
       uk: 'Українська'
+    },
+
+    // Services Page
+    servicesPage: {
+      title: 'Наші послуги Amazon',
+      description: 'Комплексні рішення для управління Amazon для розвитку вашого бізнесу',
+      services: {
+        fullAccount: {
+          title: 'Повне управління аккаунтом',
+          description: 'Комплексне управління аккаунтом Amazon від початку до кінця з присвяченими менеджерами.',
+          features: ['Налаштування аккаунту', 'Щоденний моніторинг', 'Підтримка 24/7', 'Звіти про продуктивність']
+        },
+        advertising: {
+          title: 'Управління Amazon рекламою',
+          description: 'Професійне управління Amazon PPC для максимізації ROI вашої реклами.',
+          features: ['Налаштування PPC кампаній', 'Дослідження ключових слів', 'Управління ставками', 'Оптимізація продуктивності']
+        },
+        optimization: {
+          title: 'Оптимізація продукту/сторінки',
+          description: 'Оптимізуйте ваші лістинги продуктів для максимальної видимості та конверсій.',
+          features: ['Оптимізація лістингів', 'A+ Контент', 'SEO покращення', 'Оптимізація конверсій']
+        },
+        launching: {
+          title: 'Запуск на Amazon',
+          description: 'Стратегічні послуги запуску продукту для забезпечення успішного входу на ринок.',
+          features: ['Стратегія запуску', 'Дослідження ринку', 'Аналіз конкурентів', 'Підготовка до запуску']
+        },
+        design: {
+          title: 'Дизайн пакет',
+          description: 'Повні послуги дизайну для вашої присутності на Amazon.',
+          features: ['Фотографія продуктів', 'Дизайн A+ контенту', 'Дизайн магазину', 'Брендові активи']
+        },
+        consulting: {
+          title: 'Консалтинг',
+          description: 'Експертний консалтинг Amazon для керівництва стратегією вашого бізнесу.',
+          features: ['Стратегічне планування', 'Аналіз ринку', 'Стратегії зростання', 'Експертне керівництво']
+        },
+        cataloging: {
+          title: 'Каталогізація',
+          description: 'Професійна каталогізація продуктів та управління інвентарем.',
+          features: ['Налаштування каталогу продуктів', 'Управління інвентарем', 'Організація SKU', 'Управління даними']
+        },
+        training: {
+          title: 'Навчання',
+          description: 'Комплексні програми навчання для вашої команди.',
+          features: ['Кращі практики Amazon', 'Навчання команди', 'Розвиток навичок', 'Постійна освіта']
+        }
+      }
+    },
+
+    // Service Pages Details
+    servicePages: {
+      fullAccount: {
+        title: 'Повне управління аккаунтом',
+        subtitle: 'Ми усуваємо рутинну роботу, повертаючи вам час для R&D та побудови бренду.',
+        heading: '360° турбота Amazon',
+        description: '360° турбота: закупівлі та FBA логістика, управління запасами на основі KPI, адміністрування Seller Central / Brand Registry.',
+        featuresTitle: 'Що включено:',
+        features: [
+          'Автоматизовані SOP → нуль помилок та повна прозорість у Slack + Looker Studio',
+          'Середнє підвищення чистого прибутку клієнта через 6 місяців: +42%',
+          'Щоденний моніторинг та оптимізація аккаунту',
+          'Управління інвентарем та прогнозування',
+          'Звітність про продуктивність та аналітика'
+        ],
+        trackRecordTitle: 'Наш послужний список',
+        statsHeaders: ['KPI', 'До BFarm', 'Після 6 міс.', 'Δ'],
+        stats: [
+          ['Доходи', '$120K/міс', '$170K/міс', '+42%'],
+          ['Сесії', '58K', '78K', '+34%'],
+          ['Сер. CPC', '$1.18', '$0.94', '–20%']
+        ]
+      },
+      advertising: {
+        title: 'Управління Amazon рекламою',
+        subtitle: 'Ми не просто "ведемо рекламу" — ми полюємо на прибуток. Ми поєднуємо управління ставками на основі правил з ML моделлю прогнозування конверсій.',
+        heading: 'Просунуте управління PPC',
+        description: 'Всі формати покриті: Sponsored Products, Brands, Display, DSP.',
+        approachTitle: 'Наш підхід:',
+        features: [
+          'Власні скрипти управління ставками знижують CPC до –25% без втрати трафіку',
+          'DSP ретаргетинг повертає до 14% "втрачених" відвідувачів',
+          'ML-прогнозування конверсій',
+          'Оптимізація ставок на основі правил',
+          'Управління кампаніями різних форматів'
+        ],
+        caseStudyTitle: 'Кейс',
+        caseStudyBrand: 'Бренд добавок для тварин',
+        roasLabel: 'Покращення ROAS',
+        roasValue: '2.8 → 5.1',
+        roasTime: 'за 3 місяці',
+        tacosLabel: 'Зниження TACoS', 
+        tacosValue: '18% → 11%',
+        tacosTime: 'стабільно',
+        ctaTitle: 'Готові оптимізувати рекламу Amazon?',
+        ctaText: 'Давайте перетворимо ваші витрати на рекламу в прибутковий ріст.',
+        ctaButton: 'Почати оптимізацію'
+      },
+      optimization: {
+        title: 'Оптимізація сторінки продукту',
+        subtitle: 'SEO на основі даних: Brand Analytics + Helium 10 → 100/100 релевантність.',
+        heading: 'Оптимізація що конвертує',
+        description: 'Копірайт що продає: Хук—Проблема—Рішення—Доказ формула.',
+        processTitle: 'Наш процес:',
+        features: [
+          'Копірайт що продає: Хук—Проблема—Рішення—Доказ формула',
+          'Відкрита A/B панель показує які зміни дають +15‑30% CVR',
+          'Дослідження та оптимізація ключових слів',
+          'Оптимізація зображень та відео',
+          'Створення A+ контенту',
+          'Аналіз конкурентів'
+        ],
+        optimizationTitle: 'Процес оптимізації',
+        steps: [
+          {
+            title: 'Аудит та аналіз',
+            description: 'Повний аудит лістингу з аналізом конкурентів'
+          },
+          {
+            title: 'Дослідження ключових слів',
+            description: 'Стратегія ключових слів на основі даних з Brand Analytics'
+          },
+          {
+            title: 'Оптимізація контенту',
+            description: 'Копірайтинг за формулою Хук—Проблема—Рішення—Доказ'
+          },
+          {
+            title: 'A/B тестування',
+            description: 'Постійне тестування для покращення CVR на +15‑30%'
+          }
+        ],
+        ctaTitle: 'Готові оптимізувати ваші лістинги?',
+        ctaText: 'Давайте максимізуємо ваші конверсії та видимість.',
+        ctaButton: 'Оптимізувати зараз'
+      },
+      launching: {
+        title: 'Запуск на Amazon',
+        subtitle: 'Пакет "Запуск і лідерство": Аналіз ніші та стратегія білих плям → ми уникаємо "червоного океану."',
+        heading: 'Стратегічний запуск продукту',
+        packageTitle: 'Пакет "Запуск і лідерство":',
+        steps: [
+          {
+            title: 'Позиціонування та вибір цінової точки',
+            description: 'Стратегічне позиціонування на ринку для максимального впливу'
+          },
+          {
+            title: 'Створення вбивчого лістингу, EBC та відео',
+            description: 'Повне створення контенту оптимізованого для конверсій'
+          },
+          {
+            title: 'Запуск реклами (SP + SB + SD) + план "білих" відгуків',
+            description: 'Запуск реклами різних форматів зі стратегією відгуків'
+          }
+        ],
+        featuresTitle: 'Що ви отримуєте:',
+        features: [
+          'Покроковий план 0‑90 днів: від лістингів до першого відгуку',
+          'Amazon\'s Choice гарантовано або вартість послуги повертається',
+          'Аналіз ніші та дослідження конкуренції',
+          'Виявлення можливостей білих плям',
+          'Повна стратегія та виконання запуску'
+        ],
+        resultsTitle: 'Середні результати',
+        results: [
+          { label: 'Беззбитковість', value: 'День 38' },
+          { label: 'Доходи', value: '$100K за перші 90 днів' },
+          { label: 'Відсоток успіху', value: 'Гарантія Amazon\'s Choice' }
+        ],
+        ctaTitle: 'Готові до успішного запуску?',
+        ctaText: 'Давайте створимо виграшну стратегію запуску для вашого продукту.',
+        ctaButton: 'Спланувати мій запуск'
+      }
     }
   }
 };

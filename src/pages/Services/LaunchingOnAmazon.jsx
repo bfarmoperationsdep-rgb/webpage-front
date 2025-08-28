@@ -19,9 +19,9 @@ const LaunchingOnAmazon = () => {
           <Link to="/services" className="service-page__back">
             {t('common.backToServices')}
           </Link>
-          <h1 className="service-page__title">Launching on Amazon</h1>
+          <h1 className="service-page__title">{t('servicePages.launching.title')}</h1>
           <p className="service-page__subtitle">
-            "Launch & Lead" package: Niche analysis & white‑space strategy → we dodge the "red ocean."
+            {t('servicePages.launching.subtitle')}
           </p>
         </motion.div>
 
@@ -32,70 +32,50 @@ const LaunchingOnAmazon = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="service-page__description">
-            <h2>Strategic Product Launch</h2>
+            <h2>{t('servicePages.launching.heading')}</h2>
             
             <div className="service-page__launch-steps">
-              <h3>"Launch & Lead" Package:</h3>
+              <h3>{t('servicePages.launching.packageTitle')}</h3>
               <div className="launch-steps">
-                <div className="launch-step">
-                  <div className="step-icon">1️⃣</div>
-                  <div className="step-content">
-                    <h4>Positioning & Price-Point Selection</h4>
-                    <p>Strategic market positioning for maximum impact</p>
+                {t('servicePages.launching.steps').map((step, idx) => (
+                  <div key={idx} className="launch-step">
+                    <div className="step-icon">{idx + 1}️⃣</div>
+                    <div className="step-content">
+                      <h4>{step.title}</h4>
+                      <p>{step.description}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="launch-step">
-                  <div className="step-icon">2️⃣</div>
-                  <div className="step-content">
-                    <h4>Creation of Killer Listing, EBC and Video</h4>
-                    <p>Complete content creation optimized for conversions</p>
-                  </div>
-                </div>
-                <div className="launch-step">
-                  <div className="step-icon">3️⃣</div>
-                  <div className="step-content">
-                    <h4>Kick-off Ads (SP + SB + SD) + "White-hat" Review Plan</h4>
-                    <p>Multi-format advertising launch with review strategy</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             
             <div className="service-page__features">
-              <h3>What You Get:</h3>
+              <h3>{t('servicePages.launching.featuresTitle')}</h3>
               <ul>
-                <li>Step‑by‑step 0‑90 day plan: from listings to first review</li>
-                <li>Amazon's Choice guaranteed or the service fee is refunded</li>
-                <li>Niche analysis and competition research</li>
-                <li>White-space opportunity identification</li>
-                <li>Complete launch strategy and execution</li>
+                {t('servicePages.launching.features').map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
               </ul>
             </div>
 
             <div className="service-page__results">
-              <h3>Average Results</h3>
+              <h3>{t('servicePages.launching.resultsTitle')}</h3>
               <div className="results-grid">
-                <div className="result-item">
-                  <h4>Break-even</h4>
-                  <span>Day 38</span>
-                </div>
-                <div className="result-item">
-                  <h4>Revenue</h4>
-                  <span>$100K in first 90 days</span>
-                </div>
-                <div className="result-item">
-                  <h4>Success Rate</h4>
-                  <span>Amazon's Choice guarantee</span>
-                </div>
+                {t('servicePages.launching.results').map((result, idx) => (
+                  <div key={idx} className="result-item">
+                    <h4>{result.label}</h4>
+                    <span>{result.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className="service-page__cta">
-            <h3>Ready to Launch Successfully?</h3>
-            <p>Let's create a winning launch strategy for your product.</p>
+            <h3>{t('servicePages.launching.ctaTitle')}</h3>
+            <p>{t('servicePages.launching.ctaText')}</p>
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Plan My Launch
+              {t('servicePages.launching.ctaButton')}
             </Link>
           </div>
         </motion.div>

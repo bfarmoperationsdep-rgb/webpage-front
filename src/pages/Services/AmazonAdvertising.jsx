@@ -19,10 +19,9 @@ const AmazonAdvertising = () => {
           <Link to="/services" className="service-page__back">
             {t('common.backToServices')}
           </Link>
-          <h1 className="service-page__title">Amazon Advertising Management</h1>
+          <h1 className="service-page__title">{t('servicePages.advertising.title')}</h1>
           <p className="service-page__subtitle">
-            We don't "run ads"—we hunt profit. We blend rule‑based bid‑management with 
-            an ML conversion‑forecast model.
+            {t('servicePages.advertising.subtitle')}
           </p>
         </motion.div>
 
@@ -33,36 +32,34 @@ const AmazonAdvertising = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="service-page__description">
-            <h2>Advanced PPC Management</h2>
+            <h2>{t('servicePages.advertising.heading')}</h2>
             <p>
-              All formats covered: Sponsored Products, Brands, Display, DSP.
+              {t('servicePages.advertising.description')}
             </p>
             
             <div className="service-page__features">
-              <h3>Our Approach:</h3>
+              <h3>{t('servicePages.advertising.approachTitle')}</h3>
               <ul>
-                <li>In‑house bid‑management scripts cut CPC by up to –25% without losing traffic</li>
-                <li>DSP retargeting wins back up to 14% of "lost" visitors</li>
-                <li>ML-powered conversion forecasting</li>
-                <li>Rule-based bid optimization</li>
-                <li>Multi-format campaign management</li>
+                {t('servicePages.advertising.features').map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
               </ul>
             </div>
 
             <div className="service-page__case-study">
-              <h3>Case Study</h3>
+              <h3>{t('servicePages.advertising.caseStudyTitle')}</h3>
               <div className="case-study-card">
-                <h4>Pet Supplements Brand</h4>
+                <h4>{t('servicePages.advertising.caseStudyBrand')}</h4>
                 <div className="case-metrics">
                   <div className="metric">
-                    <span className="label">ROAS Improvement</span>
-                    <span className="value">2.8 → 5.1</span>
-                    <span className="timeframe">in 3 months</span>
+                    <span className="label">{t('servicePages.advertising.roasLabel')}</span>
+                    <span className="value">{t('servicePages.advertising.roasValue')}</span>
+                    <span className="timeframe">{t('servicePages.advertising.roasTime')}</span>
                   </div>
                   <div className="metric">
-                    <span className="label">TACoS Reduction</span>
-                    <span className="value">18% → 11%</span>
-                    <span className="timeframe">sustained</span>
+                    <span className="label">{t('servicePages.advertising.tacosLabel')}</span>
+                    <span className="value">{t('servicePages.advertising.tacosValue')}</span>
+                    <span className="timeframe">{t('servicePages.advertising.tacosTime')}</span>
                   </div>
                 </div>
               </div>
@@ -70,10 +67,10 @@ const AmazonAdvertising = () => {
           </div>
 
           <div className="service-page__cta">
-            <h3>Ready to Optimize Your Amazon Ads?</h3>
-            <p>Let's turn your advertising spend into profitable growth.</p>
+            <h3>{t('servicePages.advertising.ctaTitle')}</h3>
+            <p>{t('servicePages.advertising.ctaText')}</p>
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Start Optimizing
+              {t('servicePages.advertising.ctaButton')}
             </Link>
           </div>
         </motion.div>

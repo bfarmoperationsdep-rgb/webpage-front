@@ -8,44 +8,44 @@ const Services = () => {
 
   const services = [
     {
-      title: 'Full Account Management',
-      description: 'Complete end-to-end Amazon account management with dedicated account managers.',
-      features: ['Account Setup', 'Daily Monitoring', '24/7 Support', 'Performance Reports']
+      title: t('servicesPage.services.fullAccount.title'),
+      description: t('servicesPage.services.fullAccount.description'),
+      features: t('servicesPage.services.fullAccount.features')
     },
     {
-      title: 'Amazon Advertising/Management',
-      description: 'Professional Amazon PPC management to maximize your advertising ROI.',
-      features: ['PPC Campaign Setup', 'Keyword Research', 'Bid Management', 'Performance Optimization']
+      title: t('servicesPage.services.advertising.title'),
+      description: t('servicesPage.services.advertising.description'),
+      features: t('servicesPage.services.advertising.features')
     },
     {
-      title: 'Product/Page Optimization',
-      description: 'Optimize your product listings for maximum visibility and conversions.',
-      features: ['Listing Optimization', 'A+ Content', 'SEO Enhancement', 'Conversion Rate Optimization']
+      title: t('servicesPage.services.optimization.title'),
+      description: t('servicesPage.services.optimization.description'),
+      features: t('servicesPage.services.optimization.features')
     },
     {
-      title: 'Launching/on Amazon',
-      description: 'Strategic product launch services to ensure successful market entry.',
-      features: ['Launch Strategy', 'Market Research', 'Competitor Analysis', 'Pre-launch Preparation']
+      title: t('servicesPage.services.launching.title'),
+      description: t('servicesPage.services.launching.description'),
+      features: t('servicesPage.services.launching.features')
     },
     {
-      title: 'DESIGN Suite',
-      description: 'Complete design services for your Amazon presence.',
-      features: ['Product Photography', 'A+ Content Design', 'Storefront Design', 'Brand Assets']
+      title: t('servicesPage.services.design.title'),
+      description: t('servicesPage.services.design.description'),
+      features: t('servicesPage.services.design.features')
     },
     {
-      title: 'Consulting',
-      description: 'Expert Amazon consulting to guide your business strategy.',
-      features: ['Strategic Planning', 'Market Analysis', 'Growth Strategies', 'Expert Guidance']
+      title: t('servicesPage.services.consulting.title'),
+      description: t('servicesPage.services.consulting.description'),
+      features: t('servicesPage.services.consulting.features')
     },
     {
-      title: 'Cataloging',
-      description: 'Professional product cataloging and inventory management.',
-      features: ['Product Catalog Setup', 'Inventory Management', 'SKU Organization', 'Data Management']
+      title: t('servicesPage.services.cataloging.title'),
+      description: t('servicesPage.services.cataloging.description'),
+      features: t('servicesPage.services.cataloging.features')
     },
     {
-      title: 'Training',
-      description: 'Comprehensive training programs for your team.',
-      features: ['Amazon Best Practices', 'Team Training', 'Skill Development', 'Ongoing Education']
+      title: t('servicesPage.services.training.title'),
+      description: t('servicesPage.services.training.description'),
+      features: t('servicesPage.services.training.features')
     }
   ];
 
@@ -58,9 +58,9 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="services-page__title">Our Amazon Services</h1>
+          <h1 className="services-page__title">{t('servicesPage.title')}</h1>
           <p className="services-page__description">
-            Complete Amazon management solutions to grow your business
+            {t('servicesPage.description')}
           </p>
         </motion.div>
 
@@ -83,7 +83,7 @@ const Services = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <button className="btn btn-primary">Learn More</button>
+              <button className="btn btn-primary">{t('common.learnMore')}</button>
             </motion.div>
           ))}
         </div>

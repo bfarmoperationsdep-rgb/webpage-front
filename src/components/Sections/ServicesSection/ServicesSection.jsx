@@ -5,7 +5,7 @@ import { useLanguage } from '../../../context/LanguageContext';
 import './ServicesSection.scss';
 
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -13,7 +13,7 @@ const ServicesSection = () => {
       title: t('services.items.fullAccount.title'),
       description: t('services.items.fullAccount.description'),
       features: t('services.items.fullAccount.features'),
-      metrics: '+42% чистого прибутку через 6 місяців',
+      metrics: language === 'uk' ? '+42% чистого прибутку через 6 місяців' : '+42% net profit uplift in 6 months',
       color: 'from-green-500 to-green-600',
       link: '/services/full-account-management'
     },
@@ -22,7 +22,7 @@ const ServicesSection = () => {
       title: t('services.items.advertising.title'),
       description: t('services.items.advertising.description'),
       features: t('services.items.advertising.features'),
-      metrics: 'Зниження CPC до 25% без втрати трафіку',
+      metrics: language === 'uk' ? 'Зниження CPC до 25% без втрати трафіку' : 'CPC reduction up to 25% without traffic loss',
       color: 'from-blue-500 to-blue-600',
       link: '/services/amazon-advertising'
     },
@@ -31,7 +31,7 @@ const ServicesSection = () => {
       title: t('services.items.optimization.title'),
       description: t('services.items.optimization.description'),
       features: t('services.items.optimization.features'),
-      metrics: 'CTR зростає ~1,8×',
+      metrics: language === 'uk' ? 'CTR зростає ~1,8×' : 'CTR grows ~1.8×',
       color: 'from-purple-500 to-purple-600',
       link: '/services/product-optimization'
     },
@@ -40,7 +40,7 @@ const ServicesSection = () => {
       title: t('services.items.launching.title'),
       description: t('services.items.launching.description'),
       features: t('services.items.launching.features'),
-      metrics: 'Гарантуємо значок Amazon\'s Choice',
+      metrics: language === 'uk' ? 'Гарантуємо значок Amazon\'s Choice' : 'Amazon\'s Choice guarantee',
       color: 'from-orange-500 to-orange-600',
       link: '/services/launching-on-amazon'
     }
@@ -59,13 +59,11 @@ const ServicesSection = () => {
           <h2 className="services__title">
             {t('services.title')}
             <span className="services__title-highlight">
-              спектр досконалості
+              {language === 'uk' ? 'спектр досконалості' : 'spectrum of excellence'}
             </span>
           </h2>
           <p className="services__description">
-            Ми – універсальна агенція: стратегія, креатив, реклама, консалтинг і бездоганний 
-            акаунт-менеджмент – все під одним дахом. Оберіть сервіс, який вам потрібен, 
-            і рушайте бити нові рекорди.
+            {t('services.teaser')}
           </p>
         </motion.div>
 

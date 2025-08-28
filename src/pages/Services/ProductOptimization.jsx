@@ -19,9 +19,9 @@ const ProductOptimization = () => {
           <Link to="/services" className="service-page__back">
             {t('common.backToServices')}
           </Link>
-          <h1 className="service-page__title">Product Page Optimization</h1>
+          <h1 className="service-page__title">{t('servicePages.optimization.title')}</h1>
           <p className="service-page__subtitle">
-            Data‑Driven SEO: Brand Analytics + Helium 10 → 100/100 relevance.
+            {t('servicePages.optimization.subtitle')}
           </p>
         </motion.div>
 
@@ -32,55 +32,39 @@ const ProductOptimization = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="service-page__description">
-            <h2>Optimization That Converts</h2>
+            <h2>{t('servicePages.optimization.heading')}</h2>
             <p>
-              Copy that sells: Hook—Problem—Solution—Proof formula.
+              {t('servicePages.optimization.description')}
             </p>
             
             <div className="service-page__features">
-              <h3>Our Process:</h3>
+              <h3>{t('servicePages.optimization.processTitle')}</h3>
               <ul>
-                <li>Copy that sells: Hook—Problem—Solution—Proof formula</li>
-                <li>Open A/B panel shows you which tweaks deliver +15‑30% CVR</li>
-                <li>Keyword research and optimization</li>
-                <li>Image and video optimization</li>
-                <li>A+ Content creation</li>
-                <li>Competitor analysis</li>
+                {t('servicePages.optimization.features').map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
               </ul>
             </div>
 
             <div className="service-page__process">
-              <h3>Optimization Process</h3>
+              <h3>{t('servicePages.optimization.optimizationTitle')}</h3>
               <div className="process-steps">
-                <div className="step">
-                  <div className="step-number">1</div>
-                  <h4>Audit & Analysis</h4>
-                  <p>Complete listing audit with competitor analysis</p>
-                </div>
-                <div className="step">
-                  <div className="step-number">2</div>
-                  <h4>Keyword Research</h4>
-                  <p>Data-driven keyword strategy using Brand Analytics</p>
-                </div>
-                <div className="step">
-                  <div className="step-number">3</div>
-                  <h4>Content Optimization</h4>
-                  <p>Hook—Problem—Solution—Proof copywriting</p>
-                </div>
-                <div className="step">
-                  <div className="step-number">4</div>
-                  <h4>A/B Testing</h4>
-                  <p>Continuous testing for +15‑30% CVR improvement</p>
-                </div>
+                {t('servicePages.optimization.steps').map((step, idx) => (
+                  <div key={idx} className="step">
+                    <div className="step-number">{idx + 1}</div>
+                    <h4>{step.title}</h4>
+                    <p>{step.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className="service-page__cta">
-            <h3>Ready to Optimize Your Listings?</h3>
-            <p>Let's maximize your conversion rates and visibility.</p>
+            <h3>{t('servicePages.optimization.ctaTitle')}</h3>
+            <p>{t('servicePages.optimization.ctaText')}</p>
             <Link to="/contact" className="btn btn-primary btn-lg">
-              Optimize Now
+              {t('servicePages.optimization.ctaButton')}
             </Link>
           </div>
         </motion.div>
