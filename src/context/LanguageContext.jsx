@@ -29,11 +29,13 @@ const translations = {
     
     // Hero Section
     hero: {
-      title: 'AMPLIFY YOUR AMAZON SALES',
+      title: 'AMPLIFY YOUR',
+      titleHighlight: 'AMAZON SALES',
       subtitle: 'BFarm: Built for Bold Brands',
       description: 'Selling on Amazon felt like a jungle? We\'ve already cut the trail—from your first shipment all the way to seven‑figure revenue. Since 2015 we\'ve been turning ambitious Amazon‑marketplace brands into category leaders, powered by data, creativity and rock‑solid processes.',
       startProject: 'Start Your Project',
       watchWork: 'Watch Our Work',
+      scroll: 'Scroll Down',
       features: {
         strategy: 'Data × Creativity',
         creative: 'Rock-solid Processes', 
@@ -152,11 +154,13 @@ const translations = {
     
     // Hero Section
     hero: {
-      title: 'ЗБІЛЬШУЙТЕ ПРОДАЖІ НА AMAZON',
+      title: 'ЗБІЛЬШУЙТЕ',
+      titleHighlight: 'ПРОДАЖІ НА AMAZON',
       subtitle: 'BFarm: Створені для сміливих брендів',
       description: 'Продажі на Amazon здавались джунглями? Ми вже прорубали стежку—від вашої першої відправки до семизначного доходу. З 2015 року ми перетворюємо амбітні Amazon бренди на лідерів категорій, використовуючи дані, креативність та надійні процеси.',
       startProject: 'Почати проект',
       watchWork: 'Подивитись роботи',
+      scroll: 'Прокрутити вниз',
       features: {
         strategy: 'Дані × Креативність',
         creative: 'Надійні процеси',
@@ -259,11 +263,22 @@ const translations = {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('uk'); // Default to Ukrainian
+  const [language, setLanguage] = useState(() => {
+    // Безпечна ініціалізація з localStorage
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem('language');
+      return savedLanguage || 'uk';
+    }
+    return 'uk'; // Default to Ukrainian
+  });
 
   const switchLanguage = (lang) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('language', lang);
+      // Форсуємо перезавантаження щоб скинути кеш
+      window.location.reload();
+    }
   };
 
   const t = (path) => {
