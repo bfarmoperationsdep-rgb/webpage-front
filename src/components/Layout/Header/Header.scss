@@ -19,7 +19,11 @@
   
   &__content {
     @include flex-between;
-    padding: $spacing-4 0;
+    padding: $spacing-3 0;
+    
+    @include respond-to(sm) {
+      padding: $spacing-4 0;
+    }
     
     @include respond-to(lg) {
       padding: $spacing-6 0;
@@ -42,8 +46,8 @@
   
   &__logo-icon {
     @include flex-center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
     border-radius: $border-radius-lg;
     box-shadow: 0 4px 12px rgba($primary-color, 0.3);
@@ -54,6 +58,11 @@
       box-shadow: 0 6px 20px rgba($primary-color, 0.4);
     }
     
+    @include respond-to(sm) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
     @include respond-to(lg) {
       width: 3rem;
       height: 3rem;
@@ -61,10 +70,14 @@
   }
   
   &__logo-b {
-    font-size: $font-size-xl;
+    font-size: $font-size-lg;
     font-weight: $font-weight-extrabold;
     color: $white;
     line-height: 1;
+    
+    @include respond-to(sm) {
+      font-size: $font-size-xl;
+    }
     
     @include respond-to(lg) {
       font-size: $font-size-2xl;
@@ -78,7 +91,7 @@
   }
   
   &__logo-farm {
-    font-size: $font-size-2xl;
+    font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     color: $text-primary;
     line-height: 1;
@@ -86,6 +99,10 @@
     
     .header__logo:hover & {
       color: $primary-color;
+    }
+    
+    @include respond-to(sm) {
+      font-size: $font-size-2xl;
     }
     
     @include respond-to(lg) {
@@ -240,16 +257,20 @@
   
   // Mobile Menu
   &__mobile-menu {
-    position: absolute;
+    position: fixed;
     top: 100%;
     left: 0;
     right: 0;
+    bottom: 0;
     background-color: $white;
     border-top: 1px solid $gray-200;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all $transition-duration-base $transition-timing;
+    z-index: $z-index-modal;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     
     &--open {
       transform: translateY(0);
@@ -259,7 +280,11 @@
   }
   
   &__mobile-nav {
-    padding: $spacing-6;
+    padding: $spacing-4;
+    
+    @include respond-to(sm) {
+      padding: $spacing-6;
+    }
   }
   
   &__mobile-nav-list {
@@ -279,17 +304,24 @@
   
   &__mobile-nav-link {
     display: block;
-    padding: $spacing-4 0;
+    padding: $spacing-3 0;
     color: $text-primary;
     text-decoration: none;
     font-weight: $font-weight-medium;
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
     transition: all $transition-duration-base $transition-timing;
+    border-radius: $border-radius-md;
     
     &:hover,
     &--active {
       color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
       padding-left: $spacing-4;
+    }
+    
+    @include respond-to(sm) {
+      padding: $spacing-4 0;
+      font-size: $font-size-lg;
     }
   }
   
@@ -326,9 +358,34 @@
   }
 }
 
+// Додаткові класи для visibility на різних пристроях
+.hidden-mobile {
+  @include respond-below(md) {
+    display: none !important;
+  }
+}
+
+.visible-mobile-only {
+  display: block !important;
+  
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
 // Adjust body padding for fixed header
 body {
-  padding-top: 4.5rem;
+  padding-top: 3.5rem;
+  
+  @include respond-to(sm) {
+    padding-top: 4rem;
+  }
   
   @include respond-to(lg) {
     padding-top: 5.5rem;

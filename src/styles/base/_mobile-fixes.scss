@@ -1,0 +1,190 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Спеціальні виправлення для мобільних пристроїв
+
+// Запобігання горизонтальному скролу
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+// Виправлення для дуже маленьких екранів (менше 320px)
+@media (max-width: 319px) {
+  .container {
+    padding-left: $spacing-2;
+    padding-right: $spacing-2;
+  }
+  
+  .hero__title {
+    font-size: $font-size-xl !important;
+    line-height: 1.2;
+  }
+  
+  .hero__dashboard {
+    max-width: 280px !important;
+    padding: $spacing-3 !important;
+  }
+  
+  .btn {
+    font-size: $font-size-xs !important;
+    padding: $spacing-2 $spacing-3 !important;
+  }
+}
+
+// Виправлення для малих мобільних (320px - 479px)
+@include respond-between(320px, 480px) {
+  .hero__title {
+    font-size: $font-size-2xl;
+    line-height: 1.25;
+  }
+  
+  .hero__description {
+    font-size: $font-size-sm;
+    line-height: 1.5;
+  }
+  
+  .hero__dashboard {
+    max-width: 300px;
+  }
+  
+  .hero__metric-value {
+    font-size: $font-size-lg;
+  }
+  
+  .hero__platforms {
+    grid-template-columns: 1fr;
+    gap: $spacing-2;
+  }
+  
+  .hero__platform {
+    padding: $spacing-2;
+    font-size: $font-size-xs;
+    
+    i {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Виправлення для touch пристроїв
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+    box-shadow: $shadow-base;
+  }
+  
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .header__logo:hover {
+    transform: none;
+  }
+  
+  .header__nav-link:hover {
+    transform: none;
+  }
+}
+
+// Виправлення високих екранів (portrait orientation)
+@media screen and (orientation: portrait) and (min-height: 800px) {
+  .hero {
+    min-height: calc(100vh - 4rem);
+  }
+}
+
+// Виправлення для landscape на мобільних
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+    
+    .hero__content {
+      padding: $spacing-4 0;
+    }
+    
+    .hero__title {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-2;
+    }
+    
+    .hero__description {
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-4;
+    }
+    
+    .hero__actions {
+      margin-bottom: $spacing-4;
+      
+      .btn {
+        padding: $spacing-2 $spacing-4;
+        font-size: $font-size-sm;
+      }
+    }
+    
+    .hero__dashboard {
+      max-width: 280px;
+      padding: $spacing-3;
+    }
+    
+    .hero__scroll-indicator {
+      display: none;
+    }
+  }
+}
+
+// Виправлення iOS Safari viewport bug
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+}
+
+// Виправлення для старих браузерів
+@supports not (backdrop-filter: blur(10px)) {
+  .header {
+    background-color: rgba($white, 0.95);
+  }
+  
+  .hero__dashboard {
+    background-color: $white;
+  }
+  
+  .hero__card {
+    background-color: $white;
+  }
+}
+
+// Touch-friendly tap targets
+.btn,
+.header__nav-link,
+.header__mobile-nav-link,
+.header__language-btn,
+.header__mobile-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+// Збільшення touch targets на мобільних
+@include respond-below(sm) {
+  .header__mobile-nav-link {
+    padding: $spacing-4 0;
+    min-height: 48px;
+  }
+  
+  .btn {
+    min-height: 48px;
+    padding: $spacing-3 $spacing-6;
+  }
+}
+
+// Покращення читабельності тексту на мобільних
+@include respond-below(sm) {
+  p, li, span {
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+  }
+}

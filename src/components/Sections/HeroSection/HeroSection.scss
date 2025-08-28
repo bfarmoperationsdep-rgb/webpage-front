@@ -69,12 +69,22 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-12;
+    gap: $spacing-8;
     align-items: center;
     width: 100%;
-    padding: $spacing-16 0 $spacing-24;
+    padding: $spacing-8 0 $spacing-12;
     position: relative;
     z-index: 2;
+    
+    @include respond-to(sm) {
+      gap: $spacing-10;
+      padding: $spacing-12 0 $spacing-16;
+    }
+    
+    @include respond-to(md) {
+      gap: $spacing-12;
+      padding: $spacing-16 0 $spacing-20;
+    }
     
     @include respond-to(lg) {
       grid-template-columns: 1fr 1fr;
@@ -93,18 +103,27 @@
   }
   
   &__title {
-    font-size: $font-size-4xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-extrabold;
     color: $white;
     line-height: $line-height-tight;
-    margin-bottom: $spacing-4;
+    margin-bottom: $spacing-3;
     letter-spacing: -0.02em;
     
+    @include respond-to(sm) {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-4;
+    }
+    
     @include respond-to(md) {
-      font-size: $font-size-5xl;
+      font-size: $font-size-4xl;
     }
     
     @include respond-to(lg) {
+      font-size: $font-size-5xl;
+    }
+    
+    @include respond-to(xl) {
       font-size: $font-size-6xl;
     }
 
@@ -130,31 +149,59 @@
   }
   
   &__description {
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
     color: rgba($white, 0.9);
     line-height: $line-height-relaxed;
-    margin-bottom: $spacing-8;
-    max-width: 600px;
+    margin-bottom: $spacing-6;
+    max-width: 100%;
+    
+    @include respond-to(sm) {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-8;
+      max-width: 500px;
+    }
     
     @include respond-to(lg) {
       font-size: $font-size-xl;
       margin-bottom: $spacing-10;
+      max-width: 600px;
     }
   }
   
   &__actions {
     @include flex-center;
     flex-direction: column;
-    gap: $spacing-4;
-    margin-bottom: $spacing-10;
+    gap: $spacing-3;
+    margin-bottom: $spacing-8;
+    width: 100%;
     
     @include respond-to(sm) {
       flex-direction: row;
       justify-content: center;
+      gap: $spacing-4;
+      margin-bottom: $spacing-10;
     }
     
     @include respond-to(lg) {
       justify-content: flex-start;
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+      padding: $spacing-3 $spacing-4;
+      font-size: $font-size-sm;
+      
+      @include respond-to(sm) {
+        width: auto;
+        padding: $spacing-3 $spacing-6;
+        font-size: $font-size-base;
+      }
+      
+      @include respond-to(md) {
+        padding: $spacing-4 $spacing-8;
+        font-size: $font-size-lg;
+      }
     }
   }
   
@@ -197,19 +244,28 @@
   // Dashboard design (instead of phone)
   &__dashboard {
     background: rgba($white, 0.98);
-    border-radius: $border-radius-2xl;
-    padding: $spacing-8;
+    border-radius: $border-radius-xl;
+    padding: $spacing-4;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
     border: 1px solid rgba($white, 0.3);
-    min-width: 350px;
-    max-width: 450px;
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
     color: $text-primary;
     
+    @include respond-to(sm) {
+      padding: $spacing-6;
+      max-width: 380px;
+    }
+    
     @include respond-to(md) {
+      padding: $spacing-8;
+      max-width: 420px;
+    }
+    
+    @include respond-to(lg) {
       padding: $spacing-10;
-      min-width: 400px;
       max-width: 500px;
     }
   }
@@ -224,12 +280,25 @@
   &__dashboard-title {
     @include flex-center;
     gap: $spacing-2;
-    font-size: $font-size-lg;
+    font-size: $font-size-sm;
     font-weight: $font-weight-bold;
     color: $text-primary;
     
+    @include respond-to(sm) {
+      font-size: $font-size-base;
+    }
+    
+    @include respond-to(md) {
+      font-size: $font-size-lg;
+    }
+    
     i {
       color: $primary-color;
+      font-size: $font-size-base;
+      
+      @include respond-to(sm) {
+        font-size: $font-size-lg;
+      }
     }
   }
   
@@ -265,12 +334,20 @@
   }
   
   &__metric-value {
-    font-size: $font-size-3xl;
+    font-size: $font-size-xl;
     font-weight: $font-weight-extrabold;
     color: $primary-color;
     margin-bottom: $spacing-1;
     
+    @include respond-to(sm) {
+      font-size: $font-size-2xl;
+    }
+    
     @include respond-to(md) {
+      font-size: $font-size-3xl;
+    }
+    
+    @include respond-to(lg) {
       font-size: $font-size-4xl;
     }
   }
@@ -371,50 +448,72 @@
   // Floating Cards (redesigned)
   &__floating-cards {
     position: absolute;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     pointer-events: none;
+    
+    @include respond-below(md) {
+      display: none; // Приховати floating cards на мобільних
+    }
+    
+    @include respond-to(lg) {
+      width: 120%;
+      height: 120%;
+      top: -10%;
+      left: -10%;
+    }
   }
   
   &__card {
     position: absolute;
     background: rgba($white, 0.95);
     backdrop-filter: blur(10px);
-    border-radius: $border-radius-xl;
-    padding: $spacing-6;
-    box-shadow: $shadow-2xl;
+    border-radius: $border-radius-lg;
+    padding: $spacing-4;
+    box-shadow: $shadow-lg;
     border: 1px solid rgba($white, 0.3);
-    min-width: 200px;
-    max-width: 240px;
+    min-width: 160px;
+    max-width: 200px;
+    
+    @include respond-to(lg) {
+      padding: $spacing-6;
+      min-width: 200px;
+      max-width: 240px;
+      box-shadow: $shadow-2xl;
+      border-radius: $border-radius-xl;
+    }
     
     &--strategy {
-      top: 10%;
-      right: -5%;
+      top: 15%;
+      right: 0%;
       animation: float 6s ease-in-out infinite;
       
       @include respond-to(lg) {
+        top: 10%;
         right: -15%;
       }
     }
     
     &--creative {
-      bottom: 50%;
-      left: -5%;
+      bottom: 45%;
+      left: 0%;
       animation: float 8s ease-in-out infinite reverse;
       
       @include respond-to(lg) {
+        bottom: 50%;
         left: -15%;
       }
     }
     
     &--execution {
-      bottom: 5%;
-      right: 10%;
+      bottom: 10%;
+      right: 5%;
       animation: float 10s ease-in-out infinite;
       
       @include respond-to(lg) {
+        bottom: 5%;
         right: 5%;
       }
     }

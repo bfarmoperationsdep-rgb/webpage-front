@@ -1,5 +1,8 @@
-// Медіа-запити
+// Медіа-запити (Mobile-First підхід)
 @mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) { @content; }
+  }
   @if $breakpoint == sm {
     @media (min-width: $breakpoint-sm) { @content; }
   }
@@ -15,6 +18,30 @@
   @if $breakpoint == 2xl {
     @media (min-width: $breakpoint-2xl) { @content; }
   }
+}
+
+// Медіа-запити до певного розміру (коли потрібно max-width)
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-xs - 1}) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm - 1}) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md - 1}) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg - 1}) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl - 1}) { @content; }
+  }
+}
+
+// Медіа-запити тільки для певного діапазону
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: #{$max - 1}) { @content; }
 }
 
 // Контейнер

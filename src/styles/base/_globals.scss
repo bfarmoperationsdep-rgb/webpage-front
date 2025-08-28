@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 // Глобальні стилі
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -27,6 +42,12 @@ section {
 // Контейнер
 .container {
   @include container;
+  
+  // Додаткові відступи для дуже маленьких екранів
+  @include respond-below(sm) {
+    padding-left: $spacing-3;
+    padding-right: $spacing-3;
+  }
 }
 
 // Утиліти видимості
