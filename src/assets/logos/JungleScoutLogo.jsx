@@ -2,29 +2,31 @@ import React from 'react';
 
 const JungleScoutLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="60" fill="white" rx="8"/>
+    <rect width="100" height="60" fill="white" rx="6"/>
     
-    {/* Background circle */}
-    <circle cx="25" cy="30" r="18" fill="#00C851"/>
+    {/* Green background */}
+    <rect x="5" y="5" width="90" height="50" fill="#00C851" rx="4"/>
     
     {/* Jungle Scout text */}
-    <text x="55" y="25" fontSize="11" fontWeight="bold" textAnchor="middle" fill="#00C851" fontFamily="Arial, sans-serif">JUNGLE</text>
-    <text x="55" y="38" fontSize="11" fontWeight="bold" textAnchor="middle" fill="#00C851" fontFamily="Arial, sans-serif">SCOUT</text>
+    <text x="50" y="20" fontSize="10" fontWeight="bold" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif">JUNGLE SCOUT</text>
     
-    {/* Magnifying glass icon in circle */}
-    <circle cx="25" cy="28" r="5" stroke="white" strokeWidth="2" fill="none"/>
-    <line x1="29" y1="32" x2="33" y2="36" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    {/* Magnifying glass - larger and more prominent */}
+    <circle cx="30" cy="35" r="8" stroke="white" strokeWidth="2.5" fill="none"/>
+    <line x1="36" y1="41" x2="42" y2="47" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
     
-    {/* Tree/jungle elements */}
-    <path d="M75 15L80 10L85 15L82 20L80 22L78 20L75 15Z" fill="#00C851"/>
-    <path d="M15 45C20 40 30 42 35 45C40 42 50 44 55 45" stroke="#00C851" strokeWidth="2" fill="none"/>
+    {/* Search elements inside magnifying glass */}
+    <circle cx="30" cy="35" r="3" stroke="white" strokeWidth="1" fill="none" opacity="0.7"/>
+    <circle cx="30" cy="35" r="1" fill="white" opacity="0.8"/>
     
-    {/* Small accent dots */}
-    <circle cx="15" cy="20" r="1" fill="#00C851" opacity="0.6"/>
-    <circle cx="85" cy="40" r="1" fill="#00C851" opacity="0.6"/>
+    {/* Jungle leaves */}
+    <path d="M60 15C62 12 66 12 68 15C66 18 62 18 60 15Z" fill="white" opacity="0.8"/>
+    <path d="M70 20C72 17 76 17 78 20C76 23 72 23 70 20Z" fill="white" opacity="0.7"/>
+    <path d="M75 35C77 32 81 32 83 35C81 38 77 38 75 35Z" fill="white" opacity="0.6"/>
     
-    {/* Bottom line */}
-    <line x1="10" y1="50" x2="90" y2="50" stroke="#E5E5E5" strokeWidth="1"/>
+    {/* Data tracking elements */}
+    <circle cx="15" cy="25" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="20" cy="20" r="1" fill="white" opacity="0.6"/>
+    <circle cx="85" cy="42" r="1.5" fill="white" opacity="0.7"/>
   </svg>
 );
 

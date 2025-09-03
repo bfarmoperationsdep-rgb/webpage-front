@@ -2,31 +2,32 @@ import React from 'react';
 
 const DSPLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="60" fill="white" rx="8"/>
+    <rect width="100" height="60" fill="white" rx="6"/>
     
-    {/* DSP background circle */}
-    <circle cx="30" cy="30" r="18" fill="#FF6B6B"/>
+    {/* Red background */}
+    <rect x="5" y="5" width="90" height="50" fill="#FF6B6B" rx="4"/>
     
-    {/* Target/bullseye icon */}
-    <circle cx="30" cy="30" r="8" stroke="white" strokeWidth="2" fill="none"/>
-    <circle cx="30" cy="30" r="4" stroke="white" strokeWidth="2" fill="none"/>
-    <circle cx="30" cy="30" r="1" fill="white"/>
+    {/* DSP text - more prominent */}
+    <text x="50" y="30" fontSize="20" fontWeight="900" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif">DSP</text>
     
-    {/* DSP text */}
-    <text x="65" y="30" fontSize="18" fontWeight="bold" fill="#FF6B6B" fontFamily="Arial, sans-serif">DSP</text>
+    {/* Target icon - simplified and modern */}
+    <circle cx="20" cy="20" r="6" stroke="white" strokeWidth="1.5" fill="none" opacity="0.8"/>
+    <circle cx="20" cy="20" r="3" stroke="white" strokeWidth="1.5" fill="none" opacity="0.8"/>
+    <circle cx="20" cy="20" r="0.8" fill="white"/>
     
-    {/* Ad targeting elements */}
-    <rect x="70" y="15" width="12" height="4" fill="#FF6B6B" rx="2"/>
-    <text x="76" y="18" fontSize="3" fill="white" textAnchor="middle">AD</text>
+    <circle cx="80" cy="40" r="6" stroke="white" strokeWidth="1.5" fill="none" opacity="0.8"/>
+    <circle cx="80" cy="40" r="3" stroke="white" strokeWidth="1.5" fill="none" opacity="0.8"/>
+    <circle cx="80" cy="40" r="0.8" fill="white"/>
     
-    <rect x="70" y="40" width="12" height="4" fill="#FF6B6B" rx="2"/>
-    <text x="76" y="43" fontSize="3" fill="white" textAnchor="middle">AD</text>
+    {/* Targeting lines */}
+    <path d="M26 20L74 40" stroke="white" strokeWidth="1" opacity="0.4" strokeDasharray="2,2"/>
     
-    {/* Targeting arrows */}
-    <path d="M48 25L55 30L48 35" stroke="#FF6B6B" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    {/* AD indicators */}
+    <rect x="12" y="40" width="16" height="6" fill="white" rx="3" opacity="0.9"/>
+    <text x="20" y="44" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FF6B6B">AD</text>
     
-    {/* Bottom line */}
-    <line x1="10" y1="50" x2="90" y2="50" stroke="#E5E5E5" strokeWidth="1"/>
+    <rect x="72" y="14" width="16" height="6" fill="white" rx="3" opacity="0.9"/>
+    <text x="80" y="18" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FF6B6B">AD</text>
   </svg>
 );
 

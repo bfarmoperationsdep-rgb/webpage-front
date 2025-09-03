@@ -2,29 +2,33 @@ import React from 'react';
 
 const CerebroLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="60" fill="white" rx="8"/>
+    <rect width="100" height="60" fill="white" rx="6"/>
     
-    {/* Brain outline */}
-    <path d="M30 20C28 15 35 12 40 15C42 12 48 12 50 15C52 12 58 12 60 15C65 12 72 15 70 20C72 22 72 28 70 30C72 35 65 38 60 35C58 38 52 38 50 35C48 38 42 38 40 35C35 38 28 35 30 30C28 28 28 22 30 20Z" fill="#9C27B0"/>
+    {/* Purple background */}
+    <rect x="5" y="5" width="90" height="50" fill="#9C27B0" rx="4"/>
     
-    {/* Brain details */}
-    <path d="M35 22C40 20 45 22 50 20C55 22 60 20 65 22" stroke="white" strokeWidth="1.5" fill="none"/>
-    <path d="M35 28C40 26 45 28 50 26C55 28 60 26 65 28" stroke="white" strokeWidth="1.5" fill="none"/>
+    {/* CEREBRO text */}
+    <text x="50" y="20" fontSize="14" fontWeight="bold" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif">CEREBRO</text>
     
-    {/* Cerebro text */}
-    <text x="50" y="45" fontSize="10" fontWeight="bold" textAnchor="middle" fill="#9C27B0" fontFamily="Arial, sans-serif">CEREBRO</text>
+    {/* Simplified brain icon */}
+    <ellipse cx="50" cy="35" rx="20" ry="12" fill="white" opacity="0.9"/>
     
-    {/* Neural connections */}
-    <circle cx="42" cy="24" r="1" fill="white"/>
-    <circle cx="50" cy="26" r="1" fill="white"/>
-    <circle cx="58" cy="24" r="1" fill="white"/>
+    {/* Brain folds/sections */}
+    <path d="M35 32C40 30 45 32 50 30C55 32 60 30 65 32" stroke="#9C27B0" strokeWidth="2" fill="none"/>
+    <path d="M35 38C40 36 45 38 50 36C55 38 60 36 65 38" stroke="#9C27B0" strokeWidth="2" fill="none"/>
+    <path d="M40 28C45 26 50 28 55 26C60 28 65 26 70 28" stroke="#9C27B0" strokeWidth="1.5" fill="none" opacity="0.7"/>
+    <path d="M40 42C45 40 50 42 55 40C60 42 65 40 70 42" stroke="#9C27B0" strokeWidth="1.5" fill="none" opacity="0.7"/>
     
-    {/* Side decorations */}
-    <circle cx="15" cy="15" r="2" fill="#9C27B0" opacity="0.3"/>
-    <circle cx="85" cy="20" r="1.5" fill="#9C27B0" opacity="0.4"/>
+    {/* Neural nodes */}
+    <circle cx="42" cy="32" r="1.5" fill="#9C27B0"/>
+    <circle cx="50" cy="35" r="1.5" fill="#9C27B0"/>
+    <circle cx="58" cy="32" r="1.5" fill="#9C27B0"/>
+    <circle cx="46" cy="38" r="1" fill="#9C27B0" opacity="0.8"/>
+    <circle cx="54" cy="38" r="1" fill="#9C27B0" opacity="0.8"/>
     
-    {/* Bottom line */}
-    <line x1="10" y1="50" x2="90" y2="50" stroke="#E5E5E5" strokeWidth="1"/>
+    {/* Intelligence indicators */}
+    <circle cx="15" cy="12" r="2" fill="white" opacity="0.6"/>
+    <circle cx="85" cy="12" r="1.5" fill="white" opacity="0.7"/>
   </svg>
 );
 

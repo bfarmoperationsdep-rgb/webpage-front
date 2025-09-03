@@ -2,19 +2,22 @@ import React from 'react';
 
 const AmazonLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="60" fill="white" rx="8"/>
+    <rect width="100" height="60" fill="white" rx="6"/>
     
-    {/* Amazon text */}
-    <text x="50" y="28" fontSize="18" fontWeight="bold" textAnchor="middle" fill="#232F3E" fontFamily="Arial, sans-serif">amazon</text>
+    {/* Orange background */}
+    <rect x="5" y="5" width="90" height="50" fill="#FF9900" rx="4"/>
     
-    {/* Smile arrow from A to Z */}
-    <path d="M18 35C18 35 35 42 82 35" stroke="#FF9900" strokeWidth="3" fill="none" strokeLinecap="round"/>
+    {/* Amazon text - more stylized */}
+    <text x="50" y="26" fontSize="14" fontWeight="900" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif">amazon</text>
     
-    {/* Arrow tip */}
-    <path d="M78 32L82 35L78 38" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    {/* Characteristic Amazon smile from a to z */}
+    <path d="M15 38C25 44 35 44 45 42C55 40 65 40 75 42C80 43 83 44 85 45" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
     
-    {/* Subtle shadow */}
-    <ellipse cx="50" cy="52" rx="25" ry="3" fill="#E5E5E5" opacity="0.3"/>
+    {/* Arrow pointing from A to Z */}
+    <path d="M82 42L85 45L82 48" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    
+    {/* Small decorative element */}
+    <circle cx="88" cy="12" r="2" fill="white" opacity="0.8"/>
   </svg>
 );
 
