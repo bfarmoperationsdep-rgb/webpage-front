@@ -2,12 +2,23 @@ import React from 'react';
 
 const AWSLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100" height="60" fill="#232F3E"/>
-    <path d="M28.5 25.2C28.5 24.8 28.6 24.5 28.8 24.3C29 24.1 29.3 24 29.7 24H30.9C31.3 24 31.6 24.1 31.8 24.3C32 24.5 32.1 24.8 32.1 25.2V30.9C32.1 32.1 32.4 33 32.9 33.6C33.5 34.2 34.3 34.5 35.4 34.5C36.5 34.5 37.3 34.2 37.9 33.6C38.4 33 38.7 32.1 38.7 30.9V25.2C38.7 24.8 38.8 24.5 39 24.3C39.2 24.1 39.5 24 39.9 24H41.1C41.5 24 41.8 24.1 42 24.3C42.2 24.5 42.3 24.8 42.3 25.2V30.9C42.3 33.2 41.6 34.9 40.2 36.1C38.8 37.3 36.9 37.9 34.4 37.9H35.4C32.9 37.9 31 37.3 29.6 36.1C28.2 34.9 27.5 33.2 27.5 30.9L28.5 25.2Z" fill="#FF9900"/>
-    <path d="M16.7 21.1C16.7 20.2 17.4 19.5 18.3 19.5H21.2C22.1 19.5 22.8 20.2 22.8 21.1V24.5C22.8 25.4 22.1 26.1 21.2 26.1H18.3C17.4 26.1 16.7 25.4 16.7 24.5V21.1Z" fill="#FF9900"/>
-    <path d="M75 25C75.8 25 76.5 25.7 76.5 26.5V30.5C76.5 31.3 75.8 32 75 32H73C72.2 32 71.5 31.3 71.5 30.5V26.5C71.5 25.7 72.2 25 73 25H75Z" fill="#FF9900"/>
-    <path d="M18 40C18 38.9 18.9 38 20 38H80C81.1 38 82 38.9 82 40C82 41.1 81.1 42 80 42H20C18.9 42 18 41.1 18 40Z" fill="#FF9900"/>
-    <path d="M85 32.5C83.5 31 81 32 80 33.5C81.5 35 84 34 85 32.5Z" fill="#FF9900"/>
+    <rect width="100" height="60" fill="white" rx="8"/>
+    
+    {/* AWS background */}
+    <rect x="10" y="10" width="80" height="40" fill="#232F3E" rx="4"/>
+    
+    {/* AWS text */}
+    <text x="50" y="30" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#FF9900" fontFamily="Arial, sans-serif">AWS</text>
+    
+    {/* Cloud icon elements */}
+    <path d="M20 20C22 18 26 18 28 20C30 18 34 18 36 20C38 22 38 26 36 28C34 30 30 30 28 28C26 30 22 30 20 28C18 26 18 22 20 20Z" fill="#FF9900" opacity="0.3"/>
+    
+    {/* Amazon smile curve */}
+    <path d="M15 42C15 42 35 47 85 42" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
+    <path d="M80 40L85 42L80 44" stroke="#FF9900" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    
+    {/* Bottom line */}
+    <line x1="10" y1="50" x2="90" y2="50" stroke="#E5E5E5" strokeWidth="1"/>
   </svg>
 );
 
