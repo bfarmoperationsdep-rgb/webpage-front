@@ -1,18 +1,35 @@
 @import '../../../styles/abstracts/variables';
 @import '../../../styles/abstracts/mixins';
 
-.cta {
-  padding: $spacing-18 0;
-  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+.cta-section {
+  padding: $spacing-20 0;
+  background: linear-gradient(135deg, $bfarm-green 0%, $bfarm-dark-green 100%);
   color: $white;
   text-align: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba($white, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba($white, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
   
   &__content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
   
   &__title {
+    font-family: $font-heading;
     font-size: $font-size-3xl;
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-6;
@@ -20,16 +37,38 @@
     @include respond-to(md) {
       font-size: $font-size-4xl;
     }
+    
+    @include respond-to(lg) {
+      font-size: $font-size-5xl;
+    }
   }
   
   &__description {
     font-size: $font-size-lg;
     line-height: $line-height-relaxed;
-    margin-bottom: $spacing-8;
-    opacity: 0.9;
+    margin-bottom: $spacing-12;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
     
     @include respond-to(md) {
       font-size: $font-size-xl;
+    }
+  }
+  
+  &__features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    margin-bottom: $spacing-12;
+    
+    @include respond-to(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
   
@@ -37,9 +76,88 @@
     @include flex-center;
     gap: $spacing-4;
     flex-direction: column;
+    margin-bottom: $spacing-10;
     
     @include respond-to(sm) {
       flex-direction: row;
     }
+  }
+  
+  &__contact-info {
+    @include flex-center;
+    gap: $spacing-6;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0.8;
+    
+    @include respond-to(md) {
+      gap: $spacing-8;
+    }
+  }
+}
+
+.cta-feature {
+  background: rgba($white, 0.1);
+  border-radius: $border-radius-lg;
+  padding: $spacing-6;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($white, 0.15);
+  transition: all $transition-duration-base $transition-timing;
+  
+  &:hover {
+    background: rgba($white, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  &__icon {
+    @include flex-center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba($white, 0.2);
+    border-radius: 50%;
+    margin: 0 auto $spacing-4;
+    
+    i {
+      font-size: $font-size-xl;
+      color: $white;
+    }
+  }
+  
+  &__content {
+    text-align: center;
+  }
+  
+  &__title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-2;
+    color: $white;
+  }
+  
+  &__description {
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+    opacity: 0.9;
+  }
+}
+
+.contact-option {
+  @include flex-center;
+  gap: $spacing-2;
+  font-size: $font-size-sm;
+  transition: all $transition-duration-base $transition-timing;
+  
+  &:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+  
+  i {
+    font-size: $font-size-base;
+  }
+  
+  span {
+    font-weight: $font-weight-medium;
   }
 }

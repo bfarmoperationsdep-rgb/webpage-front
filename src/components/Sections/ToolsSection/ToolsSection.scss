@@ -84,18 +84,20 @@
     height: 3.5rem;
     border-radius: $border-radius-lg;
     transition: all $transition-duration-base $transition-timing;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     
-    span {
-      font-size: $font-size-2xl;
-      filter: brightness(1.2);
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
     }
     
     @include respond-to(md) {
       width: 4rem;
       height: 4rem;
       
-      span {
-        font-size: $font-size-3xl;
+      svg {
+        width: 3rem;
+        height: 3rem;
       }
     }
   }

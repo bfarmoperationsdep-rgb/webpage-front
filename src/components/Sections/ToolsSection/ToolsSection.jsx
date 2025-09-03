@@ -2,23 +2,37 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../../context/LanguageContext';
 import './ToolsSection.scss';
+import {
+  AWSLogo,
+  AmazonLogo,
+  HeliumLogo,
+  JungleScoutLogo,
+  KeepaLogo,
+  CerebroLogo,
+  PPCEntourageLogo,
+  DataDiveLogo,
+  SellerCentralLogo,
+  BrandRegistryLogo,
+  DSPLogo,
+  AnalyticsLogo
+} from '../../../assets/logos';
 
 const ToolsSection = () => {
   const { t } = useLanguage();
 
   const tools = [
-    { name: 'AWS', icon: '☁️', color: '#FF9900' },
-    { name: 'Seller Central', icon: '📊', color: '#FF9900' },
-    { name: 'Brand Registry', icon: '🏷️', color: '#FFB84D' },
-    { name: 'DSP', icon: '🎯', color: '#FF6B6B' },
-    { name: 'Analytics', icon: '📈', color: '#4ECDC4' },
-    { name: 'Amazon', icon: '📦', color: '#FF9900' },
-    { name: 'Helium 10', icon: '🔍', color: '#00D4FF' },
-    { name: 'Jungle Scout', icon: '🌿', color: '#00C851' },
-    { name: 'Keepa', icon: '📉', color: '#FB3958' },
-    { name: 'Cerebro', icon: '🧠', color: '#9C27B0' },
-    { name: 'PPC Entourage', icon: '💼', color: '#FF5722' },
-    { name: 'DataDive', icon: '🏊', color: '#2196F3' }
+    { name: 'AWS', icon: AWSLogo, color: '#FF9900' },
+    { name: 'Seller Central', icon: SellerCentralLogo, color: '#FF9900' },
+    { name: 'Brand Registry', icon: BrandRegistryLogo, color: '#FFB84D' },
+    { name: 'DSP', icon: DSPLogo, color: '#FF6B6B' },
+    { name: 'Analytics', icon: AnalyticsLogo, color: '#4ECDC4' },
+    { name: 'Amazon', icon: AmazonLogo, color: '#FF9900' },
+    { name: 'Helium 10', icon: HeliumLogo, color: '#00D4FF' },
+    { name: 'Jungle Scout', icon: JungleScoutLogo, color: '#00C851' },
+    { name: 'Keepa', icon: KeepaLogo, color: '#FB3958' },
+    { name: 'Cerebro', icon: CerebroLogo, color: '#9C27B0' },
+    { name: 'PPC Entourage', icon: PPCEntourageLogo, color: '#FF5722' },
+    { name: 'DataDive', icon: DataDiveLogo, color: '#2196F3' }
   ];
 
   // Дублюємо масив для безперервної прокрутки
@@ -60,8 +74,8 @@ const ToolsSection = () => {
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <div className="tools__item-icon" style={{ backgroundColor: tool.color }}>
-                    <span>{tool.icon}</span>
+                  <div className="tools__item-icon" style={{ backgroundColor: 'white' }}>
+                    <tool.icon size={32} />
                   </div>
                   <span className="tools__item-name">{tool.name}</span>
                 </motion.div>
