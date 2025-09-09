@@ -130,11 +130,12 @@ const HeroSection = () => {
               </Link>
             </motion.div>
 
+
             <motion.div 
               className="hero__features"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
               <div className="hero__feature">
                 <i className="fas fa-chart-line"></i>
@@ -198,67 +199,18 @@ const HeroSection = () => {
                 
                 <div className="hero__platforms">
                   <div className="hero__platform">
-                    <i className="fab fa-google"></i>
-                    <span>{t('hero.dashboard.platforms.google')}</span>
+                    <span>Google</span>
                   </div>
                   <div className="hero__platform">
-                    <i className="fab fa-amazon"></i>
-                    <span>{t('hero.dashboard.platforms.amazon')}</span>
+                    <span>Amazon ads</span>
                   </div>
                   <div className="hero__platform">
-                    <i className="fab fa-telegram"></i>
-                    <span>{t('hero.dashboard.platforms.telegram')}</span>
+                    <span>Telegram</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="hero__floating-cards">
-              <motion.div 
-                className="hero__card hero__card--strategy"
-                initial={{ opacity: 0, scale: 0.8, x: 50 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-                <div className="hero__card-icon">
-                  <i className="fas fa-chart-line"></i>
-                </div>
-                <div className="hero__card-content">
-                  <h4>{t('hero.floatingCards.strategy.title')}</h4>
-                  <p dangerouslySetInnerHTML={{ __html: t('hero.floatingCards.strategy.description') }}></p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="hero__card hero__card--creative"
-                initial={{ opacity: 0, scale: 0.8, x: -50 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-              >
-                <div className="hero__card-icon">
-                  <i className="fas fa-palette"></i>
-                </div>
-                <div className="hero__card-content">
-                  <h4>{t('hero.floatingCards.creative.title')}</h4>
-                  <p dangerouslySetInnerHTML={{ __html: t('hero.floatingCards.creative.description') }}></p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="hero__card hero__card--execution"
-                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-              >
-                <div className="hero__card-icon">
-                  <i className="fas fa-cogs"></i>
-                </div>
-                <div className="hero__card-content">
-                  <h4>{t('hero.floatingCards.execution.title')}</h4>
-                  <p dangerouslySetInnerHTML={{ __html: t('hero.floatingCards.execution.description') }}></p>
-                </div>
-              </motion.div>
-            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -77,14 +77,39 @@ const WhyBFarmSection = () => {
             </div>
 
             <div className="why-bfarm__certifications">
-              <div className="why-bfarm__cert">
-                <span className="why-bfarm__cert-icon">🔒</span>
-                <span className="why-bfarm__cert-text">Amazon Advertising Partner</span>
-              </div>
-              <div className="why-bfarm__cert">
-                <span className="why-bfarm__cert-icon">☁️</span>
-                <span className="why-bfarm__cert-text">AWS Certified</span>
-              </div>
+              <motion.div 
+                className="why-bfarm__cert"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop&q=80" 
+                  alt="Amazon SPN Certificate" 
+                  className="why-bfarm__cert-image"
+                />
+                <div className="why-bfarm__cert-text">
+                  <span>Amazon SPN Service Provider</span>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="why-bfarm__cert"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80" 
+                  alt="Amazon Ads Certificate" 
+                  className="why-bfarm__cert-image"
+                />
+                <div className="why-bfarm__cert-text">
+                  <span>Amazon Ads Certified Partner</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
