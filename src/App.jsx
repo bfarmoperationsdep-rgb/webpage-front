@@ -13,6 +13,10 @@ import FullAccountManagement from './pages/Services/FullAccountManagement';
 import AmazonAdvertising from './pages/Services/AmazonAdvertising';
 import ProductOptimization from './pages/Services/ProductOptimization';
 import LaunchingOnAmazon from './pages/Services/LaunchingOnAmazon';
+import DesignServices from './pages/Services/DesignServices';
+import ConsultingServices from './pages/Services/ConsultingServices';
+import CatalogingServices from './pages/Services/CatalogingServices';
+import TrainingServices from './pages/Services/TrainingServices';
 import './styles/main.scss';
 
 // Компонент для автоматичного скролу вгору при зміні роуту
@@ -42,6 +46,10 @@ function App() {
               <Route path="/services/amazon-advertising" element={<AmazonAdvertising />} />
               <Route path="/services/product-optimization" element={<ProductOptimization />} />
               <Route path="/services/launching-on-amazon" element={<LaunchingOnAmazon />} />
+              <Route path="/services/design-services" element={<DesignServices />} />
+              <Route path="/services/consulting-services" element={<ConsultingServices />} />
+              <Route path="/services/cataloging-services" element={<CatalogingServices />} />
+              <Route path="/services/training-services" element={<TrainingServices />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />
