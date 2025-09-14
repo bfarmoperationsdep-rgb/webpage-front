@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Layout/Header/Header';
-import Footer from './components/Layout/Footer/Footer';
+import EmailCapture from './components/Sections/EmailCapture/EmailCapture';
 import Home from './pages/Home/Home';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
 import Portfolio from './pages/Portfolio/Portfolio';
-import Blog from './pages/Blog/Blog';
+import Articles from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
 import FullAccountManagement from './pages/Services/FullAccountManagement';
 import AmazonAdvertising from './pages/Services/AmazonAdvertising';
@@ -52,11 +52,11 @@ function App() {
               <Route path="/services/training-services" element={<TrainingServices />} />
               <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path="/articles" element={<Articles />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
-          <Footer />
+          <EmailCapture />
         </div>
       </Router>
     </LanguageProvider>

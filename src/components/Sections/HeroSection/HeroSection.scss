@@ -93,9 +93,15 @@
     }
     
     @include respond-to(lg) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: $spacing-16;
+      padding: $spacing-16 0 $spacing-20;
+      align-items: center;
+    }
+    
+    @include respond-to(xl) {
       gap: $spacing-20;
-      padding: $spacing-20 0 $spacing-32;
+      padding: $spacing-20 0 $spacing-24;
     }
   }
   
@@ -192,24 +198,85 @@
       justify-content: flex-start;
     }
     
-    .btn {
+    &--three {
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-3;
       width: 100%;
-      justify-content: center;
-      padding: $spacing-3 $spacing-4;
-      font-size: $font-size-sm;
-      min-height: 48px; // Touch-friendly
-      border-radius: $border-radius-lg;
+      max-width: 100%;
       
       @include respond-to(sm) {
-        width: auto;
-        padding: $spacing-3 $spacing-6;
-        font-size: $font-size-base;
+        gap: $spacing-4;
+        max-width: 480px;
+        margin: 0 auto;
       }
       
       @include respond-to(md) {
-        padding: $spacing-4 $spacing-8;
-        font-size: $font-size-lg;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 700px;
+        gap: $spacing-3;
       }
+      
+      @include respond-to(lg) {
+        flex-wrap: nowrap;
+        gap: $spacing-4;
+        max-width: 900px;
+      }
+      
+      @include respond-to(xl) {
+        max-width: 1000px;
+      }
+      
+      .btn {
+        width: 100%;
+        margin: 0;
+        font-size: $font-size-sm;
+        padding: $spacing-3 $spacing-4;
+        
+        @include respond-to(sm) {
+          max-width: 400px;
+          font-size: $font-size-base;
+          padding: $spacing-3 $spacing-5;
+        }
+        
+        @include respond-to(md) {
+          flex: 0 1 calc(50% - #{$spacing-2});
+          max-width: 280px;
+          min-width: 200px;
+        }
+        
+        @include respond-to(lg) {
+          flex: 0 1 calc(33.333% - #{$spacing-3});
+          max-width: 260px;
+          min-width: 220px;
+          font-size: $font-size-base;
+          padding: $spacing-3 $spacing-4;
+        }
+        
+        @include respond-to(xl) {
+          max-width: 300px;
+          min-width: 250px;
+          padding: $spacing-4 $spacing-6;
+        }
+      }
+    }
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      border-radius: $border-radius-lg;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-align: center;
+      line-height: 1.2;
+      
+      // Базові розміри для всіх екранів без дублювання
     }
   }
   
@@ -259,9 +326,28 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba($white, 0.3);
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     margin: 0 auto;
     color: $text-primary;
+    
+    @include respond-to(sm) {
+      max-width: 350px;
+      padding: $spacing-4;
+    }
+    
+    @include respond-to(md) {
+      max-width: 400px;
+      padding: $spacing-5;
+    }
+    
+    @include respond-to(lg) {
+      max-width: 420px;
+      padding: $spacing-6;
+    }
+    
+    @include respond-to(xl) {
+      max-width: 480px;
+    }
     
     // Мобільні покращення
     @media (max-width: 359px) {

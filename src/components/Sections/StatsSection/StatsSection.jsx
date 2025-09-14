@@ -6,22 +6,22 @@ const StatsSection = () => {
   const stats = [
     {
       number: '500+',
-      label: 'Реалізованих проектів',
+      label: 'Completed Projects',
       icon: 'fas fa-project-diagram'
     },
     {
       number: '98%',
-      label: 'Задоволених клієнтів',
+      label: 'Satisfied Clients',
       icon: 'fas fa-smile'
     },
     {
       number: '50+',
-      label: 'Членів команди',
+      label: 'Team Members',
       icon: 'fas fa-users'
     },
     {
       number: '24/7',
-      label: 'Технічна підтримка',
+      label: 'Technical Support',
       icon: 'fas fa-headset'
     }
   ];
@@ -41,10 +41,10 @@ const StatsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="stats__title">
-            Наші досягнення в цифрах
+            Our achievements in numbers
           </h2>
           <p className="stats__description">
-            За роки роботи ми накопичили досвід та довіру тисяч клієнтів
+            Years of experience building trust with thousands of clients
           </p>
         </motion.div>
 

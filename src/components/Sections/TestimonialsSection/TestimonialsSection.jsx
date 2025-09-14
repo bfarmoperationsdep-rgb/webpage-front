@@ -1,10 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../../../context/LanguageContext';
 import './TestimonialsSection.scss';
 
 const TestimonialsSection = () => {
-  const { t } = useLanguage();
 
   return (
     <section className="testimonials">
@@ -16,7 +14,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="testimonials__title">{t('testimonials.title')}</h2>
+          <h2 className="testimonials__title">What Our Clients Say</h2>
           
           <div className="testimonials__main">
             <motion.div 
@@ -28,10 +26,10 @@ const TestimonialsSection = () => {
             >
               <div className="testimonials__quote-content">
                 <div className="testimonials__quote-mark">"</div>
-                <p>{t('testimonials.quote')}</p>
+                <p>"In nine months BFarm took our cosmetics brand from zero to $400K/month and dropped TACoS to 9%. Finally found partners who speak in numbers, not poetry."</p>
                 <div className="testimonials__author">
                   <div className="testimonials__author-info">
-                    <h4>{t('testimonials.author')}</h4>
+                    <h4>Anna R., Co‑Founder, Beauty Lab</h4>
                   </div>
                 </div>
               </div>
@@ -46,11 +44,11 @@ const TestimonialsSection = () => {
             >
               <div className="testimonials__founder-content">
                 <div className="testimonials__founder-quote">
-                  <p>{t('founder.quote')}</p>
+                  <p>"I once realized: Amazon rewards those who play by its rules—then add their own creativity. That's exactly how BFarm helps brands worldwide: we mixed the platform's cold data with human creativity and got an explosive growth cocktail. Join us and see how 1 + 1 can equal 11."</p>
                 </div>
                 <div className="testimonials__founder-info">
-                  <h4>{t('founder.name')}</h4>
-                  <span>{t('founder.title')}</span>
+                  <h4>MAKSYM LAZUTO</h4>
+                  <span>Founder & CEO</span>
                 </div>
               </div>
             </motion.div>

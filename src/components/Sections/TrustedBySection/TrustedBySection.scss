@@ -1,0 +1,76 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
+.trusted-by {
+  padding: $spacing-12 0;
+  background: rgba($primary-color, 0.02);
+  border-top: 1px solid rgba($primary-color, 0.08);
+  border-bottom: 1px solid rgba($primary-color, 0.08);
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+    
+    @include respond-to(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-8;
+    }
+    
+    @include respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-10;
+    }
+  }
+  
+  &__item {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-3;
+    padding: $spacing-4;
+    border-radius: $border-radius-lg;
+    transition: all $transition-duration-base $transition-timing;
+    
+    @include respond-to(md) {
+      flex-direction: row;
+      text-align: left;
+      justify-content: center;
+    }
+    
+    @include respond-to(lg) {
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba($primary-color, 0.05);
+    }
+  }
+  
+  &__icon {
+    font-size: $font-size-2xl;
+    flex-shrink: 0;
+    
+    @include respond-to(md) {
+      font-size: $font-size-xl;
+    }
+    
+    @include respond-to(lg) {
+      font-size: $font-size-2xl;
+    }
+  }
+  
+  &__text {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-primary;
+    line-height: $line-height-relaxed;
+    
+    @include respond-to(md) {
+      font-size: $font-size-base;
+    }
+  }
+}

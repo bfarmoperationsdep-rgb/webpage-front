@@ -6,12 +6,12 @@ const Portfolio = () => {
     <div className="portfolio-page">
       <div className="container">
         <div className="portfolio-page__header">
-          <h1>Портфоліо</h1>
-          <p>Наші найкращі проекти та досягнення</p>
+          <h1>Portfolio</h1>
+          <p>Our best Amazon growth projects and achievements</p>
         </div>
         
         <div className="portfolio-page__content">
-          <p>Портфоліо проектів буде тут...</p>
+          <p>Portfolio projects will be here...</p>
         </div>
       </div>
     </div>

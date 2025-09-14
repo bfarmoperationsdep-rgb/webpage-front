@@ -85,11 +85,19 @@
         color: $text-secondary;
         
         &::before {
-          content: '✓';
+          content: '•';
           color: $success-color;
           font-weight: bold;
         }
       }
+    }
+    
+    .btn {
+      width: 100%;
+      padding: $spacing-3 $spacing-6;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: initial;
     }
   }
 }

@@ -97,10 +97,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {t('hero.title')}
+              The Amazon agency that turns
               <br />
               <span className="hero__title-gradient">
-                {t('hero.titleHighlight')}
+                visibility into profit
               </span>
             </motion.h1>
             
@@ -110,23 +110,23 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              {t('hero.description')}
+              Great products, sluggish sales? We fix discoverability, conversion, and ads — so your listings rank, ACoS drops, and revenue scales.
             </motion.p>
 
             <motion.div 
-              className="hero__actions"
+              className="hero__actions hero__actions--three"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
-                <i className="fas fa-rocket"></i>
-                {t('hero.startProject')}
-                <i className="fas fa-arrow-right btn-arrow"></i>
+                Grow Profitable Amazon Sales
               </Link>
-              <Link to="/portfolio" className="btn btn-secondary btn-lg hover-lift">
-                <i className="fas fa-play-circle"></i>
-                {t('hero.watchWork')}
+              <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
+                Fix My Amazon Issue
+              </Link>
+              <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
+                Get a FREE listing audit
               </Link>
             </motion.div>
 
@@ -139,15 +139,15 @@ const HeroSection = () => {
             >
               <div className="hero__feature">
                 <i className="fas fa-chart-line"></i>
-                <span>{t('hero.features.strategy')}</span>
+                <span>Data-Driven Strategy</span>
               </div>
               <div className="hero__feature">
                 <i className="fas fa-palette"></i>
-                <span>{t('hero.features.creative')}</span>
+                <span>Creative Excellence</span>
               </div>
               <div className="hero__feature">
                 <i className="fas fa-cogs"></i>
-                <span>{t('hero.features.execution')}</span>
+                <span>Reliable Processes</span>
               </div>
             </motion.div>
           </motion.div>
@@ -157,11 +157,11 @@ const HeroSection = () => {
               <div className="hero__dashboard-header">
                 <div className="hero__dashboard-title">
                   <i className="fas fa-chart-line"></i>
-                  {t('hero.dashboard.title')}
+                  Amazon Performance Dashboard
                 </div>
                 <div className="hero__dashboard-status">
                   <span className="status-dot status-dot--active"></span>
-                  {t('hero.dashboard.status')}
+                  Live Data
                 </div>
               </div>
               
@@ -169,7 +169,7 @@ const HeroSection = () => {
                 <div className="hero__metrics-grid">
                   <div className="hero__metric">
                     <div className="hero__metric-value">+187%</div>
-                    <div className="hero__metric-label">{t('hero.dashboard.metrics.growth')}</div>
+                    <div className="hero__metric-label">Sales Growth</div>
                     <div className="hero__metric-trend">
                       <i className="fas fa-arrow-up"></i>
                     </div>
@@ -177,7 +177,7 @@ const HeroSection = () => {
                   
                   <div className="hero__metric">
                     <div className="hero__metric-value">1.375M</div>
-                    <div className="hero__metric-label">{t('hero.dashboard.metrics.revenue')}</div>
+                    <div className="hero__metric-label">Revenue Generated</div>
                     <div className="hero__metric-trend">
                       <i className="fas fa-arrow-up"></i>
                     </div>
@@ -185,7 +185,7 @@ const HeroSection = () => {
                 </div>
                 
                 <div className="hero__chart">
-                  <div className="hero__chart-title">{t('hero.dashboard.chartTitle')}</div>
+                  <div className="hero__chart-title">Monthly Performance</div>
                   <div className="hero__chart-bars">
                     <div className="hero__chart-bar" style={{height: '30%'}}></div>
                     <div className="hero__chart-bar" style={{height: '45%'}}></div>
@@ -229,7 +229,7 @@ const HeroSection = () => {
         <div className="hero__scroll-mouse">
           <div className="hero__scroll-wheel"></div>
         </div>
-        <span>{t('hero.scroll')}</span>
+        <span>Scroll down</span>
       </motion.div>
     </section>
   );

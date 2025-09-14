@@ -7,25 +7,25 @@ const PortfolioSection = () => {
   const portfolioItems = [
     {
       id: 1,
-      title: "Електронна комерція",
+      title: "E-commerce Excellence",
       category: "E-commerce",
-      description: "Створення онлайн-магазину з інтеграцією з Amazon",
+      description: "Complete Amazon store setup with advanced integrations",
       image: "placeholder-image.jpg",
       tags: ["Amazon", "SEO", "PPC"]
     },
     {
       id: 2,
-      title: "Брендинг продукту",
+      title: "Product Branding",
       category: "Brand Development",
-      description: "Розробка бренд-стратегії та запуск на Amazon",
+      description: "Brand strategy development and successful Amazon launch",
       image: "placeholder-image.jpg",
       tags: ["Branding", "Launch", "Strategy"]
     },
     {
       id: 3,
-      title: "Оптимізація листингів",
+      title: "Listing Optimization",
       category: "Optimization",
-      description: "Підвищення конверсії та органічного трафіку",
+      description: "Conversion rate and organic traffic optimization",
       image: "placeholder-image.jpg",
       tags: ["Optimization", "SEO", "Conversion"]
     }
@@ -41,9 +41,9 @@ const PortfolioSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="portfolio-section__title">Наші роботи</h2>
+          <h2 className="portfolio-section__title">Our Work</h2>
           <p className="portfolio-section__description">
-            Переглянути приклади успішно реалізованих проектів
+            View examples of successfully implemented projects
           </p>
         </motion.div>
         
@@ -61,7 +61,7 @@ const PortfolioSection = () => {
               <div className="portfolio-card__image">
                 <div className="placeholder-image"></div>
                 <div className="portfolio-card__overlay">
-                  <span>Переглянути проект</span>
+                  <span>View Project</span>
                 </div>
               </div>
               <div className="portfolio-card__content">
@@ -87,7 +87,7 @@ const PortfolioSection = () => {
         >
           <Link to="/portfolio" className="btn btn-primary btn-lg">
             <i className="fas fa-eye"></i>
-            Дивитися всі проекти
+            View All Projects
           </Link>
         </motion.div>
       </div>

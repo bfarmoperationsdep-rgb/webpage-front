@@ -6,12 +6,12 @@ const Contact = () => {
     <div className="contact-page">
       <div className="container">
         <div className="contact-page__header">
-          <h1>Контакти</h1>
-          <p>Зв'яжіться з нами для обговорення вашого проекту</p>
+          <h1>Contact Us</h1>
+          <p>Get in touch with us to discuss your Amazon growth project</p>
         </div>
         
         <div className="contact-page__content">
-          <p>Контактна форма буде тут...</p>
+          <p>Contact form will be here...</p>
         </div>
       </div>
     </div>

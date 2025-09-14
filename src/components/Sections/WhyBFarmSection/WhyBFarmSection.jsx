@@ -9,23 +9,23 @@ const WhyBFarmSection = () => {
   const features = [
     {
       icon: '👥',
-      title: 'Співзасновники вашого росту',
-      description: 'Ми стаємо частиною вашої команди, а не просто підрядниками',
+      title: 'Co-founders of your growth',
+      description: 'We become part of your team, not just contractors',
     },
     {
       icon: '📊',
-      title: 'Прозорі дашборди',
-      description: 'Відкритий доступ до всіх метрик і результатів у режимі реального часу',
+      title: 'Transparent dashboards',
+      description: 'Open access to all metrics and results in real time',
     },
     {
       icon: '🏆',
-      title: 'Доведена експертиза',
-      description: 'Amazon Advertising Partner та AWS Certified спеціалісти',
+      title: 'Proven expertise',
+      description: 'Amazon Advertising Partner and AWS Certified specialists',
     },
     {
       icon: '✅',
-      title: 'Гарантія результату',
-      description: 'Говоримо мовою прибутку, а не пустих обіцянок',
+      title: 'Result guarantee',
+      description: 'We speak the language of profit, not empty promises',
     },
   ];
 
@@ -40,11 +40,11 @@ const WhyBFarmSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="why-bfarm__title">
-            Чому <span className="why-bfarm__title-highlight">BFarm?</span>
+            Why <span className="why-bfarm__title-highlight">BFarm?</span>
           </h2>
           <p className="why-bfarm__subtitle">
-            Обираючи BFarm, ви наймаєте не просто підрядника – ви отримуєте{' '}
-            <span className="why-bfarm__accent">співзасновника вашого росту.</span>
+            Choosing BFarm, you're not just hiring a contractor – you're getting{' '}
+            <span className="why-bfarm__accent">a co-founder of your growth.</span>
           </p>
         </motion.div>
 
@@ -67,13 +67,13 @@ const WhyBFarmSection = () => {
                 98%
               </motion.div>
               <p className="why-bfarm__stat-text">
-                наших клієнтів співпрацюють з нами понад <strong>18 місяців</strong>, адже 
-                ми говоримо мовою прибутку та відкритих дашбордів, а не пустих обіцянок.
+                of our clients work with us for over <strong>18 months</strong>, because 
+                we speak the language of profit and open dashboards, not empty promises.
               </p>
             </div>
 
             <div className="why-bfarm__stat-label">
-              клієнтів з нами понад 18 місяців
+              clients with us over 18 months
             </div>
 
             <div className="why-bfarm__certifications">
@@ -84,13 +84,16 @@ const WhyBFarmSection = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop&q=80" 
-                  alt="Amazon SPN Certificate" 
-                  className="why-bfarm__cert-image"
-                />
-                <div className="why-bfarm__cert-text">
-                  <span>Amazon SPN Service Provider</span>
+                <div className="amazon-cert">
+                  <div className="amazon-cert__badge">
+                    <div className="amazon-cert__icon">🔍</div>
+                    <span className="amazon-cert__brand">amazon</span>
+                    <span className="amazon-cert__sub">advertising</span>
+                  </div>
+                  <div className="amazon-cert__text">
+                    <span>Amazon Ads</span>
+                    <span>Certified</span>
+                  </div>
                 </div>
               </motion.div>
               
@@ -101,13 +104,16 @@ const WhyBFarmSection = () => {
                 transition={{ duration: 0.5, delay: 0.9 }}
                 viewport={{ once: true }}
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80" 
-                  alt="Amazon Ads Certificate" 
-                  className="why-bfarm__cert-image"
-                />
-                <div className="why-bfarm__cert-text">
-                  <span>Amazon Ads Certified Partner</span>
+                <div className="amazon-cert">
+                  <div className="amazon-cert__badge">
+                    <div className="amazon-cert__icon">🔍</div>
+                    <span className="amazon-cert__brand">amazon</span>
+                    <span className="amazon-cert__sub">advertising</span>
+                  </div>
+                  <div className="amazon-cert__text">
+                    <span>Amazon Ads</span>
+                    <span>Certified</span>
+                  </div>
                 </div>
               </motion.div>
             </div>

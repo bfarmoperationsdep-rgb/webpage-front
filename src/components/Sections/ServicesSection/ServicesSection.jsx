@@ -1,46 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../../../context/LanguageContext';
 import './ServicesSection.scss';
 
 const ServicesSection = () => {
-  const { t, language } = useLanguage();
 
   const services = [
     {
       icon: 'fas fa-cogs',
-      title: t('services.items.fullAccount.title'),
-      description: t('services.items.fullAccount.description'),
-      features: t('services.items.fullAccount.features'),
-      metrics: language === 'uk' ? '+42% чистого прибутку через 6 місяців' : '+42% net profit uplift in 6 months',
+      title: 'Full Account Management',
+      description: '360° care: purchasing & FBA logistics, KPI‑driven stock management, Seller Central / Brand Registry admin.',
+      features: ['Automated SOPs → zero errors and full transparency in Slack + Looker Studio', 'Average client net‑profit uplift after 6 months: +42%'],
+      metrics: '+42% net profit uplift in 6 months',
       color: 'from-green-500 to-green-600',
       link: '/services/full-account-management'
     },
     {
       icon: 'fas fa-chart-line',
-      title: t('services.items.advertising.title'),
-      description: t('services.items.advertising.description'),
-      features: t('services.items.advertising.features'),
-      metrics: language === 'uk' ? 'Зниження CPC до 25% без втрати трафіку' : 'CPC reduction up to 25% without traffic loss',
+      title: 'Amazon Advertising Management',
+      description: 'All formats covered: Sponsored Products, Brands, Display, DSP.',
+      features: ['In‑house bid‑management scripts cut CPC by up to –25% without losing traffic', 'DSP retargeting wins back up to 14% of "lost" visitors'],
+      metrics: 'CPC reduction up to 25% without traffic loss',
       color: 'from-blue-500 to-blue-600',
       link: '/services/amazon-advertising'
     },
     {
       icon: 'fas fa-search',
-      title: t('services.items.optimization.title'),
-      description: t('services.items.optimization.description'),
-      features: t('services.items.optimization.features'),
-      metrics: language === 'uk' ? 'CTR зростає ~1,8×' : 'CTR grows ~1.8×',
+      title: 'Product Page Optimization',
+      description: 'Data‑Driven SEO: Brand Analytics + Helium 10 → 100/100 relevance.',
+      features: ['Copy that sells: Hook—Problem—Solution—Proof formula', 'Open A/B panel shows you which tweaks deliver +15‑30% CVR'],
+      metrics: 'CTR grows ~1.8×',
       color: 'from-purple-500 to-purple-600',
       link: '/services/product-optimization'
     },
     {
       icon: 'fas fa-rocket',
-      title: t('services.items.launching.title'),
-      description: t('services.items.launching.description'),
-      features: t('services.items.launching.features'),
-      metrics: language === 'uk' ? 'Гарантуємо значок Amazon\'s Choice' : 'Amazon\'s Choice guarantee',
+      title: 'Launching on Amazon',
+      description: 'Niche analysis & white‑space strategy → we dodge the "red ocean."',
+      features: ['Step‑by‑step 0‑90 day plan: from listings to first review', 'Amazon\'s Choice guaranteed or the service fee is refunded'],
+      metrics: 'Amazon\'s Choice guarantee',
       color: 'from-orange-500 to-orange-600',
       link: '/services/launching-on-amazon'
     }
@@ -57,13 +55,13 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="services__title">
-            {t('services.title')}
+            Full‑spectrum services for Amazon brands
             <span className="services__title-highlight">
-              {language === 'uk' ? 'спектр досконалості' : 'spectrum of excellence'}
+              spectrum of excellence
             </span>
           </h2>
           <p className="services__description">
-            {t('services.teaser')}
+            We're a one‑stop shop: strategy, creative, advertising, consulting and flawless account management—all under one roof. Pick the service you need and go break some records.
           </p>
         </motion.div>
 
@@ -101,7 +99,7 @@ const ServicesSection = () => {
               <div className="services__item-overlay"></div>
               
               <Link to={service.link} className="services__item-link btn btn-outline">
-                {t('common.learnMore')}
+                Learn More
                 <i className="fas fa-arrow-right"></i>
               </Link>
             </motion.div>

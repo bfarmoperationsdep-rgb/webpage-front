@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useLanguage } from '../../../context/LanguageContext';
 import './Header.scss';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { language, switchLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +21,12 @@ const Header = () => {
   }, [location]);
 
   const navigation = [
-    { name: t('nav.home'), href: '/' },
-    { name: t('nav.services'), href: '/services' },
-    { name: t('nav.about'), href: '/about' },
-    { name: t('nav.portfolio'), href: '/portfolio' },
-    { name: t('nav.blog'), href: '/blog' },
-    { name: t('nav.contact'), href: '/contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Articles', href: '/articles' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const toggleMobileMenu = () => {
@@ -67,22 +65,11 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Language Switcher */}
-          <div className="header__language hidden-mobile">
-            <button
-              onClick={() => switchLanguage(language === 'en' ? 'uk' : 'en')}
-              className="header__language-btn"
-              title={t('language.switch')}
-            >
-              <i className="fas fa-globe"></i>
-              <span>{language === 'en' ? 'EN' : 'УК'}</span>
-            </button>
-          </div>
 
           {/* CTA Button */}
           <div className="header__actions hidden-mobile">
             <Link to="/contact" className="btn btn-primary">
-              {t('cta.consultation')}
+              Free Consultation
             </Link>
           </div>
 
@@ -118,19 +105,9 @@ const Header = () => {
               ))}
             </ul>
             
-            <div className="header__mobile-language">
-              <button
-                onClick={() => switchLanguage(language === 'en' ? 'uk' : 'en')}
-                className="header__language-btn"
-              >
-                <i className="fas fa-globe"></i>
-                <span>{language === 'en' ? 'English' : 'Українська'}</span>
-              </button>
-            </div>
-            
             <div className="header__mobile-actions">
               <Link to="/contact" className="btn btn-primary btn-full">
-                {t('cta.consultation')}
+                Free Consultation
               </Link>
             </div>
           </nav>

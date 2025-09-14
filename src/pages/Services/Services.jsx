@@ -1,67 +1,65 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
 import './Services.scss';
 
 const Services = () => {
-  const { t } = useLanguage();
 
   const services = [
     {
       icon: 'fas fa-cogs',
-      title: t('servicesPage.services.fullAccount.title'),
-      description: t('servicesPage.services.fullAccount.description'),
-      features: t('servicesPage.services.fullAccount.features'),
+      title: 'Full Account Management',
+      description: 'Complete end-to-end Amazon account management with dedicated account managers.',
+      features: ['Account Setup', 'Daily Monitoring', '24/7 Support', 'Performance Reports'],
       link: '/services/full-account-management'
     },
     {
       icon: 'fas fa-chart-line',
-      title: t('servicesPage.services.advertising.title'),
-      description: t('servicesPage.services.advertising.description'),
-      features: t('servicesPage.services.advertising.features'),
+      title: 'Amazon Advertising Management',
+      description: 'Professional Amazon PPC management to maximize your advertising ROI.',
+      features: ['PPC Campaign Setup', 'Keyword Research', 'Bid Management', 'Performance Optimization'],
       link: '/services/amazon-advertising'
     },
     {
       icon: 'fas fa-search',
-      title: t('servicesPage.services.optimization.title'),
-      description: t('servicesPage.services.optimization.description'),
-      features: t('servicesPage.services.optimization.features'),
+      title: 'Product Optimization',
+      description: 'Optimize your product listings for maximum visibility and conversions.',
+      features: ['Listing Optimization', 'A+ Content', 'SEO Enhancement', 'Conversion Optimization'],
       link: '/services/product-optimization'
     },
     {
       icon: 'fas fa-rocket',
-      title: t('servicesPage.services.launching.title'),
-      description: t('servicesPage.services.launching.description'),
-      features: t('servicesPage.services.launching.features'),
+      title: 'Launching on Amazon',
+      description: 'Strategic product launch services to ensure successful market entry.',
+      features: ['Launch Strategy', 'Market Analysis', 'Competitive Research', 'Go-to-Market Planning'],
       link: '/services/launching-on-amazon'
     },
     {
       icon: 'fas fa-paint-brush',
-      title: t('servicesPage.services.design.title'),
-      description: t('servicesPage.services.design.description'),
-      features: t('servicesPage.services.design.features'),
+      title: 'Design Services',
+      description: 'Professional design services for Amazon listings and brand materials.',
+      features: ['Product Photography', 'Graphic Design', 'Brand Development', 'Creative Assets'],
       link: '/services/design-services'
     },
     {
       icon: 'fas fa-lightbulb',
-      title: t('servicesPage.services.consulting.title'),
-      description: t('servicesPage.services.consulting.description'),
-      features: t('servicesPage.services.consulting.features'),
+      title: 'Consulting Services',
+      description: 'Expert Amazon consulting to guide your business strategy and growth.',
+      features: ['Strategy Consulting', 'Business Analysis', 'Growth Planning', 'Expert Guidance'],
       link: '/services/consulting-services'
     },
     {
       icon: 'fas fa-list-ul',
-      title: t('servicesPage.services.cataloging.title'),
-      description: t('servicesPage.services.cataloging.description'),
-      features: t('servicesPage.services.cataloging.features'),
+      title: 'Cataloging Services',
+      description: 'Professional product cataloging and inventory management services.',
+      features: ['Product Cataloging', 'Inventory Management', 'Data Entry', 'Product Information'],
       link: '/services/cataloging-services'
     },
     {
       icon: 'fas fa-graduation-cap',
-      title: t('servicesPage.services.training.title'),
-      description: t('servicesPage.services.training.description'),
-      features: t('servicesPage.services.training.features'),
+      title: 'Training Services',
+      description: 'Comprehensive Amazon training programs for sellers and businesses.',
+      features: ['Seller Training', 'Best Practices', 'Platform Education', 'Skill Development'],
       link: '/services/training-services'
     }
   ];
@@ -75,9 +73,9 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="services-page__title">{t('servicesPage.title')}</h1>
+          <h1 className="services-page__title">Our Amazon Services</h1>
           <p className="services-page__description">
-            {t('servicesPage.description')}
+            Complete Amazon management solutions to grow your business
           </p>
         </motion.div>
 
@@ -100,7 +98,7 @@ const Services = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <Link to={service.link} className="btn btn-primary">{t('common.learnMore')}</Link>
+              <Link to={service.link} className="btn btn-primary">Learn More</Link>
             </motion.div>
           ))}
         </div>

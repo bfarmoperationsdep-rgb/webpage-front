@@ -166,6 +166,68 @@
     }
   }
 
+  .amazon-cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-4;
+    background: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all $transition-duration-base $transition-timing;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &__badge {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #FF9900, #FFB84D);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $spacing-3;
+      border: 4px solid #FF9900;
+    }
+
+    &__icon {
+      font-size: $font-size-xl;
+      margin-bottom: 2px;
+    }
+
+    &__brand {
+      font-size: $font-size-xs;
+      font-weight: $font-weight-bold;
+      color: $white;
+      text-transform: lowercase;
+      line-height: 1;
+    }
+
+    &__sub {
+      font-size: 8px;
+      color: $white;
+      text-transform: lowercase;
+      line-height: 1;
+    }
+
+    &__text {
+      text-align: center;
+      
+      span {
+        display: block;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $text-primary;
+        line-height: 1.2;
+      }
+    }
+  }
+
   &__features {
     display: grid;
     grid-template-columns: 1fr;
