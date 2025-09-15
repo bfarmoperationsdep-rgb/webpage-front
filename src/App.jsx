@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Layout/Header/Header';
+import Footer from './components/Layout/Footer/Footer';
 import EmailCapture from './components/Sections/EmailCapture/EmailCapture';
 import Home from './pages/Home/Home';
 import Services from './pages/Services/Services';
@@ -57,6 +58,7 @@ function App() {
             </Routes>
           </main>
           <EmailCapture />
+          <Footer />
         </div>
       </Router>
     </LanguageProvider>
