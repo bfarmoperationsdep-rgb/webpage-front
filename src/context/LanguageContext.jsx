@@ -149,7 +149,7 @@ const translations = {
     // Common Elements
     common: {
       learnMore: 'Learn More',
-      backToServices: '← Back to Services',
+        backToHome: '← Back to All Services',
       getStarted: 'Get Started Today',
       readyToScale: 'Ready to Scale Your Amazon Business?',
       letsDiscuss: 'Let\'s discuss how our full account management can transform your results.',
@@ -475,7 +475,7 @@ const translations = {
     // Common Elements
     common: {
       learnMore: 'Дізнатися більше',
-      backToServices: '← Назад до послуг',
+        backToHome: '← Назад до всіх сервісів',
       getStarted: 'Почати зараз',
       readyToScale: 'Готові масштабувати ваш Amazon бізнес?',
       letsDiscuss: 'Давайте обговоримо як наше повне управління аккаунтом може трансформувати ваші результати.',

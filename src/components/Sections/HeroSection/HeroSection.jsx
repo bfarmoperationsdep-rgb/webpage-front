@@ -113,8 +113,8 @@ const HeroSection = () => {
               Great products, sluggish sales? We fix discoverability, conversion, and ads — so your listings rank, ACoS drops, and revenue scales.
             </motion.p>
 
-            <motion.div 
-              className="hero__actions hero__actions--three"
+            <motion.div
+              className="hero__actions hero__actions--four"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -127,6 +127,9 @@ const HeroSection = () => {
               </Link>
               <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
                 Get a FREE listing audit
+              </Link>
+              <Link to="/contact" className="btn btn-primary btn-lg hover-lift">
+                Scale Your Amazon Business
               </Link>
             </motion.div>
 

@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Cache busting з timestamp
-const timestamp = new Date().getTime();
+// Cache busting з timestamp - оновлюється кожну секунду
+const timestamp = new Date().getTime() + Math.random().toString(36).substr(2, 9);
 
 module.exports = {
   entry: './src/index.js',
@@ -15,14 +15,23 @@ module.exports = {
   },
   devServer: {
     port: 3001,
-    hot: true,
+    hot: false,
+    liveReload: true,
     historyApiFallback: true,
     headers: {
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
       'Pragma': 'no-cache',
-      'Expires': '0'
+      'Expires': '0',
+      'ETag': 'false'
     },
-    liveReload: true,
+    devMiddleware: {
+      writeToDisk: false,
+    },
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+      serveIndex: false,
+      watch: true,
+    },
   },
   stats: {
     warnings: false,
