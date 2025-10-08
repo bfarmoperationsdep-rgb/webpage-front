@@ -1,15 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Cache busting з timestamp - оновлюється кожну секунду
-const timestamp = new Date().getTime() + Math.random().toString(36).substr(2, 9);
+// Cache busting з timestamp - оновлюється при кожній збірці
+const timestamp = () => new Date().getTime() + Math.random().toString(36).substr(2, 9);
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: `bundle.[contenthash:8].js?v=${timestamp}`,
-    chunkFilename: `[name].[contenthash:8].chunk.js?v=${timestamp}`,
+    filename: `bundle.[contenthash:8].js?v=${timestamp()}`,
+    chunkFilename: `[name].[contenthash:8].chunk.js?v=${timestamp()}`,
     publicPath: '/',
     clean: true,
   },

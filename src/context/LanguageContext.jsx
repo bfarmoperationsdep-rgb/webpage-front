@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 const LanguageContext = createContext();
 
@@ -883,12 +883,12 @@ export const LanguageProvider = ({ children }) => {
     return value || path;
   };
 
-  const value = {
+  const value = useMemo(() => ({
     language,
     switchLanguage,
     t,
     translations: translations[language]
-  };
+  }), [language]);
 
   return (
     <LanguageContext.Provider value={value}>
