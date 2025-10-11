@@ -1,113 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
 import './ServicePage.scss';
 
 const ConsultingServices = () => {
-  const { t } = useLanguage();
+  const serviceOffers = [
+    {
+      id: 1,
+      title: "Amazon Strategy Consulting",
+      description: "Develop a comprehensive Amazon strategy aligned with your business goals and market opportunities.",
+      features: ["Market analysis", "Growth strategy", "Competitive positioning", "Action roadmap"],
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop"
+    },
+    {
+      id: 2,
+      title: "Account Audit & Assessment",
+      description: "Comprehensive audit of your Amazon account to identify issues and opportunities for improvement.",
+      features: ["Performance review", "Compliance check", "Optimization opportunities", "Priority recommendations"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Product Launch Strategy",
+      description: "Expert guidance on launching new products successfully on Amazon with maximum impact.",
+      features: ["Launch planning", "Positioning strategy", "Marketing tactics", "Success metrics"],
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Brand Protection & Compliance",
+      description: "Protect your brand from unauthorized sellers and ensure full compliance with Amazon policies.",
+      features: ["Brand registry", "IP protection", "Policy compliance", "Violation management"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop"
+    },
+    {
+      id: 5,
+      title: "International Expansion",
+      description: "Strategic guidance for expanding your Amazon presence to international marketplaces.",
+      features: ["Market selection", "Localization", "Logistics planning", "Compliance management"],
+      image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&h=250&fit=crop"
+    },
+    {
+      id: 6,
+      title: "Performance Optimization",
+      description: "Ongoing consulting to optimize your Amazon performance metrics and maximize profitability.",
+      features: ["KPI tracking", "Process improvement", "Cost optimization", "Growth tactics"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+    }
+  ];
 
   return (
     <div className="service-page">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="service-page__header"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            {t('common.backToServices')}
+            ← Back to All Services
           </Link>
-          <h1 className="service-page__title">{t('servicePages.consulting.title')}</h1>
+          <h1 className="service-page__title">Consulting Services</h1>
           <p className="service-page__subtitle">
-            {t('servicePages.consulting.subtitle')}
+            Expert Amazon consulting to guide your business strategy and growth
           </p>
         </motion.div>
 
-        <motion.div 
-          className="service-page__content"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="service-page__description">
-            <h2>{t('servicePages.consulting.heading')}</h2>
-            <p>
-              {t('servicePages.consulting.description')}
-            </p>
-            
-            <div className="service-page__features">
-              <h3>{t('servicePages.consulting.areasTitle')}</h3>
-              <ul>
-                {t('servicePages.consulting.areas').map((area, idx) => (
-                  <li key={idx}>{area}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="consulting-types">
-              <h3>{t('servicePages.consulting.consultingTypesTitle')}</h3>
-              {t('servicePages.consulting.consultingTypes').map((type, idx) => (
-                <div key={idx} className="service-page__features">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <h4 style={{ margin: 0, color: '#059669' }}>{type.title}</h4>
-                    <span style={{ color: '#6b7280', fontSize: '0.9rem' }}>{type.duration}</span>
-                  </div>
-                  <p style={{ marginBottom: '1rem' }}>{type.description}</p>
-                  <h5 style={{ marginBottom: '0.5rem', color: '#374151' }}>Що включено:</h5>
-                  <ul style={{ marginBottom: '2rem' }}>
-                    {type.includes.map((item, itemIdx) => (
-                      <li key={itemIdx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className="service-page__results">
-              <h3>{t('servicePages.consulting.resultsTitle')}</h3>
-              <div className="results-grid">
-                {t('servicePages.consulting.results').map((result, idx) => (
-                  <div key={idx} className="result-item">
-                    <h4>{result.label}</h4>
-                    <span>{result.value}</span>
-                  </div>
-                ))}
+        <div className="service-offers">
+          {serviceOffers.map((offer, index) => (
+            <motion.div
+              key={offer.id}
+              className="service-offer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="service-offer__image">
+                <img src={offer.image} alt={offer.title} />
               </div>
-            </div>
-
-            <div className="service-page__case-study">
-              <h3>{t('servicePages.consulting.caseStudyTitle')}</h3>
-              <div className="case-study-card">
-                <h4>{t('servicePages.consulting.caseStudyBrand')}</h4>
-                <p>
-                  {t('servicePages.consulting.caseStudyText')}
-                </p>
-                <div className="case-metrics">
-                  <div className="metric">
-                    <span className="label">Зростання обороту</span>
-                    <span className="value">+180%</span>
-                    <span className="timeframe">за 6 місяців</span>
-                  </div>
-                  <div className="metric">
-                    <span className="label">Нові ринки</span>
-                    <span className="value">4 країни</span>
-                    <span className="timeframe">успішно запущено</span>
-                  </div>
-                </div>
+              <div className="service-offer__content">
+                <h3>{offer.title}</h3>
+                <p>{offer.description}</p>
+                <ul className="service-offer__features">
+                  {offer.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+                <Link
+                  to={`/services/consulting-services/${offer.id}`}
+                  className="btn btn-primary"
+                >
+                  Learn More
+                </Link>
               </div>
-            </div>
-          </div>
-
-          <div className="service-page__cta">
-            <h3>{t('servicePages.consulting.ctaTitle')}</h3>
-            <p>{t('servicePages.consulting.ctaText')}</p>
-            <Link to="/contact" className="btn btn-primary btn-lg">
-              {t('servicePages.consulting.ctaButton')}
-            </Link>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

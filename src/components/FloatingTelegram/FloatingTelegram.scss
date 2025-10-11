@@ -1,0 +1,68 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.floating-telegram {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 10px 30px rgba($primary-color, 0.5);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  animation: float 3s ease-in-out infinite;
+
+  &:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 15px 40px rgba($primary-color, 0.7);
+    animation: none;
+  }
+
+  &:active {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  i {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  &:hover i {
+    transform: scale(1.1);
+  }
+
+  // Responsive
+  @include respond-to(md) {
+    bottom: 2rem;
+    right: 2rem;
+    width: 65px;
+    height: 65px;
+    font-size: 2.25rem;
+  }
+
+  @include respond-to(sm) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

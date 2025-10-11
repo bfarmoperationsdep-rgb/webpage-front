@@ -1,5 +1,5 @@
-@import '../../../styles/abstracts/variables';
-@import '../../../styles/abstracts/mixins';
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/mixins' as *;
 
 .header {
   position: relative;
@@ -377,10 +377,38 @@
       color: #047857;
       font-weight: 600;
       background: linear-gradient(135deg, rgba(5, 150, 105, 0.15) 0%, rgba(5, 150, 105, 0.2) 100%);
-      
+
       &::after {
         opacity: 1;
         transform: scaleX(1);
+      }
+    }
+
+    &--highlight {
+      background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+      color: $white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+
+      &::before {
+        content: '★';
+        color: #fbbf24;
+        font-size: 1rem;
+        text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+      }
+
+      &:hover {
+        color: $white;
+        background: linear-gradient(135deg, $primary-light 0%, $secondary-color 100%);
+        transform: translateX(4px) translateY(-2px);
+        box-shadow: 0 6px 16px rgba($primary-color, 0.4);
+      }
+
+      &::after {
+        display: none;
       }
     }
     

@@ -58,7 +58,7 @@ const DesignCategory = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link to="/services/full-account-management" className="service-page__back">
+          <Link to="/services" className="service-page__back">
             ← Back to All Services
           </Link>
           <h1 className="service-page__title">Design Services</h1>

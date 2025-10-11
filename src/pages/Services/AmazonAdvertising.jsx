@@ -1,79 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
 import './ServicePage.scss';
 
 const AmazonAdvertising = () => {
-  const { t } = useLanguage();
+  const serviceOffers = [
+    {
+      id: 1,
+      title: "Sponsored Products Campaign Management",
+      description: "Maximize visibility with expertly managed Sponsored Products campaigns that drive sales and improve organic rankings.",
+      features: ["Keyword optimization", "Bid management", "Campaign structure", "Performance tracking"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
+    },
+    {
+      id: 2,
+      title: "Sponsored Brands Campaign Setup",
+      description: "Build brand awareness with Sponsored Brands campaigns featuring your logo, custom headline, and multiple products.",
+      features: ["Brand storytelling", "Custom creatives", "Multi-product showcase", "Brand analytics"],
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Sponsored Display Advertising",
+      description: "Re-engage shoppers and reach new audiences with display ads both on and off Amazon.",
+      features: ["Audience targeting", "Retargeting campaigns", "Cross-platform reach", "Creative optimization"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Amazon DSP Management",
+      description: "Reach audiences at scale with programmatic display and video ads across Amazon sites and third-party exchanges.",
+      features: ["Programmatic buying", "Video ads", "Advanced targeting", "Brand safety"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop"
+    },
+    {
+      id: 5,
+      title: "PPC Strategy & Optimization",
+      description: "Comprehensive PPC strategy development and continuous optimization to maximize ROI and reduce ACoS.",
+      features: ["Strategy development", "ACoS optimization", "Keyword research", "Competitor analysis"],
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop"
+    },
+    {
+      id: 6,
+      title: "Advertising Analytics & Reporting",
+      description: "Detailed analytics and reporting to track performance, identify opportunities, and make data-driven decisions.",
+      features: ["Custom dashboards", "Performance metrics", "ROI tracking", "Monthly reports"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+    }
+  ];
 
   return (
     <div className="service-page">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="service-page__header"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            {t('common.backToServices')}
+            ← Back to All Services
           </Link>
-          <h1 className="service-page__title">{t('servicePages.advertising.title')}</h1>
+          <h1 className="service-page__title">Amazon Advertising Optimization</h1>
           <p className="service-page__subtitle">
-            {t('servicePages.advertising.subtitle')}
+            Professional Amazon PPC management to maximize your advertising ROI
           </p>
         </motion.div>
 
-        <motion.div 
-          className="service-page__content"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="service-page__description">
-            <h2>{t('servicePages.advertising.heading')}</h2>
-            <p>
-              {t('servicePages.advertising.description')}
-            </p>
-            
-            <div className="service-page__features">
-              <h3>{t('servicePages.advertising.approachTitle')}</h3>
-              <ul>
-                {t('servicePages.advertising.features').map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="service-page__case-study">
-              <h3>{t('servicePages.advertising.caseStudyTitle')}</h3>
-              <div className="case-study-card">
-                <h4>{t('servicePages.advertising.caseStudyBrand')}</h4>
-                <div className="case-metrics">
-                  <div className="metric">
-                    <span className="label">{t('servicePages.advertising.roasLabel')}</span>
-                    <span className="value">{t('servicePages.advertising.roasValue')}</span>
-                    <span className="timeframe">{t('servicePages.advertising.roasTime')}</span>
-                  </div>
-                  <div className="metric">
-                    <span className="label">{t('servicePages.advertising.tacosLabel')}</span>
-                    <span className="value">{t('servicePages.advertising.tacosValue')}</span>
-                    <span className="timeframe">{t('servicePages.advertising.tacosTime')}</span>
-                  </div>
-                </div>
+        <div className="service-offers">
+          {serviceOffers.map((offer, index) => (
+            <motion.div
+              key={offer.id}
+              className="service-offer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="service-offer__image">
+                <img src={offer.image} alt={offer.title} />
               </div>
-            </div>
-          </div>
-
-          <div className="service-page__cta">
-            <h3>{t('servicePages.advertising.ctaTitle')}</h3>
-            <p>{t('servicePages.advertising.ctaText')}</p>
-            <Link to="/contact" className="btn btn-primary btn-lg">
-              {t('servicePages.advertising.ctaButton')}
-            </Link>
-          </div>
-        </motion.div>
+              <div className="service-offer__content">
+                <h3>{offer.title}</h3>
+                <p>{offer.description}</p>
+                <ul className="service-offer__features">
+                  {offer.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+                <Link
+                  to={`/services/amazon-advertising/${offer.id}`}
+                  className="btn btn-primary"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

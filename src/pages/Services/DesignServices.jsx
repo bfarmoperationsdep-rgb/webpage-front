@@ -1,95 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
 import './ServicePage.scss';
 
 const DesignServices = () => {
-  const { t } = useLanguage();
+  const serviceOffers = [
+    {
+      id: 1,
+      title: "A+ Content Design",
+      description: "Create compelling A+ Content that showcases your brand story and product features with rich media.",
+      features: ["Custom layouts", "Brand storytelling", "High-quality visuals", "Comparison charts"],
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop"
+    },
+    {
+      id: 2,
+      title: "Premium A+ Content",
+      description: "Elevate your brand with Premium A+ featuring interactive modules, video, and advanced layouts.",
+      features: ["Interactive modules", "Video integration", "Carousel displays", "Enhanced engagement"],
+      image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=250&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Brand Store Design",
+      description: "Build a custom Amazon Store that creates an immersive shopping experience for your brand.",
+      features: ["Multi-page stores", "Custom navigation", "Brand immersion", "Mobile optimization"],
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Brand Story Creation",
+      description: "Tell your brand's unique story with compelling visuals and copy that resonates with customers.",
+      features: ["Brand narrative", "Visual storytelling", "Emotional connection", "Value proposition"],
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop"
+    },
+    {
+      id: 5,
+      title: "Posts & Social Content",
+      description: "Create engaging Amazon Posts that drive traffic and build brand awareness directly on Amazon.",
+      features: ["Custom posts", "Visual content", "Product tagging", "Engagement tracking"],
+      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=250&fit=crop"
+    },
+    {
+      id: 6,
+      title: "Storefront Optimization",
+      description: "Optimize your existing storefront for better performance, navigation, and conversion rates.",
+      features: ["Performance audit", "UX improvements", "Traffic optimization", "Conversion testing"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
+    }
+  ];
 
   return (
     <div className="service-page">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="service-page__header"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            {t('common.backToServices')}
+            ← Back to All Services
           </Link>
-          <h1 className="service-page__title">{t('servicePages.design.title')}</h1>
+          <h1 className="service-page__title">Enhanced Brand Content</h1>
           <p className="service-page__subtitle">
-            {t('servicePages.design.subtitle')}
+            A+, brand story, storefront, premium A+, posts, and more
           </p>
         </motion.div>
 
-        <motion.div 
-          className="service-page__content"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="service-page__description">
-            <h2>{t('servicePages.design.heading')}</h2>
-            <p>
-              {t('servicePages.design.description')}
-            </p>
-            
-            <div className="service-page__features">
-              <h3>{t('servicePages.design.featuresTitle')}</h3>
-              <ul>
-                {t('servicePages.design.features').map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="service-page__process">
-              <h3>{t('servicePages.design.processTitle')}</h3>
-              <div className="process-steps">
-                {t('servicePages.design.processSteps').map((step, idx) => (
-                  <div key={idx} className="step">
-                    <div className="step-number">{idx + 1}</div>
-                    <h4>{step.title}</h4>
-                    <p>{step.description}</p>
-                  </div>
-                ))}
+        <div className="service-offers">
+          {serviceOffers.map((offer, index) => (
+            <motion.div
+              key={offer.id}
+              className="service-offer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="service-offer__image">
+                <img src={offer.image} alt={offer.title} />
               </div>
-            </div>
-
-            <div className="service-page__case-study">
-              <h3>{t('servicePages.design.caseStudyTitle')}</h3>
-              <div className="case-study-card">
-                <h4>{t('servicePages.design.caseStudyBrand')}</h4>
-                <p>
-                  {t('servicePages.design.caseStudyText')}
-                </p>
-                <div className="case-metrics">
-                  <div className="metric">
-                    <span className="label">Конверсія</span>
-                    <span className="value">+38%</span>
-                    <span className="timeframe">за 2 місяці</span>
-                  </div>
-                  <div className="metric">
-                    <span className="label">Середній чек</span>
-                    <span className="value">+25%</span>
-                    <span className="timeframe">після редизайну</span>
-                  </div>
-                </div>
+              <div className="service-offer__content">
+                <h3>{offer.title}</h3>
+                <p>{offer.description}</p>
+                <ul className="service-offer__features">
+                  {offer.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+                <Link
+                  to={`/services/design-services/${offer.id}`}
+                  className="btn btn-primary"
+                >
+                  Learn More
+                </Link>
               </div>
-            </div>
-          </div>
-
-          <div className="service-page__cta">
-            <h3>{t('servicePages.design.ctaTitle')}</h3>
-            <p>{t('servicePages.design.ctaText')}</p>
-            <Link to="/contact" className="btn btn-primary btn-lg">
-              {t('servicePages.design.ctaButton')}
-            </Link>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

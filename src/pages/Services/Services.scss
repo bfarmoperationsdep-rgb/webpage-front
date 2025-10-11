@@ -1,5 +1,5 @@
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
 
 .services-page {
   padding: $spacing-18 0;
@@ -22,18 +22,149 @@
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-12;
+
+    @include respond-to(lg) {
+      grid-template-columns: 280px 1fr;
+      gap: $spacing-16;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-6;
+    order: 2;
+
+    @include respond-to(lg) {
+      order: 1;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    order: 1;
+
+    @include respond-to(lg) {
+      order: 2;
+    }
+  }
+
+  &__section-title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: $spacing-8;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-8;
-    
+
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
     }
-    
-    @include respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__section {
+    @include card;
+    padding: $spacing-6;
+    background: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+
+    &--highlight {
+      background: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+      padding: 0;
+    }
+  }
+
+  &__all-services {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    padding: $spacing-6;
+    color: $white;
+    text-decoration: none;
+    transition: all $transition-duration-base $transition-timing;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+
+    i {
+      font-size: 2rem;
+      min-width: 2rem;
+    }
+
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 0 $spacing-1;
+      color: $white;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  &__section-subtitle {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    margin-bottom: $spacing-4;
+    padding-bottom: $spacing-3;
+    border-bottom: 2px solid $primary-color;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: $spacing-3;
+        padding: $spacing-3 0;
+        color: $text-secondary;
+        font-size: $font-size-base;
+        line-height: $line-height-relaxed;
+        text-decoration: none;
+        transition: all $transition-duration-base $transition-timing;
+
+        &:hover {
+          color: $primary-color;
+          padding-left: $spacing-2;
+        }
+
+        i {
+          color: $primary-color;
+          font-size: $font-size-lg;
+          min-width: 20px;
+          transition: transform $transition-duration-base $transition-timing;
+        }
+
+        &:hover i {
+          transform: translateX(3px);
+        }
+      }
     }
   }
   
@@ -50,13 +181,28 @@
     
     .icon {
       @include flex-center;
-      width: 4rem;
-      height: 4rem;
-      background: linear-gradient(135deg, $primary-color, $primary-light);
+      width: 5rem;
+      height: 5rem;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
       color: $white;
       border-radius: 50%;
       margin: 0 auto $spacing-6;
-      font-size: $font-size-xl;
+      font-size: 2.5rem;
+      box-shadow: 0 8px 24px rgba($primary-color, 0.3);
+      transition: all $transition-duration-base $transition-timing;
+
+      i {
+        transition: transform $transition-duration-base $transition-timing;
+      }
+    }
+
+    &:hover .icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 12px 32px rgba($primary-color, 0.4);
+
+      i {
+        transform: scale(1.15);
+      }
     }
     
     h3 {

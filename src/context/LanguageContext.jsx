@@ -149,7 +149,8 @@ const translations = {
     // Common Elements
     common: {
       learnMore: 'Learn More',
-        backToHome: '← Back to All Services',
+      backToHome: '← Back to All Services',
+      backToServices: '← Back to All Services',
       getStarted: 'Get Started Today',
       readyToScale: 'Ready to Scale Your Amazon Business?',
       letsDiscuss: 'Let\'s discuss how our full account management can transform your results.',
@@ -475,7 +476,8 @@ const translations = {
     // Common Elements
     common: {
       learnMore: 'Дізнатися більше',
-        backToHome: '← Назад до всіх сервісів',
+      backToHome: '← Назад до всіх сервісів',
+      backToServices: '← Назад до всіх сервісів',
       getStarted: 'Почати зараз',
       readyToScale: 'Готові масштабувати ваш Amazon бізнес?',
       letsDiscuss: 'Давайте обговоримо як наше повне управління аккаунтом може трансформувати ваші результати.',
@@ -858,9 +860,9 @@ export const LanguageProvider = ({ children }) => {
     // Безпечна ініціалізація з localStorage
     if (typeof window !== 'undefined') {
       const savedLanguage = localStorage.getItem('language');
-      return savedLanguage || 'uk';
+      return savedLanguage || 'en';
     }
-    return 'uk'; // Default to Ukrainian
+    return 'en'; // Default to English
   });
 
   const switchLanguage = (lang) => {

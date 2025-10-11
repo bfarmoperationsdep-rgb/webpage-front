@@ -426,7 +426,7 @@ const ServiceOfferDetail = () => {
           <div className="error-message">
             <h1>Service Details Coming Soon</h1>
             <p>This service page is currently being developed. Please check back soon!</p>
-            <Link to="/services/full-account-management" className="back-link">
+            <Link to="/services" className="back-link">
               ← Back to All Services
             </Link>
           </div>
@@ -436,7 +436,7 @@ const ServiceOfferDetail = () => {
   }
 
   return (
-    <motion.div 
+    <motion.div
       className="service-offer-detail"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -444,7 +444,7 @@ const ServiceOfferDetail = () => {
     >
       <div className="container">
         <div className="service-offer-detail__header">
-            <Link to="/services/full-account-management" className="back-link">
+            <Link to="/services" className="back-link">
               ← Back to All Services
             </Link>
           

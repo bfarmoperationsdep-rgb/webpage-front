@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 // Медіа-запити (Mobile-First підхід)
 @mixin respond-to($breakpoint) {
   @if $breakpoint == xs {

@@ -1,5 +1,5 @@
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
 
 .service-page {
   padding: $spacing-18 0;
@@ -406,12 +406,99 @@
 }
 
 // Service Offers Grid
+.service-offers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-8;
+  margin-top: $spacing-12;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+  }
+}
+
+.service-offer {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all $transition-duration-base $transition-timing;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-xl;
+  }
+
+  &__image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-duration-base $transition-timing;
+    }
+  }
+
+  &:hover &__image img {
+    transform: scale(1.1);
+  }
+
+  &__content {
+    padding: $spacing-6;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $text-primary;
+      margin-bottom: $spacing-4;
+      line-height: $line-height-tight;
+    }
+
+    > p {
+      color: $text-secondary;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacing-4;
+      flex: 1;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-6 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: $spacing-2;
+      margin-bottom: $spacing-2;
+      color: $text-secondary;
+      font-size: $font-size-sm;
+
+      &::before {
+        content: '✓';
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-base;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
 .service-offers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;

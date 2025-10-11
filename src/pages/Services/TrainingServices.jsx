@@ -1,142 +1,102 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../context/LanguageContext';
 import './ServicePage.scss';
 
 const TrainingServices = () => {
-  const { t } = useLanguage();
-
+  const serviceOffers = [
+    {
+      id: 1,
+      title: "Amazon Seller Basics Training",
+      description: "Comprehensive training program covering all fundamentals of selling successfully on Amazon.",
+      features: ["Account setup", "Product listings", "FBA basics", "Policy compliance"],
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop"
+    },
+    {
+      id: 2,
+      title: "Advanced PPC Training",
+      description: "Master Amazon advertising with in-depth training on PPC strategies and optimization techniques.",
+      features: ["Campaign structure", "Keyword strategy", "Bid optimization", "Analytics & reporting"],
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Amazon SEO Masterclass",
+      description: "Learn proven strategies to optimize product listings and rank higher in Amazon search results.",
+      features: ["Keyword research", "Listing optimization", "Backend search terms", "Ranking factors"],
+      image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=400&h=250&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Brand Building on Amazon",
+      description: "Strategic training on building and scaling your brand presence on Amazon marketplace.",
+      features: ["Brand registry", "A+ Content", "Brand stores", "Brand protection"],
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=250&fit=crop"
+    },
+    {
+      id: 5,
+      title: "Amazon Analytics & Data",
+      description: "Master Amazon analytics tools and learn to make data-driven decisions for your business.",
+      features: ["Business reports", "Brand analytics", "Market basket analysis", "Performance metrics"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+    },
+    {
+      id: 6,
+      title: "Team Training & Workshops",
+      description: "Custom training programs designed for your team's specific needs and skill levels.",
+      features: ["Custom curriculum", "Hands-on exercises", "Team collaboration", "Ongoing support"],
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop"
+    }
+  ];
 
   return (
     <div className="service-page">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="service-page__header"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Link to="/services" className="service-page__back">
-            {t('common.backToServices')}
+            ← Back to All Services
           </Link>
-          <h1 className="service-page__title">{t('servicePages.training.title')}</h1>
+          <h1 className="service-page__title">Training Services</h1>
           <p className="service-page__subtitle">
-            {t('servicePages.training.subtitle')}
+            Comprehensive Amazon training programs for sellers and businesses
           </p>
         </motion.div>
 
-        <motion.div 
-          className="service-page__content"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="service-page__description">
-            <h2>{t('servicePages.training.heading')}</h2>
-            <p>
-              {t('servicePages.training.description')}
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '3rem' }}>
-            <h3 style={{ textAlign: 'center', marginBottom: '2rem' }}>{t('servicePages.training.programsTitle')}</h3>
-            {t('servicePages.training.programs').map((program, idx) => (
-              <div key={idx} className="service-page__features" style={{ marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <h4 style={{ margin: 0, color: '#059669' }}>{program.title}</h4>
-                  <div style={{ display: 'flex', gap: '1rem', fontSize: '0.9rem', color: '#6b7280' }}>
-                    <span>📅 {program.duration}</span>
-                    <span>📊 {program.level}</span>
-                  </div>
-                </div>
-                <p style={{ marginBottom: '1rem' }}>{program.description}</p>
-                <h5 style={{ marginBottom: '0.5rem', color: '#374151' }}>Що вивчимо:</h5>
-                <ul>
-                  {program.topics.map((topic, topicIdx) => (
-                    <li key={topicIdx}>{topic}</li>
+        <div className="service-offers">
+          {serviceOffers.map((offer, index) => (
+            <motion.div
+              key={offer.id}
+              className="service-offer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="service-offer__image">
+                <img src={offer.image} alt={offer.title} />
+              </div>
+              <div className="service-offer__content">
+                <h3>{offer.title}</h3>
+                <p>{offer.description}</p>
+                <ul className="service-offer__features">
+                  {offer.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
                   ))}
                 </ul>
+                <Link
+                  to={`/services/training-services/${offer.id}`}
+                  className="btn btn-primary"
+                >
+                  Learn More
+                </Link>
               </div>
-            ))}
-          </div>
-
-          <div style={{ marginBottom: '3rem' }}>
-            <h3 style={{ textAlign: 'center', marginBottom: '2rem' }}>{t('servicePages.training.formatsTitle')}</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-              {t('servicePages.training.formats').map((format, idx) => (
-                <div key={idx} style={{ 
-                  padding: '1.5rem', 
-                  backgroundColor: 'rgba(5, 150, 105, 0.05)', 
-                  borderRadius: '12px',
-                  textAlign: 'center',
-                  border: '1px solid rgba(5, 150, 105, 0.1)'
-                }}>
-                  <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{format.icon}</div>
-                  <h4 style={{ marginBottom: '0.5rem', color: '#059669' }}>{format.title}</h4>
-                  <p style={{ color: '#6b7280', margin: 0 }}>{format.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="service-page__results">
-            <h3>{t('servicePages.training.resultsTitle')}</h3>
-            <div className="results-grid">
-              {t('servicePages.training.results').map((result, idx) => (
-                <div key={idx} className="result-item">
-                  <h4>{result.label}</h4>
-                  <span>{result.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="service-page__case-study">
-            <h3>{t('servicePages.training.caseStudyTitle')}</h3>
-            <div className="case-study-card">
-              <h4>{t('servicePages.training.caseStudyBrand')}</h4>
-              <p>
-                {t('servicePages.training.caseStudyText')}
-              </p>
-              <div className="case-metrics">
-                <div className="metric">
-                  <span className="label">Зростання продажів</span>
-                  <span className="value">+280%</span>
-                  <span className="timeframe">за рік</span>
-                </div>
-                <div className="metric">
-                  <span className="label">ROI від навчання</span>
-                  <span className="value">1500%</span>
-                  <span className="timeframe">перший рік</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="service-page__launch-steps">
-            <h3>{t('servicePages.training.launchStepsTitle')}</h3>
-            <div className="launch-steps">
-              {t('servicePages.training.launchSteps').map((step, idx) => (
-                <div key={idx} className="launch-step">
-                  <div className="step-icon">{step.icon}</div>
-                  <div className="step-content">
-                    <h4>{step.title}</h4>
-                    <p>{step.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="service-page__cta">
-            <h3>{t('servicePages.training.ctaTitle')}</h3>
-            <p>{t('servicePages.training.ctaText')}</p>
-            <Link to="/contact" className="btn btn-primary btn-lg">
-              {t('servicePages.training.ctaButton')}
-            </Link>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

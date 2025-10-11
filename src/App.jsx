@@ -4,6 +4,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Layout/Header/Header';
 import Footer from './components/Layout/Footer/Footer';
 import EmailCapture from './components/Sections/EmailCapture/EmailCapture';
+import FloatingTelegram from './components/FloatingTelegram/FloatingTelegram';
 import Home from './pages/Home/Home';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
@@ -19,6 +20,7 @@ import DesignServices from './pages/Services/DesignServices';
 import ConsultingServices from './pages/Services/ConsultingServices';
 import CatalogingServices from './pages/Services/CatalogingServices';
 import TrainingServices from './pages/Services/TrainingServices';
+import ImagingServices from './pages/Services/ImagingServices';
 import ServiceOfferDetail from './pages/Services/ServiceOfferDetail';
 import DesignCategory from './pages/Services/DesignCategory';
 import TroubleshootingCategory from './pages/Services/TroubleshootingCategory';
@@ -30,8 +32,13 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Скрол вгору при зміні сторінки
-    window.scrollTo(0, 0);
+    // Скрол вгору при зміні сторінки - миттєво на самий верх
+    // Використовуємо setTimeout щоб переконатись що це виконується після рендеру
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 0);
   }, [pathname]);
 
   return null;
@@ -70,6 +77,7 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/services/full-account-management" element={<FullAccountManagement />} />
               <Route path="/services/amazon-advertising" element={<AmazonAdvertising />} />
               <Route path="/services/product-optimization" element={<ProductOptimization />} />
@@ -78,7 +86,8 @@ function App() {
               <Route path="/services/consulting-services" element={<ConsultingServices />} />
               <Route path="/services/cataloging-services" element={<CatalogingServices />} />
               <Route path="/services/training-services" element={<TrainingServices />} />
-              
+              <Route path="/services/imaging-services" element={<ImagingServices />} />
+
               {/* Category pages */}
               <Route path="/services/design" element={<DesignCategory />} />
               <Route path="/services/troubleshooting" element={<TroubleshootingCategory />} />
@@ -125,6 +134,14 @@ function App() {
               <Route path="/tools/warehouse-codes" element={<FullAccountManagement />} />
               
               {/* Service detail pages */}
+              <Route path="/services/full-account-management/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/amazon-advertising/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/cataloging/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/product-optimization/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/design-services/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/imaging/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/consulting-services/:offerId" element={<ServiceOfferDetail />} />
+              <Route path="/services/training-services/:offerId" element={<ServiceOfferDetail />} />
               <Route path="/services/design/:offerId" element={<ServiceOfferDetail />} />
               <Route path="/services/troubleshooting/:offerId" element={<ServiceOfferDetail />} />
               <Route path="/services/other/:offerId" element={<ServiceOfferDetail />} />
@@ -138,6 +155,7 @@ function App() {
           </main>
           <EmailCapture />
           <Footer />
+          <FloatingTelegram />
         </div>
       </Router>
     </LanguageProvider>

@@ -32,61 +32,48 @@ const Header = () => {
         columns: [
           {
             items: [
-              { name: 'Full service management', href: '/services/full-account-management', isMain: true },
-              { name: 'Advertising (PPC) management', href: '/services/amazon-advertising', isMain: true },
-              { name: 'Amazon SEO', href: '/services/amazon-seo', isMain: true },
-              { name: 'Amazon account audit', href: '/services/amazon-audit', isMain: true },
-              { name: 'SOPs', href: '/services/sops', isMain: true },
-              { name: 'All services', href: '/services/all-services', isMain: true },
+              { name: 'All Services', href: '/services', isMain: true, isHighlight: true },
+              { name: 'Full Amazon Account Management', href: '/services/full-account-management', isMain: true },
+              { name: 'Amazon Advertising Optimization', href: '/services/amazon-advertising', isMain: true },
+              { name: 'Cataloging', href: '/services/cataloging-services', isMain: true },
+              { name: 'Amazon SEO', href: '/services/product-optimization', isMain: true },
+              { name: 'Enhanced Brand Content (A+, brand story, storefront, premium A+, posts, etc.)', href: '/services/design-services', isMain: true },
+              { name: 'Imaging', href: '/services/design-services', isMain: true },
               { name: 'Consulting', href: '/services/consulting-services', isMain: true },
-              { name: 'Book a coaching call', href: '/services/coaching', isMain: true }
+              { name: 'Training', href: '/services/training-services', isMain: true }
             ]
           },
           {
             title: 'Design',
-            titleLink: '/services/design', // Link for the title
+            titleLink: '/services/design',
             items: [
-              { name: 'Brand guidelines', href: '/services/design/1' },
-              { name: 'Brand story', href: '/services/design/2' },
-              { name: 'Brand store', href: '/services/design/3' },
-              { name: 'Listing images', href: '/services/design/4' },
-              { name: 'Enhanced brand content A+', href: '/services/design/5' },
-              { name: 'Main image CTR hack', href: '/services/design/6' },
-              { name: 'Listing optimization', href: '/services/listing-optimization' },
+              { name: 'Brand story', href: '/services/design/brand-story' },
+              { name: 'Listing images', href: '/services/design/listing-images' },
+              { name: 'Enhanced brand content A+ & Premium A+', href: '/services/design/enhanced-content' },
               { name: 'Full listing optimization', href: '/services/full-listing-optimization' }
             ]
           },
           {
             title: 'Troubleshooting',
-            titleLink: '/services/troubleshooting', // Link for the title
+            titleLink: '/services/troubleshooting',
             items: [
-              { name: 'Listing reinstatement', href: '/services/troubleshooting/1' },
-              { name: 'Account suspension', href: '/services/troubleshooting/2' },
-              { name: 'PPC Advertising audit', href: '/services/troubleshooting/3' },
-              { name: 'Brand name change', href: '/services/troubleshooting/4' },
-              { name: 'Troubleshooting hours', href: '/services/troubleshooting/5' },
-              { name: 'UPC to GS1 change', href: '/services/troubleshooting/6' }
+              { name: 'Listing reinstatement', href: '/services/troubleshooting/listing-reinstatement' },
+              { name: 'Account suspension', href: '/services/troubleshooting/account-suspension' },
+              { name: 'PPC Advertising audit', href: '/services/troubleshooting/ppc-audit' },
+              { name: 'Troubleshooting hours', href: '/services/troubleshooting/hours' }
             ]
           },
           {
             title: 'Other services',
-            titleLink: '/services/other', // Link for the title
+            titleLink: '/services/other',
             items: [
-              { name: 'Amazon DSP', href: '/services/other/1' },
-              { name: 'Trademark registration', href: '/services/other/2' },
-              { name: 'Product photography', href: '/services/other/3' },
-              { name: 'Vendor Central full service', href: '/services/other/4' }
+              { name: 'Amazon DSP', href: '/services/other/amazon-dsp' },
+              { name: 'Vendor Central full service', href: '/services/other/vendor-central' }
             ],
             freeTools: {
               title: 'Free Amazon tools',
               items: [
-                { name: 'PPC Resources Directory', href: '/tools/ppc-resources' },
-                { name: 'Amazon Crisis Kit', href: '/tools/crisis-kit' },
-                { name: 'Amazon PPC Guide', href: '/tools/ppc-guide' },
-                { name: 'New Seller Launch Deck', href: '/tools/launch-deck' },
-                { name: 'DTC Growth Stack', href: '/tools/dtc-growth' },
-                { name: 'Amazon SEO Toolkit', href: '/tools/seo-toolkit' },
-                { name: 'Warehouse Code Directory', href: '/tools/warehouse-codes', isNew: true }
+                { name: 'To be soon', href: '/tools/coming-soon' }
               ]
             }
           }
@@ -178,7 +165,9 @@ const Header = () => {
                                   <Link
                                     to={dropdownItem.href}
                                     className={`header__dropdown-link ${
-                                      dropdownItem.isMain ? 'header__dropdown-link--main' : ''
+                                      dropdownItem.isHighlight ? 'header__dropdown-link--highlight' : ''
+                                    } ${
+                                      dropdownItem.isMain && !dropdownItem.isHighlight ? 'header__dropdown-link--main' : ''
                                     } ${
                                       location.pathname === dropdownItem.href ? 'header__dropdown-link--active' : ''
                                     }`}
@@ -188,7 +177,7 @@ const Header = () => {
                                       window.location.href = dropdownItem.href;
                                     }}
                                   >
-                                    {dropdownItem.isMain && <span className="main-service-bullet"></span>} {/* Bullet for main services */}
+                                    {dropdownItem.isMain && !dropdownItem.isHighlight && <span className="main-service-bullet"></span>} {/* Bullet for main services */}
                                     {dropdownItem.name}
                                     {dropdownItem.isNew && <span className="new-badge">NEW</span>}
                                   </Link>
