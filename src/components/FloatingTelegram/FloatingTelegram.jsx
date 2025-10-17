@@ -2,19 +2,19 @@ import React from 'react';
 import './FloatingTelegram.scss';
 
 const FloatingTelegram = () => {
-  const telegramUsername = 'Maksym_Lazuto';
-  const telegramUrl = `https://t.me/${telegramUsername}`;
+  const whatsappNumber = '380930319897';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
     <a
-      href={telegramUrl}
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="floating-telegram"
-      aria-label="Contact us on Telegram"
-      title="Chat with us on Telegram"
+      aria-label="Contact us on WhatsApp"
+      title="Chat with us on WhatsApp"
     >
-      <i className="fab fa-telegram-plane"></i>
+      <i className="fab fa-whatsapp"></i>
     </a>
   );
 };

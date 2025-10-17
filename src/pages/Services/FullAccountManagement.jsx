@@ -4,55 +4,10 @@ import { Link } from 'react-router-dom';
 import './ServicePage.scss';
 
 const FullAccountManagement = () => {
-  const serviceOffers = [
-    {
-      id: 1,
-      title: "Complete Account Setup & Optimization",
-      description: "We handle everything from account registration to full optimization, ensuring your Amazon presence is professional and effective.",
-      features: ["Account registration assistance", "Brand registry setup", "Tax and legal compliance", "Initial inventory setup"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
-    },
-    {
-      id: 2,
-      title: "Daily Account Monitoring & Management",
-      description: "Round-the-clock monitoring and management to keep your account healthy and performing optimally.",
-      features: ["Performance metrics tracking", "Health score monitoring", "Issue prevention & resolution", "Regular performance reports"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
-    },
-    {
-      id: 3,
-      title: "Inventory Management & Forecasting",
-      description: "Strategic inventory planning to prevent stockouts and optimize cash flow while maintaining healthy inventory levels.",
-      features: ["Demand forecasting", "Reorder point optimization", "Seasonal planning", "FBA shipment management"],
-      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=250&fit=crop"
-    },
-    {
-      id: 4,
-      title: "Customer Service & Review Management",
-      description: "Professional customer service to maintain high seller ratings and positive customer relationships.",
-      features: ["24/7 customer support", "Review response management", "Returns processing", "Feedback optimization"],
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop"
-    },
-    {
-      id: 5,
-      title: "Financial Reporting & Analytics",
-      description: "Comprehensive financial tracking and business intelligence to help you make data-driven decisions.",
-      features: ["Monthly P&L reports", "ROI analysis", "Cost optimization", "Performance benchmarking"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop"
-    },
-    {
-      id: 6,
-      title: "Strategic Growth Planning",
-      description: "Long-term strategic planning to scale your Amazon business sustainably and profitably.",
-      features: ["Market expansion strategies", "Product line development", "Competitive analysis", "Growth roadmap creation"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
-    }
-  ];
-
   return (
     <div className="service-page">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="service-page__header"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,52 +16,129 @@ const FullAccountManagement = () => {
           <Link to="/services" className="service-page__back">
             ← Back to All Services
           </Link>
-          <h1 className="service-page__title">Full Account Management</h1>
+          <h1 className="service-page__title">Full Amazon Account Management</h1>
           <p className="service-page__subtitle">
-            Complete end-to-end Amazon account management with dedicated support
+            Complete end-to-end Amazon account management with dedicated support to grow your business
           </p>
         </motion.div>
 
-        <motion.div 
-          className="service-page__content"
+        <motion.div
+          className="service-page__content-single"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="service-offers-grid">
-            {serviceOffers.map((offer, index) => (
-              <motion.div
-                key={offer.id}
-                className="service-offer-card"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="offer-image">
-                  <img src={offer.image} alt={offer.title} />
+          <div className="service-description">
+            <div className="service-description__main">
+              <h2>Your Complete Amazon Partner</h2>
+              <p>
+                Running a successful Amazon business requires constant attention, expertise, and strategic decision-making.
+                Our Full Amazon Account Management service provides you with a dedicated team of Amazon specialists who handle
+                every aspect of your seller account, allowing you to focus on growing your business while we manage the day-to-day operations.
+              </p>
+              <p>
+                From product listing optimization and inventory management to customer service and advertising campaigns,
+                we take care of everything. Our team acts as an extension of your business, working tirelessly to maximize
+                your sales, improve your metrics, and ensure your Amazon presence is optimized for success.
+              </p>
+            </div>
+
+            <div className="service-features-grid">
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-chart-line"></i>
                 </div>
-                <div className="offer-content">
-                  <h3>{offer.title}</h3>
-                  <p>{offer.description}</p>
-                  <ul className="offer-features">
-                    {offer.features.map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-                  <Link 
-                    to={`/services/full-account-management/${offer.id}`}
-                    className="offer-link"
-                  >
-                    Learn More →
-                  </Link>
+                <h3>Account Optimization</h3>
+                <p>Complete account setup, brand registry, and ongoing optimization to ensure peak performance and compliance with Amazon policies.</p>
+              </div>
+
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-boxes"></i>
                 </div>
-              </motion.div>
-            ))}
+                <h3>Inventory Management</h3>
+                <p>Strategic inventory planning, demand forecasting, and FBA shipment coordination to prevent stockouts and optimize cash flow.</p>
+              </div>
+
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-bullhorn"></i>
+                </div>
+                <h3>Advertising & Marketing</h3>
+                <p>Professional PPC campaign management, sponsored ads optimization, and marketing strategies to drive traffic and sales.</p>
+              </div>
+
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-headset"></i>
+                </div>
+                <h3>Customer Service</h3>
+                <p>24/7 customer support, review management, returns processing, and proactive communication to maintain excellent seller metrics.</p>
+              </div>
+
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-file-invoice-dollar"></i>
+                </div>
+                <h3>Financial Reporting</h3>
+                <p>Detailed monthly reports, P&L analysis, ROI tracking, and financial insights to help you make data-driven business decisions.</p>
+              </div>
+
+              <div className="feature-block">
+                <div className="feature-icon">
+                  <i className="fas fa-rocket"></i>
+                </div>
+                <h3>Growth Strategy</h3>
+                <p>Long-term strategic planning, market expansion guidance, product development support, and competitive analysis for sustainable growth.</p>
+              </div>
+            </div>
+
+            <div className="service-benefits">
+              <h2>What You Get</h2>
+              <ul className="benefits-list">
+                <li><i className="fas fa-check-circle"></i> Dedicated Account Manager assigned to your business</li>
+                <li><i className="fas fa-check-circle"></i> Daily account monitoring and health score optimization</li>
+                <li><i className="fas fa-check-circle"></i> Complete listing creation and optimization</li>
+                <li><i className="fas fa-check-circle"></i> Professional PPC campaign management</li>
+                <li><i className="fas fa-check-circle"></i> Inventory forecasting and management</li>
+                <li><i className="fas fa-check-circle"></i> Customer service and review management</li>
+                <li><i className="fas fa-check-circle"></i> Monthly performance reports and strategy sessions</li>
+                <li><i className="fas fa-check-circle"></i> Brand protection and policy compliance</li>
+                <li><i className="fas fa-check-circle"></i> Issue resolution and account health management</li>
+                <li><i className="fas fa-check-circle"></i> Ongoing optimization and growth recommendations</li>
+              </ul>
+            </div>
+
+            <div className="service-process">
+              <h2>How It Works</h2>
+              <div className="process-steps">
+                <div className="process-step">
+                  <div className="step-number">1</div>
+                  <h3>Discovery & Onboarding</h3>
+                  <p>We learn about your business, goals, and products. Complete account audit and strategy development.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">2</div>
+                  <h3>Account Setup & Optimization</h3>
+                  <p>Full account setup, listing optimization, brand registry, and initial campaign launch.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">3</div>
+                  <h3>Daily Management</h3>
+                  <p>Ongoing daily operations, monitoring, customer service, inventory management, and advertising optimization.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">4</div>
+                  <h3>Growth & Scaling</h3>
+                  <p>Continuous improvement, expansion strategies, and scaling your Amazon business to new heights.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="service-page__cta">
             <h3>Ready to Scale Your Amazon Business?</h3>
-            <p>Let's discuss how our full account management can accelerate your growth</p>
+            <p>Let our expert team handle everything while you focus on growth</p>
             <Link to="/contact" className="btn btn-primary btn-lg">
               Get Started Today
             </Link>

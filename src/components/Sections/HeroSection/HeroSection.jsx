@@ -208,23 +208,18 @@ const HeroSection = () => {
                     <span>Amazon ads</span>
                   </div>
                   <div className="hero__platform">
-                    <span>Telegram</span>
+                    <span>Facebook</span>
                   </div>
                 </div>
               </div>
             </div>
-            
+
           </motion.div>
         </motion.div>
       </div>
 
-      {/* FAB кнопка Telegram без фону як просив користувач */}
-      <button className="fab" aria-label="Telegram">
-        <i className="fab fa-telegram"></i>
-      </button>
-
       {/* Enhanced Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="hero__scroll-indicator"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

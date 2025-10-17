@@ -68,6 +68,7 @@
 
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
+      
     }
   }
 
@@ -154,6 +155,25 @@
           padding-left: $spacing-2;
         }
 
+        &.disabled {
+          color: $gray-400;
+          cursor: not-allowed;
+          opacity: 0.5;
+
+          &:hover {
+            color: $gray-400;
+            padding-left: 0;
+          }
+
+          i {
+            color: $gray-400;
+          }
+
+          &:hover i {
+            transform: translateX(0);
+          }
+        }
+
         i {
           color: $primary-color;
           font-size: $font-size-lg;
@@ -173,10 +193,55 @@
     padding: $spacing-8;
     text-align: center;
     transition: all $transition-duration-base $transition-timing;
-    
+    display: flex;
+    flex-direction: column;
+
     &:hover {
       transform: translateY(-4px);
       box-shadow: $shadow-lg;
+    }
+
+    &--featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba($success-color, 0.15) 0%, rgba($success-color, 0.05) 100%);
+      border: 2px solid $success-color;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, $success-color, lighten($success-color, 10%));
+        border-radius: $border-radius-lg;
+        z-index: -1;
+        opacity: 0.2;
+      }
+
+      h3 {
+        color: darken($success-color, 15%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-3;
+
+        .featured-star {
+          color: $warning-color;
+          font-size: $font-size-xl;
+          animation: pulse 2s ease-in-out infinite;
+        }
+      }
+
+      .icon {
+        background: linear-gradient(135deg, $success-color, lighten($success-color, 10%));
+        box-shadow: 0 8px 24px rgba($success-color, 0.4);
+      }
+
+      &:hover .icon {
+        box-shadow: 0 12px 32px rgba($success-color, 0.5);
+      }
     }
     
     .icon {
@@ -211,11 +276,12 @@
       color: $text-primary;
       margin-bottom: $spacing-4;
     }
-    
+
     p {
       color: $text-secondary;
       line-height: $line-height-relaxed;
       margin-bottom: $spacing-6;
+      flex: 1;
     }
     
     .features {
@@ -245,5 +311,16 @@
       overflow: visible;
       text-overflow: initial;
     }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }

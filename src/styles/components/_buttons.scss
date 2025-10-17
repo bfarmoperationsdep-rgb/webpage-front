@@ -244,35 +244,7 @@
   }
 }
 
-// Floating Action Button без фону (як просив користувач)
-.fab {
-  position: fixed;
-  bottom: $spacing-6;
-  right: $spacing-6;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: transparent;
-  color: $bfarm-green;
-  border: none;
-  box-shadow: none;
-  z-index: $z-index-fixed;
-  @include flex-center;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 12px 40px rgba($bfarm-green, 0.4);
-  }
-  
-  &:active {
-    transform: scale(1.05);
-  }
-  
-  .icon {
-    font-size: 1.5rem;
-  }
-}
+// Floating Action Button видалено - використовується FloatingWhatsApp компонент замість цього
 
 // Додаткові сучасні стилі
 .btn-glass {

@@ -38,7 +38,7 @@ const Header = () => {
               { name: 'Cataloging', href: '/services/cataloging-services', isMain: true },
               { name: 'Amazon SEO', href: '/services/product-optimization', isMain: true },
               { name: 'Enhanced Brand Content (A+, brand story, storefront, premium A+, posts, etc.)', href: '/services/design-services', isMain: true },
-              { name: 'Imaging', href: '/services/design-services', isMain: true },
+              { name: 'Imaging', href: '/services/imaging-services', isMain: true },
               { name: 'Consulting', href: '/services/consulting-services', isMain: true },
               { name: 'Training', href: '/services/training-services', isMain: true }
             ]
@@ -82,7 +82,7 @@ const Header = () => {
     },
     { name: 'About', href: '/about' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Articles', href: '/articles' },
+    { name: 'Articles', href: '#', isDisabled: true },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -129,7 +129,8 @@ const Header = () => {
                       to={item.href}
                       className={`header__nav-link ${
                         location.pathname === item.href ? 'header__nav-link--active' : ''
-                      }`}
+                      } ${item.isDisabled ? 'header__nav-link--disabled' : ''}`}
+                      onClick={(e) => item.isDisabled && e.preventDefault()}
                     >
                       {item.name}
                     </Link>
@@ -249,7 +250,8 @@ const Header = () => {
                     to={item.href}
                     className={`header__mobile-nav-link ${
                       location.pathname === item.href ? 'header__mobile-nav-link--active' : ''
-                    }`}
+                    } ${item.isDisabled ? 'header__mobile-nav-link--disabled' : ''}`}
+                    onClick={(e) => item.isDisabled && e.preventDefault()}
                   >
                     {item.name}
                   </Link>

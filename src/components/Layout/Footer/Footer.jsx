@@ -7,26 +7,22 @@ const Footer = () => {
 
   const navigation = {
     services: [
-      { name: 'Веб-розробка', href: '/services#web-development' },
-      { name: 'Мобільні додатки', href: '/services#mobile-apps' },
-      { name: 'E-commerce', href: '/services#ecommerce' },
-      { name: 'Цифровий маркетинг', href: '/services#digital-marketing' },
-      { name: 'SEO оптимізація', href: '/services#seo' },
-      { name: 'Технічна підтримка', href: '/services#support' },
+      { name: 'Full Account Management', href: '/services/full-account-management' },
+      { name: 'Amazon Advertising', href: '/services/amazon-advertising' },
+      { name: 'Cataloging', href: '/services/cataloging-services' },
+      { name: 'Amazon SEO', href: '/services/product-optimization' },
+      { name: 'Design for Amazon', href: '/services/design-services' },
+      { name: 'Images for Amazon', href: '/services/imaging-services' },
     ],
     company: [
-      { name: 'Про нас', href: '/about' },
-      { name: 'Наша команда', href: '/about#team' },
-      { name: 'Кар\'єра', href: '/careers' },
-      { name: 'Новини', href: '/blog' },
-      { name: 'Контакти', href: '/contact' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Portfolio', href: '/portfolio' },
+      { name: 'Contact', href: '/contact' },
     ],
     resources: [
-      { name: 'Блог', href: '/blog' },
-      { name: 'Кейси', href: '/portfolio' },
-      { name: 'Документація', href: '/docs' },
-      { name: 'Підтримка', href: '/support' },
-      { name: 'FAQ', href: '/faq' },
+      { name: 'Consulting', href: '/services/consulting-services' },
+      { name: 'Amazon Coaching', href: '/services/training-services' },
+      { name: 'All Services', href: '/services' },
     ],
   };
 
@@ -90,7 +86,7 @@ const Footer = () => {
 
             {/* Services */}
             <div className="footer__section">
-              <h3 className="footer__title">Послуги</h3>
+              <h3 className="footer__title">Services</h3>
               <ul className="footer__links">
                 {navigation.services.map((link) => (
                   <li key={link.name}>
@@ -104,7 +100,7 @@ const Footer = () => {
 
             {/* Company */}
             <div className="footer__section">
-              <h3 className="footer__title">Компанія</h3>
+              <h3 className="footer__title">Company</h3>
               <ul className="footer__links">
                 {navigation.company.map((link) => (
                   <li key={link.name}>
@@ -118,7 +114,7 @@ const Footer = () => {
 
             {/* Resources */}
             <div className="footer__section">
-              <h3 className="footer__title">Ресурси</h3>
+              <h3 className="footer__title">Resources</h3>
               <ul className="footer__links">
                 {navigation.resources.map((link) => (
                   <li key={link.name}>
@@ -132,15 +128,15 @@ const Footer = () => {
 
             {/* Newsletter */}
             <div className="footer__section">
-              <h3 className="footer__title">Підписка на новини</h3>
+              <h3 className="footer__title">Newsletter</h3>
               <p className="footer__newsletter-text">
-                Отримуйте останні новини та оновлення від нашої команди.
+                Get the latest news and updates from our team.
               </p>
               <form className="footer__newsletter">
                 <div className="footer__newsletter-input">
                   <input
                     type="email"
-                    placeholder="Ваш email"
+                    placeholder="Your email"
                     className="form-input"
                     required
                   />
@@ -151,7 +147,7 @@ const Footer = () => {
                 <label className="form-check footer__newsletter-consent">
                   <input type="checkbox" className="form-check-input" required />
                   <span className="form-check-label">
-                    Я погоджуюся з <Link to="/privacy">політикою конфіденційності</Link>
+                    I agree to the <Link to="/privacy">privacy policy</Link>
                   </span>
                 </label>
               </form>
@@ -169,13 +165,13 @@ const Footer = () => {
             </p>
             <div className="footer__legal">
               <Link to="/privacy" className="footer__legal-link">
-                Політика конфіденційності
+                Privacy Policy
               </Link>
               <Link to="/terms" className="footer__legal-link">
-                Умови використання
+                Terms of Service
               </Link>
               <Link to="/cookies" className="footer__legal-link">
-                Файли cookie
+                Cookies
               </Link>
             </div>
           </div>

@@ -161,12 +161,26 @@
     
     &--active {
       color: $primary-color;
-      
+
       &::after {
         width: 100%;
       }
     }
-    
+
+    &--disabled {
+      color: $gray-400;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover {
+        color: $gray-400;
+
+        &::after {
+          width: 0;
+        }
+      }
+    }
+
     &:hover {
       .dropdown-arrow {
         transform: rotate(180deg);
@@ -584,14 +598,26 @@
     font-size: $font-size-base;
     transition: all $transition-duration-base $transition-timing;
     border-radius: $border-radius-md;
-    
+
     &:hover,
     &--active {
       color: $primary-color;
       background-color: rgba($primary-color, 0.1);
       padding-left: $spacing-4;
     }
-    
+
+    &--disabled {
+      color: $gray-400;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover {
+        color: $gray-400;
+        background-color: transparent;
+        padding-left: 0;
+      }
+    }
+
     @include respond-to(sm) {
       padding: $spacing-4 0;
       font-size: $font-size-lg;
