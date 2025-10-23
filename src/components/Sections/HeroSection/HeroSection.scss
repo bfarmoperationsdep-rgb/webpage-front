@@ -250,7 +250,7 @@
       align-items: flex-start;
     }
     
-    &--four {
+    &--two {
       flex-direction: column;
       align-items: center;
       gap: $spacing-4;
@@ -259,65 +259,33 @@
       z-index: 15;
 
       @include respond-to(sm) {
-        gap: $spacing-4;
-        max-width: 480px;
-        margin: 0 auto;
-      }
-
-      @include respond-to(md) {
         flex-direction: row;
-        flex-wrap: wrap;
+        gap: $spacing-4;
+        max-width: 600px;
+        margin: 0 auto;
         justify-content: center;
-        max-width: 700px;
-        gap: $spacing-3;
       }
 
       @include respond-to(lg) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: $spacing-3;
-        max-width: 650px;
         justify-content: flex-start;
-        align-items: flex-start;
+        margin: 0;
       }
 
-      @include respond-to(xl) {
-        max-width: 600px;
-        gap: $spacing-3;
-      }
-      
       .btn {
         width: 100%;
         margin: 0;
-        font-size: $font-size-sm;
-        padding: $spacing-3 $spacing-4;
-        
+        font-size: $font-size-base;
+        padding: $spacing-4 $spacing-6;
+        font-weight: $font-weight-semibold;
+
         @include respond-to(sm) {
-          max-width: 400px;
-          font-size: $font-size-base;
-          padding: $spacing-3 $spacing-5;
+          width: auto;
+          min-width: 250px;
         }
-        
-        @include respond-to(md) {
-          flex: 0 1 calc(50% - #{$spacing-2});
-          max-width: 280px;
-          min-width: 200px;
-        }
-        
+
         @include respond-to(lg) {
-          flex: 0 1 calc(50% - #{$spacing-2});
-          max-width: 280px;
-          min-width: 200px;
-          font-size: $font-size-sm;
-          padding: $spacing-3 $spacing-4;
-          font-weight: $font-weight-medium;
-          font-family: $font-primary;
-        }
-        
-        @include respond-to(xl) {
-          max-width: 240px;
-          min-width: 200px;
-          padding: $spacing-3 $spacing-4;
+          font-size: $font-size-base;
+          padding: $spacing-4 $spacing-6;
         }
       }
     }
@@ -391,235 +359,304 @@
     }
   }
   
-  // Dashboard design (back to white background)
-  &__dashboard {
-    background: rgba($white, 0.98);
-    border-radius: $border-radius-xl;
-    padding: $spacing-4;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba($white, 0.4);
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    color: $text-primary;
+  // Mobile Phone Mockup - Realistic iPhone
+  &__phone {
     position: relative;
     z-index: 8;
-    
-    @include respond-to(sm) {
-      max-width: 420px;
-      padding: $spacing-4;
-    }
-    
-    @include respond-to(md) {
-      max-width: 480px;
-      padding: $spacing-5;
-    }
-    
-    @include respond-to(lg) {
-      max-width: 550px;
-      padding: $spacing-4;
-    }
-    
-    @include respond-to(xl) {
-      max-width: 650px;
-      padding: $spacing-6;
-    }
-    
-    // Мобільні покращення
-    @media (max-width: 359px) {
-      padding: $spacing-2;
-      max-width: 260px;
-      margin: $spacing-4 auto;
-    }
-    
-    // Покращений мобільний вигляд
-    @include respond-below(sm) {
-      margin: $spacing-4 auto;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
-    
-  }
-  
-  &__dashboard-header {
-    @include flex-between;
-    margin-bottom: $spacing-6;
-    padding-bottom: $spacing-4;
-    border-bottom: 1px solid $gray-200;
-  }
-  
-  &__dashboard-title {
-    @include flex-center;
-    gap: $spacing-2;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    
-    @include respond-to(sm) {
-      font-size: $font-size-base;
-    }
-    
-    @include respond-to(md) {
-      font-size: $font-size-lg;
-    }
-    
-    i {
-      color: $primary-color;
-      font-size: $font-size-base;
-      
-      @include respond-to(sm) {
-        font-size: $font-size-lg;
-      }
-    }
-  }
-  
-  &__dashboard-status {
-    @include flex-center;
-    gap: $spacing-2;
-    color: $success-color;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-medium;
-  }
-  
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    
-    &--active {
-      background: $success-color;
-      animation: pulse 2s infinite;
-    }
-  }
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
 
-  &__metrics-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: $spacing-6;
-    margin-bottom: $spacing-8;
+    @include respond-to(sm) {
+      max-width: 180px;
+    }
+
+    @include respond-to(md) {
+      max-width: 200px;
+    }
+
+    @include respond-to(lg) {
+      max-width: 220px;
+    }
+
+    @include respond-to(xl) {
+      max-width: 240px;
+    }
   }
-  
-  &__metric {
-    text-align: center;
+
+  &__phone-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 19.5;
+    background: linear-gradient(145deg, #505050 0%, #3a3a3a 50%, #2a2a2a 100%);
+    border-radius: 48px;
+    padding: 10px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                0 0 0 3px rgba(0, 0, 0, 0.9);
+  }
+
+  &__phone-bezel {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 40px;
+    overflow: hidden;
     position: relative;
   }
-  
-  &__metric-value {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-extrabold;
-    color: $primary-color;
-    margin-bottom: $spacing-1;
-    
-    @include respond-to(sm) {
-      font-size: $font-size-2xl;
-    }
-    
-    @include respond-to(md) {
-      font-size: $font-size-3xl;
-    }
-    
-    @include respond-to(lg) {
-      font-size: $font-size-4xl;
-    }
-  }
-  
-  &__metric-label {
-    font-size: $font-size-sm;
-    color: $text-muted;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  &__metric-trend {
+
+  &__phone-notch {
     position: absolute;
     top: 0;
-    right: 0;
-    color: $success-color;
-    font-size: $font-size-lg;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 26px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
   }
-  
 
-  &__chart {
-    margin-bottom: $spacing-8;
+  &__notch-camera {
+    width: 6px;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   }
-  
+
+  &__phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    padding-top: 8px;
+    z-index: 100;
+    color: #000;
+    font-size: 11px;
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  &__status-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__time {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  &__status-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    i {
+      font-size: 10px;
+
+      &.fa-battery-three-quarters {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__phone-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  &__home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: #000;
+    border-radius: 2px;
+    z-index: 100;
+  }
+
+  &__phone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 12px 6px;
+    background: #fff;
+    font-size: 9px;
+    color: #000;
+    font-weight: 600;
+  }
+
+  &__phone-time {
+    flex: 1;
+  }
+
+  &__phone-icons {
+    display: flex;
+    gap: 3px;
+    font-size: 8px;
+
+    i {
+      opacity: 0.8;
+    }
+  }
+
+  &__phone-content {
+    padding: 8px;
+    height: calc(100% - 44px);
+    overflow-y: auto;
+  }
+
+  &__amazon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  &__amazon-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #232F3E;
+
+    i {
+      color: #FF9900;
+      font-size: 14px;
+    }
+  }
+
+  &__metrics-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  &__metric-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--small {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+  }
+
+  &__metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__metric-label {
+    font-size: 8px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+  }
+
+  &__metric-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #232F3E;
+
+    &--large {
+      font-size: 20px;
+      color: $bfarm-green;
+    }
+  }
+
+  &__metric-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9px;
+    font-weight: 600;
+
+    &--up {
+      color: $success-color;
+    }
+
+    i {
+      font-size: 8px;
+    }
+  }
+
+  &__chart-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  }
+
   &__chart-title {
-    font-size: $font-size-base;
-    font-weight: $font-weight-semibold;
-    color: $text-secondary;
-    margin-bottom: $spacing-4;
-    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #232F3E;
+    margin-bottom: 8px;
   }
-  
-  &__chart-bars {
-    @include flex-center;
+
+  &__mini-chart {
+    display: flex;
     align-items: flex-end;
-    gap: $spacing-1;
-    height: 120px;
-    background: $gray-50;
-    border-radius: $border-radius-lg;
-    padding: $spacing-4;
+    gap: 4px;
+    height: 60px;
+    padding: 6px;
+    background: #f9f9f9;
+    border-radius: 6px;
   }
-  
+
   &__chart-bar {
     flex: 1;
-    background: linear-gradient(to top, $primary-color, $secondary-color);
-    border-radius: $border-radius-sm $border-radius-sm 0 0;
+    background: linear-gradient(to top, $bfarm-green, $bfarm-light-green);
+    border-radius: 4px 4px 0 0;
     min-height: 20%;
     animation: barGrow 1.5s ease-out;
-  }
-  
-  &__platforms {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-3;
-    
-    @include respond-below(sm) {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  &__platform {
-    @include flex-center;
-    gap: $spacing-2;
-    padding: $spacing-3;
-    background: $gray-50;
-    border-radius: $border-radius-lg;
-    transition: all $transition-duration-base $transition-timing;
-    
-    &:hover {
-      background: $gray-100;
-      transform: scale(1.02);
-    }
-    
-    i {
-      font-size: $font-size-lg;
-      
-      &.fa-google {
-        color: #4285F4;
-      }
-      
-      &.fa-amazon {
-        color: #FF9900;
-      }
-      
-      &.fa-youtube {
-        color: #FF0000;
-      }
-    }
-    
-    span {
-      font-size: $font-size-sm;
-      font-weight: $font-weight-medium;
-      color: $text-primary;
-      
-      &.klaviyo-logo {
-        color: #F06292;
-        font-weight: $font-weight-bold;
-        font-style: italic;
-      }
-    }
   }
   
   // Floating Cards (redesigned)

@@ -9,7 +9,7 @@ const ServicesSection = () => {
     {
       icon: 'fas fa-cogs',
       title: 'Full Account Management',
-      description: '360° care: purchasing & FBA logistics, KPI‑driven stock management, Seller Central / Brand Registry admin.',
+      description: '360° ops: FBA logistics, stock KPIs, Seller Central & Brand Registry care.',
       features: ['Automated SOPs → zero errors and full transparency in Slack + Looker Studio', 'Average client net‑profit uplift after 6 months: +42%'],
       metrics: '+42% net profit uplift in 6 months',
       color: 'from-green-500 to-green-600',
@@ -28,7 +28,7 @@ const ServicesSection = () => {
       icon: 'fas fa-search',
       title: 'Product Page Optimization',
       description: 'Data‑Driven SEO: Brand Analytics + Helium 10 → 100/100 relevance.',
-      features: ['Copy that sells: Hook—Problem—Solution—Proof formula', 'Open A/B panel shows you which tweaks deliver +15‑30% CVR'],
+      features: ['Copy that sells: Hook—Pain—Solution—Proof formula', 'Open A/B panel shows you which tweaks deliver +15‑30% CVR'],
       metrics: 'CTR grows ~1.8×',
       color: 'from-purple-500 to-purple-600',
       link: '/services/product-optimization'
@@ -36,9 +36,9 @@ const ServicesSection = () => {
     {
       icon: 'fas fa-rocket',
       title: 'Launching on Amazon',
-      description: 'Niche analysis & white‑space strategy → we dodge the "red ocean."',
-      features: ['Step‑by‑step 0‑90 day plan: from listings to first review', 'Amazon\'s Choice guaranteed or the service fee is refunded'],
-      metrics: 'Amazon\'s Choice guarantee',
+      description: 'Niche & white-space strategy to avoid the "red ocean."',
+      features: ['0–90-day execution: listings, offers, PPC, promos, and review-safe acceleration.', 'Visibility ramp plan: keyword set & rank targets, traffic mix, and post-launch optimization — built to qualify for high-trust signals (e.g., Amazon\'s Choice) but no badge promises (badges are algorithmic and criteria-driven).'],
+      metrics: '0-90 day launch execution',
       color: 'from-orange-500 to-orange-600',
       link: '/services/launching-on-amazon'
     }
@@ -55,13 +55,13 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="services__title">
-            Full‑spectrum services for Amazon brands
+            End-to-end Amazon growth for private-label brands
             <span className="services__title-highlight">
-              spectrum of excellence
+              Everything your Amazon brand needs — from launch to scale, under one accountable team.
             </span>
           </h2>
           <p className="services__description">
-            We're a one‑stop shop: strategy, creative, advertising, consulting and flawless account management—all under one roof. Pick the service you need and go break some records.
+            From PPC and listings to stock and analytics — we handle every Amazon lever that drives TACoS down and profit up.
           </p>
         </motion.div>
 

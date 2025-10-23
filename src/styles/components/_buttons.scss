@@ -66,11 +66,24 @@
   background: transparent;
   color: $bfarm-green;
   border: 1px solid rgba($bfarm-green, 0.3);
-  
+
   &:hover:not(:disabled) {
     background: rgba($bfarm-green, 0.1);
     border-color: $bfarm-green;
     color: $bfarm-green;
+  }
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: $white;
+  border: 2px solid rgba($white, 0.8);
+
+  &:hover:not(:disabled) {
+    background: $white;
+    border-color: $white;
+    color: $bfarm-green;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
   }
 }
 

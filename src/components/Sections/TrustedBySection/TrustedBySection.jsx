@@ -1,24 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import amazonAdsBadge from '../../../assets/amazon-ads-badge.png';
+import amazonSpnBadge from '../../../assets/amazon-spn-badge.png';
 import './TrustedBySection.scss';
 
 const TrustedBySection = () => {
   const trustedPoints = [
     {
-      icon: '👥',
-      text: 'Trusted by 300+ brands and Amazon sellers'
+      text: 'Trusted by 400+ brands & Amazon sellers'
     },
     {
-      icon: '📅',
       text: 'In Amazon space since 2015'
     },
     {
-      icon: '🏆',
-      text: 'Amazon ads certified'
+      badge: amazonAdsBadge,
+      alt: 'Amazon Ads Verified Partner'
     },
     {
-      icon: '🤝',
-      text: 'Amazon SPN partners'
+      badge: amazonSpnBadge,
+      alt: 'Amazon SPN Partner'
+    },
+    {
+      text: 'Performance guarantee after diagnostic'
     }
   ];
 
@@ -35,18 +38,28 @@ const TrustedBySection = () => {
           {trustedPoints.map((point, index) => (
             <motion.div
               key={index}
-              className="trusted-by__item"
+              className={`trusted-by__item ${point.badge ? 'trusted-by__item--badge' : ''}`}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="trusted-by__icon">
-                {point.icon}
-              </div>
-              <span className="trusted-by__text">
-                {point.text}
-              </span>
+              {point.badge ? (
+                <img
+                  src={point.badge}
+                  alt={point.alt}
+                  className="trusted-by__badge-img"
+                />
+              ) : (
+                <>
+                  <div className="trusted-by__icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <span className="trusted-by__text">
+                    {point.text}
+                  </span>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>
