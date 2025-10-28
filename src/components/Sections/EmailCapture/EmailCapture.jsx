@@ -5,12 +5,37 @@ import './EmailCapture.scss';
 const EmailCapture = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  // Enhanced email validation
+  const isValidEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    return emailRegex.test(email) && email.length <= 254;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (email) {
-      // Here you would typically send the email to your backend
-      console.log('Email submitted:', email);
+    setError('');
+    
+    // Client-side validation
+    if (!email || !isValidEmail(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      // In production, this should send to your backend API
+      // For now, we'll simulate the API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Log only in development
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Email submitted:', email);
+      }
+      
       setIsSubmitted(true);
       setEmail('');
       
@@ -18,6 +43,10 @@ const EmailCapture = () => {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 3000);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -56,17 +85,25 @@ const EmailCapture = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="email-capture__input"
+                    className={`email-capture__input ${error ? 'email-capture__input--error' : ''}`}
                     required
+                    disabled={isLoading}
                   />
                   <button 
                     type="submit" 
                     className="btn btn-primary"
+                    disabled={isLoading}
                   >
-                    <i className="fas fa-paper-plane"></i>
-                    Subscribe
+                    <i className={`fas ${isLoading ? 'fa-spinner fa-spin' : 'fa-paper-plane'}`}></i>
+                    {isLoading ? 'Subscribing...' : 'Subscribe'}
                   </button>
                 </div>
+                {error && (
+                  <p className="email-capture__error">
+                    <i className="fas fa-exclamation-circle"></i>
+                    {error}
+                  </p>
+                )}
                 <p className="email-capture__privacy">
                   <i className="fas fa-lock"></i>
                   We respect your privacy. Unsubscribe at any time.

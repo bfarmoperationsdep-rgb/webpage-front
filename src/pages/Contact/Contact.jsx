@@ -22,8 +22,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    // Log only in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Form submitted:', formData);
+    }
+    // Handle form submission here - in production this should send to backend
+    // TODO: Implement proper form submission with server-side validation
   };
 
   return (
