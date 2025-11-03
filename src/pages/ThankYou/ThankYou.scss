@@ -1,0 +1,129 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.thank-you-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-10 0;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-45deg, $primary-color, $secondary-color, $secondary-light, $primary-color);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    opacity: 0.15;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.thank-you-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: $spacing-8;
+  background: rgba($white, 0.98);
+  border-radius: $border-radius-2xl;
+  box-shadow: $shadow-2xl;
+}
+
+.thank-you-icon {
+  margin: 0 auto $spacing-6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    filter: drop-shadow(0 10px 30px rgba(76, 175, 80, 0.3));
+  }
+}
+
+.thank-you-title {
+  font-family: $font-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: $spacing-4;
+  line-height: 1.2;
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.thank-you-message {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-6;
+
+  @include respond-to(lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+.thank-you-info {
+  padding: $spacing-4;
+  background: rgba($secondary-light, 0.1);
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-6;
+
+  p {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.thank-you-actions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+  align-items: center;
+
+  @include respond-to(sm) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    min-width: 200px;
+    font-weight: $font-weight-semibold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

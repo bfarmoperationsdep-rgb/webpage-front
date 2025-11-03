@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Contact.scss';
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,10 +22,51 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+
+    // Create email body
+    const emailBody = `
+New Contact Form Submission
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phoneNumber}
+Message: ${formData.message}
+Amazon Listing: ${formData.amazonListingLink || 'Not provided'}
+Agree to updates: ${formData.agreeToUpdates ? 'Yes' : 'No'}
+    `;
+
+    try {
+      // Using FormSubmit.co service
+      const response = await fetch('https://formsubmit.co/ajax/bfarmoperationsdep@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phoneNumber,
+          message: formData.message,
+          amazonListing: formData.amazonListingLink,
+          agreeToUpdates: formData.agreeToUpdates,
+          _subject: 'New Contact Form Submission from BFarm Website',
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        // Redirect to thank you page
+        navigate('/thank-you');
+      } else {
+        alert('Sorry, there was an error sending your message. Please try again or email us directly.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Sorry, there was an error sending your message. Please try again or email us directly at bfarmoperationsdep@gmail.com');
+    }
   };
 
   return (

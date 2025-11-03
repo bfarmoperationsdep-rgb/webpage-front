@@ -12,6 +12,7 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import Articles from './pages/Blog/Blog';
 import ArticleDetail from './pages/Blog/ArticleDetail';
 import Contact from './pages/Contact/Contact';
+import ThankYou from './pages/ThankYou/ThankYou';
 import FullAccountManagement from './pages/Services/FullAccountManagement';
 import AmazonAdvertising from './pages/Services/AmazonAdvertising';
 import ProductOptimization from './pages/Services/ProductOptimization';
@@ -151,6 +152,7 @@ function App() {
               <Route path="/articles" element={<Articles />} />
               <Route path="/articles/:id" element={<ArticleDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
           </main>
           <EmailCapture />

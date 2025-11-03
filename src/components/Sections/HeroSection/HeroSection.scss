@@ -359,7 +359,7 @@
     }
   }
   
-  // Mobile Phone Mockup - Realistic iPhone
+  // Mobile Phone Mockup - iPhone Image
   &__phone {
     position: relative;
     z-index: 8;
@@ -375,289 +375,26 @@
     }
 
     @include respond-to(md) {
-      max-width: 200px;
-    }
-
-    @include respond-to(lg) {
       max-width: 220px;
     }
 
+    @include respond-to(lg) {
+      max-width: 260px;
+    }
+
     @include respond-to(xl) {
-      max-width: 240px;
+      max-width: 280px;
     }
   }
 
-  &__phone-frame {
-    position: relative;
+  &__phone-mockup {
     width: 100%;
-    aspect-ratio: 9 / 19.5;
-    background: linear-gradient(145deg, #505050 0%, #3a3a3a 50%, #2a2a2a 100%);
-    border-radius: 48px;
-    padding: 10px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-                inset 0 2px 4px rgba(255, 255, 255, 0.1),
-                0 0 0 3px rgba(0, 0, 0, 0.9);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.5))
+            drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
   }
 
-  &__phone-bezel {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    border-radius: 40px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  &__phone-notch {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
-    height: 26px;
-    background: #000;
-    border-radius: 0 0 20px 20px;
-    z-index: 101;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  &__notch-camera {
-    width: 6px;
-    height: 6px;
-    background: #1a1a1a;
-    border-radius: 50%;
-    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  }
-
-  &__phone-screen {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    border-radius: 26px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__status-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    padding-top: 8px;
-    z-index: 100;
-    color: #000;
-    font-size: 11px;
-    font-weight: 600;
-    pointer-events: none;
-  }
-
-  &__status-left {
-    display: flex;
-    align-items: center;
-  }
-
-  &__time {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-
-  &__status-right {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-    i {
-      font-size: 10px;
-
-      &.fa-battery-three-quarters {
-        font-size: 13px;
-      }
-    }
-  }
-
-  &__phone-screenshot {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  &__home-indicator {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: #000;
-    border-radius: 2px;
-    z-index: 100;
-  }
-
-  &__phone-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 32px 12px 6px;
-    background: #fff;
-    font-size: 9px;
-    color: #000;
-    font-weight: 600;
-  }
-
-  &__phone-time {
-    flex: 1;
-  }
-
-  &__phone-icons {
-    display: flex;
-    gap: 3px;
-    font-size: 8px;
-
-    i {
-      opacity: 0.8;
-    }
-  }
-
-  &__phone-content {
-    padding: 8px;
-    height: calc(100% - 44px);
-    overflow-y: auto;
-  }
-
-  &__amazon-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    background: #fff;
-    border-radius: 6px;
-    margin-bottom: 8px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-  }
-
-  &__amazon-logo {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #232F3E;
-
-    i {
-      color: #FF9900;
-      font-size: 14px;
-    }
-  }
-
-  &__metrics-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 8px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
-  }
-
-  &__metric-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &--small {
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-  }
-
-  &__metric-item {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  &__metric-label {
-    font-size: 8px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    font-weight: 500;
-  }
-
-  &__metric-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: #232F3E;
-
-    &--large {
-      font-size: 20px;
-      color: $bfarm-green;
-    }
-  }
-
-  &__metric-change {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 9px;
-    font-weight: 600;
-
-    &--up {
-      color: $success-color;
-    }
-
-    i {
-      font-size: 8px;
-    }
-  }
-
-  &__chart-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
-  }
-
-  &__chart-title {
-    font-size: 10px;
-    font-weight: 600;
-    color: #232F3E;
-    margin-bottom: 8px;
-  }
-
-  &__mini-chart {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 60px;
-    padding: 6px;
-    background: #f9f9f9;
-    border-radius: 6px;
-  }
-
-  &__chart-bar {
-    flex: 1;
-    background: linear-gradient(to top, $bfarm-green, $bfarm-light-green);
-    border-radius: 4px 4px 0 0;
-    min-height: 20%;
-    animation: barGrow 1.5s ease-out;
-  }
   
   // Floating Cards (redesigned)
   &__floating-cards {
@@ -826,14 +563,6 @@
   }
 }
 
-@keyframes barGrow {
-  from {
-    height: 0%;
-  }
-  to {
-    height: var(--height, 50%);
-  }
-}
 
 @keyframes scroll {
   0% {

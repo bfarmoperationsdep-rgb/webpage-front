@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../../context/LanguageContext';
-import amazonPhone from '../../../assets/amazon-phone.png';
+import iphoneMockup from '../../../assets/завантаження.png';
 import './HeroSection.scss';
 
 const HeroSection = () => {
@@ -152,31 +152,11 @@ const HeroSection = () => {
 
           <motion.div className="hero__visual" variants={itemVariants}>
             <div className="hero__phone">
-              <div className="hero__phone-frame">
-                <div className="hero__phone-bezel">
-                  <div className="hero__phone-notch">
-                    <div className="hero__notch-camera"></div>
-                  </div>
-                  <div className="hero__phone-screen">
-                    <div className="hero__status-bar">
-                      <div className="hero__status-left">
-                        <span className="hero__time">9:41</span>
-                      </div>
-                      <div className="hero__status-right">
-                        <i className="fas fa-signal"></i>
-                        <i className="fas fa-wifi"></i>
-                        <i className="fas fa-battery-three-quarters"></i>
-                      </div>
-                    </div>
-                    <img
-                      src={amazonPhone}
-                      alt="Amazon Seller Central"
-                      className="hero__phone-screenshot"
-                    />
-                    <div className="hero__home-indicator"></div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src={iphoneMockup}
+                alt="Amazon Seller Central iPhone"
+                className="hero__phone-mockup"
+              />
             </div>
           </motion.div>
         </motion.div>
